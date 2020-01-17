@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E48D4FC701011B62C5C6C8B6 /* Pods_WebcashStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B546AC0236BBA52866C2BC7D /* Pods_WebcashStore.framework */; };
 		FD62D79323D1A159007667BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79223D1A159007667BE /* AppDelegate.swift */; };
 		FD62D79523D1A159007667BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79423D1A159007667BE /* SceneDelegate.swift */; };
 		FD62D79723D1A159007667BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79623D1A159007667BE /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B546AC0236BBA52866C2BC7D /* Pods_WebcashStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebcashStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebcashStore.debug.xcconfig"; path = "Target Support Files/Pods-WebcashStore/Pods-WebcashStore.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebcashStore.release.xcconfig"; path = "Target Support Files/Pods-WebcashStore/Pods-WebcashStore.release.xcconfig"; sourceTree = "<group>"; };
 		FD62D78F23D1A159007667BE /* WebcashStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebcashStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD62D79223D1A159007667BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD62D79423D1A159007667BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48D4FC701011B62C5C6C8B6 /* Pods_WebcashStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7575ED54677E9F209A0A057F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B546AC0236BBA52866C2BC7D /* Pods_WebcashStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B731F56BA660E1C83A9DFCC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */,
+				FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FD62D78623D1A159007667BE = {
 			isa = PBXGroup;
 			children = (
 				FD62D79123D1A159007667BE /* WebcashStore */,
 				FD62D79023D1A159007667BE /* Products */,
+				B731F56BA660E1C83A9DFCC2 /* Pods */,
+				7575ED54677E9F209A0A057F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +81,87 @@
 		FD62D79123D1A159007667BE /* WebcashStore */ = {
 			isa = PBXGroup;
 			children = (
-				FD62D79223D1A159007667BE /* AppDelegate.swift */,
-				FD62D79423D1A159007667BE /* SceneDelegate.swift */,
-				FD62D79623D1A159007667BE /* ViewController.swift */,
-				FD62D79823D1A159007667BE /* Main.storyboard */,
-				FD62D79B23D1A15A007667BE /* Assets.xcassets */,
-				FD62D79D23D1A15A007667BE /* LaunchScreen.storyboard */,
-				FD62D7A023D1A15A007667BE /* Info.plist */,
+				FD62D7AD23D1A2C7007667BE /* Helper */,
+				FD62D7A723D1A1A9007667BE /* Resource */,
+				FD62D7A623D1A188007667BE /* AppDelegate */,
+				FD62D7A823D1A297007667BE /* Application */,
 			);
 			path = WebcashStore;
+			sourceTree = "<group>";
+		};
+		FD62D7A623D1A188007667BE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FD62D79223D1A159007667BE /* AppDelegate.swift */,
+				FD62D79423D1A159007667BE /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FD62D7A723D1A1A9007667BE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FD62D79B23D1A15A007667BE /* Assets.xcassets */,
+				FD62D7A023D1A15A007667BE /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FD62D7A823D1A297007667BE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FD62D7AE23D1A2D6007667BE /* Setting */,
+				FD62D7AC23D1A2BE007667BE /* Launch */,
+				FD62D7AB23D1A2B0007667BE /* Intro */,
+				FD62D7AA23D1A2A8007667BE /* List */,
+				FD62D7A923D1A29D007667BE /* Main */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FD62D7A923D1A29D007667BE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FD62D79623D1A159007667BE /* ViewController.swift */,
+				FD62D79823D1A159007667BE /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FD62D7AA23D1A2A8007667BE /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		FD62D7AB23D1A2B0007667BE /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		FD62D7AC23D1A2BE007667BE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				FD62D79D23D1A15A007667BE /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		FD62D7AD23D1A2C7007667BE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FD62D7AE23D1A2D6007667BE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD62D7A323D1A15A007667BE /* Build configuration list for PBXNativeTarget "WebcashStore" */;
 			buildPhases = (
+				CCF766C14559176DEF37FE48 /* [CP] Check Pods Manifest.lock */,
 				FD62D78B23D1A159007667BE /* Sources */,
 				FD62D78C23D1A159007667BE /* Frameworks */,
 				FD62D78D23D1A159007667BE /* Resources */,
@@ -132,6 +230,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CCF766C14559176DEF37FE48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebcashStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FD62D78B23D1A159007667BE /* Sources */ = {
@@ -282,37 +405,45 @@
 		};
 		FD62D7A423D1A15A007667BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = YXK57W277A;
-				INFOPLIST_FILE = WebcashStore/Info.plist;
+				INFOPLIST_FILE = WebcashStore/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.webcash.WebcashStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		FD62D7A523D1A15A007667BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = YXK57W277A;
-				INFOPLIST_FILE = WebcashStore/Info.plist;
+				INFOPLIST_FILE = WebcashStore/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.webcash.WebcashStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
