@@ -175,6 +175,7 @@
 				FD62D78B23D1A159007667BE /* Sources */,
 				FD62D78C23D1A159007667BE /* Frameworks */,
 				FD62D78D23D1A159007667BE /* Resources */,
+				C8935CF0DD6624499262C9B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +233,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C8935CF0DD6624499262C9B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebcashStore/Pods-WebcashStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebcashStore/Pods-WebcashStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebcashStore/Pods-WebcashStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CCF766C14559176DEF37FE48 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
