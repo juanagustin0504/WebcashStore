@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pyn-5E-QY3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Voice Popup View Controller-->
+        <scene sceneID="POO-f6-yl8">
+            <objects>
+                <viewController storyboardIdentifier="VoicePopupViewController" id="pyn-5E-QY3" customClass="VoicePopupViewController" customModule="WebcashStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AfX-Xp-XYi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xg-S1-AEC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cxJ-jx-h4x">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listening…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3r-9g-QzH" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                            <rect key="frame" x="18" y="60" width="102.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something for searching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-PN-8bm" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                            <rect key="frame" x="18" y="94" width="206.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microphone" translatesAutoresizingMaskIntoConstraints="NO" id="e1j-9q-egk">
+                                            <rect key="frame" x="152.5" y="298.5" width="70" height="70"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="e1j-9q-egk" secondAttribute="height" multiplier="1:1" id="2S7-U9-x0a"/>
+                                                <constraint firstAttribute="width" constant="70" id="C06-T4-fjm"/>
+                                                <constraint firstAttribute="height" constant="70" id="ij5-0J-Htd"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="EAg-Jg-xnH" appends="YES" id="51c-qf-DiX"/>
+                                            </connections>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6V-Y7-Omb">
+                                            <rect key="frame" x="162.5" y="609" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="Yy6-kH-sPC"/>
+                                                <constraint firstAttribute="height" constant="50" id="cJd-LW-wCz"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="closeBtnDidTapped:" destination="pyn-5E-QY3" eventType="touchUpInside" id="N0J-js-PG0"/>
+                                            </connections>
+                                        </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_close" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-BL-tFc">
+                                            <rect key="frame" x="180" y="626.5" width="15" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="61H-ad-mdI"/>
+                                                <constraint firstAttribute="height" constant="15" id="spO-wM-8oJ"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Z3r-9g-QzH" firstAttribute="leading" secondItem="cxJ-jx-h4x" secondAttribute="leading" constant="18" id="1zc-9C-blk"/>
+                                        <constraint firstItem="e1j-9q-egk" firstAttribute="centerY" secondItem="cxJ-jx-h4x" secondAttribute="centerY" id="4nS-JK-lm8"/>
+                                        <constraint firstItem="CgW-PN-8bm" firstAttribute="leading" secondItem="cxJ-jx-h4x" secondAttribute="leading" constant="18" id="GCY-ch-GY7"/>
+                                        <constraint firstItem="Z3r-9g-QzH" firstAttribute="top" secondItem="cxJ-jx-h4x" secondAttribute="top" constant="60" id="KRz-O7-EWD"/>
+                                        <constraint firstItem="p6V-Y7-Omb" firstAttribute="centerX" secondItem="cxJ-jx-h4x" secondAttribute="centerX" id="OJV-S6-pSe"/>
+                                        <constraint firstItem="e1j-9q-egk" firstAttribute="centerX" secondItem="cxJ-jx-h4x" secondAttribute="centerX" id="Ymu-hl-Iaf"/>
+                                        <constraint firstItem="B6k-BL-tFc" firstAttribute="centerX" secondItem="p6V-Y7-Omb" secondAttribute="centerX" id="b4m-5g-8Op"/>
+                                        <constraint firstItem="CgW-PN-8bm" firstAttribute="top" secondItem="Z3r-9g-QzH" secondAttribute="bottom" constant="10" id="ib8-c0-ks7"/>
+                                        <constraint firstItem="B6k-BL-tFc" firstAttribute="centerY" secondItem="p6V-Y7-Omb" secondAttribute="centerY" id="k7e-TM-D1r"/>
+                                        <constraint firstAttribute="bottom" secondItem="p6V-Y7-Omb" secondAttribute="bottom" constant="8" id="qa0-n1-QJg"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Xg-S1-AEC" firstAttribute="top" secondItem="AfX-Xp-XYi" secondAttribute="top" id="0lS-HP-er2"/>
+                            <constraint firstItem="4Xg-S1-AEC" firstAttribute="bottom" secondItem="AfX-Xp-XYi" secondAttribute="bottom" id="F0J-A0-moF"/>
+                            <constraint firstItem="4Xg-S1-AEC" firstAttribute="leading" secondItem="UWC-mL-4NA" secondAttribute="leading" id="a7f-W8-vuW"/>
+                            <constraint firstItem="4Xg-S1-AEC" firstAttribute="trailing" secondItem="UWC-mL-4NA" secondAttribute="trailing" id="wEr-Ef-FOU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UWC-mL-4NA"/>
+                    </view>
+                    <connections>
+                        <outlet property="effectBlurView" destination="4Xg-S1-AEC" id="2cl-6C-o9y"/>
+                        <outlet property="microPhoneImg" destination="e1j-9q-egk" id="ZzR-b4-RSl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdJ-x3-VPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="EAg-Jg-xnH">
+                    <connections>
+                        <action selector="longPressGestureAction:" destination="pyn-5E-QY3" id="zH5-GQ-6e8"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-188" y="-231.63418290854574"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_close" width="33.5" height="33.5"/>
+        <image name="microphone" width="39.5" height="39.5"/>
+    </resources>
+</document>

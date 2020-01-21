@@ -1,16 +1,38 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.4)
   - LanguageManager-iOS (1.2.0)
+  - Pulsator (0.6.0)
+  - RESideMenu (4.0.7)
+  - SDWebImage (5.5.0):
+    - SDWebImage/Core (= 5.5.0)
+  - SDWebImage/Core (5.5.0)
+  - UIImageColors (2.1.0)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - LanguageManager-iOS
+  - Pulsator
+  - RESideMenu
+  - SDWebImage
+  - UIImageColors
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManagerSwift
     - LanguageManager-iOS
+    - Pulsator
+    - RESideMenu
+    - SDWebImage
+    - UIImageColors
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+  Pulsator: eb5a9f9be4bdcbd19903984c65deca6aabe50a17
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
+  SDWebImage: 86589f0d47a7de15827640c71813e23fd428965c
+  UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
 
-PODFILE CHECKSUM: 7cc63c669e9a6aa1d804fc7ba38b78e1b08f4593
+PODFILE CHECKSUM: 810322017048cc2b70e108f8314477ab6156ae02
 
 COCOAPODS: 1.8.4
