@@ -19,6 +19,11 @@ class MainViewController: UIViewController {
     
     //MARK: properties
     fileprivate lazy var mainVM = MainViewModel()
+    fileprivate var mainListDataArr : [MainModel.Response] = [] {
+        didSet {
+            self.reloadTableView()
+        }
+    }
     fileprivate var viewStyle : ViewStyle! = ViewStyle.Detail
     fileprivate var sortBy : SortBy! = SortBy.Accending
     
@@ -57,7 +62,7 @@ class MainViewController: UIViewController {
                 self.alert(message: err?.localizedDescription ?? "")
                 return
             }
-            self.reloadTableView()
+            self.mainListDataArr = self.mainVM.mainResponse
         }
     }
 }
@@ -69,7 +74,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell : MainListCustomCell!
-        let responseObj = mainVM.mainResponse[indexPath.row]
+        let responseObj = mainListDataArr[indexPath.row]
         
         switch viewStyle {
         case .Detail:
@@ -86,7 +91,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainVM.mainResponse.count
+        return mainListDataArr.count
     }
     
     
@@ -97,7 +102,17 @@ extension MainViewController : FilterDelegate {
     func filterDidApplied(sortBy: SortBy, listStyle: ViewStyle) {
         self.sortBy = sortBy
         self.viewStyle = listStyle
-        self.tableView.reloadData()
+        
+        switch sortBy {
+        case .Accending:
+            self.mainListDataArr = self.mainListDataArr.sorted {
+                ($0.app_name ?? "") < ($1.app_name ?? "")
+            }
+        default:
+            self.mainListDataArr = self.mainListDataArr.sorted {
+                ($0.app_name ?? "") > ($1.app_name ?? "")
+            }
+        }
     }
 }
 

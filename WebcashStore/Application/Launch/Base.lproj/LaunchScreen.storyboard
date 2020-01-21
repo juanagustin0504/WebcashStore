@@ -27,16 +27,17 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pff-Jf-dRs" secondAttribute="height" multiplier="1:1" id="5w0-hB-YcW"/>
                                     <constraint firstAttribute="height" constant="150" id="Cef-Fc-fVe"/>
-                                    <constraint firstAttribute="width" constant="150" id="PIx-y7-gr3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Pff-Jf-dRs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="K3g-X5-UfQ"/>
+                            <constraint firstItem="Pff-Jf-dRs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="209" id="1P7-TA-QwK"/>
+                            <constraint firstItem="Cz4-Ub-UmT" firstAttribute="top" secondItem="Pff-Jf-dRs" secondAttribute="bottom" constant="176.5" id="XaF-85-BiY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cz4-Ub-UmT" secondAttribute="bottom" constant="18" id="aop-q9-1fQ"/>
-                            <constraint firstItem="Pff-Jf-dRs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gXO-3n-e5g"/>
+                            <constraint firstItem="Pff-Jf-dRs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="dq9-8Z-C6j"/>
                             <constraint firstItem="Cz4-Ub-UmT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gp7-ks-t23"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pff-Jf-dRs" secondAttribute="trailing" constant="85" id="xtE-Hd-l4j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

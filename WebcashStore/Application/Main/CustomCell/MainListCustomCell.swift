@@ -47,6 +47,8 @@ class MainListCustomCell: UITableViewCell {
                         self.getBtn.setTitleColor(.black, for: .normal)
                     }
                 })
+            } else {
+                print("Error ")
             }
         }
         

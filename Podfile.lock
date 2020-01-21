@@ -1,4 +1,5 @@
 PODS:
+  - BottomPopup (0.6.0)
   - IQKeyboardManagerSwift (6.5.4)
   - LanguageManager-iOS (1.2.0)
   - Pulsator (0.6.0)
@@ -9,6 +10,7 @@ PODS:
   - UIImageColors (2.1.0)
 
 DEPENDENCIES:
+  - BottomPopup
   - IQKeyboardManagerSwift
   - LanguageManager-iOS
   - Pulsator
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - BottomPopup
     - IQKeyboardManagerSwift
     - LanguageManager-iOS
     - Pulsator
@@ -26,6 +29,7 @@ SPEC REPOS:
     - UIImageColors
 
 SPEC CHECKSUMS:
+  BottomPopup: 1d5649a3b29396238f0e8f3c82075a7bfcf37ba7
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
   Pulsator: eb5a9f9be4bdcbd19903984c65deca6aabe50a17
@@ -33,6 +37,6 @@ SPEC CHECKSUMS:
   SDWebImage: 86589f0d47a7de15827640c71813e23fd428965c
   UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
 
-PODFILE CHECKSUM: 810322017048cc2b70e108f8314477ab6156ae02
+PODFILE CHECKSUM: 3372e39b33f80e2f8cfdcb0caa1d3538e25c6aa7
 
 COCOAPODS: 1.8.4
