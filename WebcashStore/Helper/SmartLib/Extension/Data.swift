@@ -2,7 +2,7 @@
 //  Data.swift
 //  SmartLib
 //
-//  Created by kosign webcash on 1/17/20.
+//  Created by God Save The King on 1/17/20.
 //  Copyright © 2020 Webcash. All rights reserved.
 //
 
@@ -46,6 +46,7 @@ extension Data {
         NSData(data: self).aes128DecryptedData(withKey: key, iv: iv)
     }
     
+    /// Convert Data to NSDictionary
     func dataToDic() -> NSDictionary {
         guard let dic: NSDictionary = (try? JSONSerialization.jsonObject(with: self, options: [])) as? NSDictionary else {
             return [:]
@@ -54,6 +55,17 @@ extension Data {
         return dic
     }
     
+    /// Convert Data to String
+    func dataToString() -> String? {
+        do {
+            let jsonResponse = try JSONSerialization.jsonObject(with: self, options: [])
+            return jsonResponse as? String
+        } catch {
+            return nil
+        }
+    }
+    
+    /// Get Pretty Print String from Data
     func prettyPrint() -> String {
         if JSONSerialization.isValidJSONObject(self.dataToDic()) {
             if let data = try? JSONSerialization.data(withJSONObject: self.dataToDic(), options: JSONSerialization.WritingOptions.prettyPrinted) {
@@ -64,6 +76,32 @@ extension Data {
         }
         return ""
     }
+
     
+    func dataToDecodableObject<O: Decodable>(responseType type : O.Type) -> O? {
+
+        guard let responseObject = try? JSONDecoder().decode(type.self, from: self) else {
+            if self.prettyPrint() == "{\n\n}" {
+                
+                let htmlString = String(data: self, encoding: .utf8) ?? ""
+                
+                Log.e("""
+                    Error Response:
+                    \(self.prettyPrint())
+                    \(htmlString)
+                    """)
+            }
+            else {
+                Log.e("""
+                    Error mapping data.
+                    Response:
+                    \(self.prettyPrint())
+                    """)
+            }
+            return nil
+        }
+        return responseObject
+    }
+
     
 }

@@ -9,14 +9,20 @@
 import UIKit
 
 class IntroViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Reachability setup
+        NetworkManager.shared.checkNetworkConnection { isReaching in
+            print("Network is reachable ::::::: \(isReaching)")
+        }
+        
         self.requestToken()
     }
-
+    
     //MARK: - custom methods
+    
     func requestToken() {
         IntroViewModel().requestToken { (err) in
             guard err == nil else {

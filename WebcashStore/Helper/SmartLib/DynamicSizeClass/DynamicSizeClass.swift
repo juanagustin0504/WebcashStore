@@ -2,7 +2,7 @@
 //  File.swift
 //  SmartLib
 //
-//  Created by Vichhai on 2020/01/08.
+//  Created by God Save The King on 2020/01/08.
 //  Copyright © 2020 Webcash. All rights reserved.
 //
 

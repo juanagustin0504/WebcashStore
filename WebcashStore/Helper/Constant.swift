@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-typealias Completion                = ()                -> Void
-typealias Completion_Int            = (Int)             -> Void
-typealias Completion_Bool           = (Bool)            -> Void
-typealias Completion_NSError        = (NSError?)        -> Void
-typealias Completion_String         = (String)          -> Void
-typealias Completion_String_Error   = (String, Error?)  -> Void
-
 enum APIKey : String {
     static var baseURL = "http://10.254.243.243:8080/webcashstore/"
     static var AuthKey = "Basic a29zaWduLWNsaWVudDprb3NpZ24tc2VjcmV0"

@@ -2,7 +2,7 @@
 //  Encodable.swift
 //  WebcashStore
 //
-//  Created by 위차이 on 1/17/20.
+//  Created by God Save The King on 1/17/20.
 //  Copyright © 2020 Webcash. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  UITextField.swift
 //  WebcashStore
 //
-//  Created by kosign webcash on 1/21/20.
+//  Created by God Save The King on 1/21/20.
 //  Copyright © 2020 Webcash. All rights reserved.
 //
 
