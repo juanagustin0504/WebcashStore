@@ -9,7 +9,7 @@
 import UIKit
 
 let kMaxRadius: CGFloat = 150
-let kMaxDuration: TimeInterval = 4
+let kMaxDuration: TimeInterval = 3
 
 class VoicePopupViewController: UIViewController {
 

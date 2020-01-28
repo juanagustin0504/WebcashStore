@@ -248,7 +248,7 @@
                                             <outlet property="appImage" destination="1eF-vS-D0D" id="N3z-DN-FgM"/>
                                             <outlet property="appNameLbl" destination="DNY-0J-Ppm" id="H6C-Pf-t8b"/>
                                             <outlet property="developServerDateLbl" destination="cfu-pe-Z5o" id="1AH-6k-MO7"/>
-                                            <outlet property="getBtn" destination="1EN-U0-fN8" id="sCl-4j-RHG"/>
+                                            <outlet property="getBtn" destination="1EN-U0-fN8" id="VF4-qA-OUe"/>
                                             <outlet property="realServerDateLbl" destination="xva-E6-XoG" id="7GS-n9-jsz"/>
                                             <outlet property="wrapperView" destination="JXn-n7-272" id="Ru6-Qu-znP"/>
                                         </connections>
@@ -342,7 +342,7 @@
                                         <connections>
                                             <outlet property="appImage" destination="lue-Zu-ebV" id="aQr-hC-NFz"/>
                                             <outlet property="appNameLbl" destination="os8-2E-7b4" id="LMh-ux-9zj"/>
-                                            <outlet property="getBtn" destination="d44-zz-95Q" id="6a9-J7-3h6"/>
+                                            <outlet property="getBtn" destination="d44-zz-95Q" id="MK3-Gq-TaA"/>
                                             <outlet property="wrapperView" destination="FFU-2X-vll" id="cbh-gh-KoR"/>
                                         </connections>
                                     </tableViewCell>

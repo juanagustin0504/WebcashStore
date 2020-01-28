@@ -28,7 +28,8 @@ class RootViewController: RESideMenu,RESideMenuDelegate {
         self.contentViewScaleValue  = 0.9
         self.leftMenuViewController = leftMenu
         self.contentViewController  = mainVC
-        self.scaleMenuView = false
+        self.scaleMenuView = true
+        self.scaleContentView = false
     }
 
 }

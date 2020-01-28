@@ -49,6 +49,16 @@ class MainViewController: UIViewController {
         self.presentPopup(vc: vc)
     }
     
+    @objc func getBtnDidTapped(_ sender : UIButtonDynamicSizeClass) {
+        let index = sender.tag
+        let responseObj = mainListDataArr[index]
+        
+        let vc = self.VC(sbName: "Detail", identifier: "DetailBottomViewController") as! DetailBottomViewController
+        vc.detailVM.responseObj = responseObj
+
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     //MARK: - custom methods
     fileprivate func reloadTableView() {
         DispatchQueue.main.async {
@@ -86,6 +96,9 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         case .none:
             return UITableViewCell()
         }
+        
+        cell.getBtn.tag = indexPath.row
+        cell.getBtn.addTarget(self, action: #selector(getBtnDidTapped(_:)), for: .touchUpInside)
         
         return cell
     }

@@ -21,6 +21,7 @@ class MainListCustomCell: UITableViewCell {
     
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,30 +32,35 @@ class MainListCustomCell: UITableViewCell {
     }
     
     
-    
     func configCell(data : MainModel.Response) {
         let url = URL(string: data.app_image ?? "")
         self.appImage.sd_setImage(with: url) { (img, err, _, _) in
             if err == nil {
-
-                img?.getColors({ (imageColors) in
-                    self.wrapperView.backgroundColor = imageColors?.secondary
-                    if self.wrapperView.backgroundColor!.isLight {
-                        self.getBtn.backgroundColor = UIColor(hexString: "5578C0")
-                        self.getBtn.setTitleColor(.white, for: .normal)
-                    } else {
-                        self.getBtn.backgroundColor = .white
-                        self.getBtn.setTitleColor(.black, for: .normal)
-                    }
+                img?.getColors({ (imgColor) in
+                    self.changeBackgroundColor(imageColors: imgColor)
                 })
             } else {
-                print("Error ")
+                self.appImage.image = UIImage(named: "image_placeholder")
+                self.appImage.image?.getColors({ (imgColor) in
+                    self.changeBackgroundColor(imageColors: imgColor)
+                })
             }
         }
         
         self.appNameLbl.text = data.app_name
     }
     
+    private func changeBackgroundColor(imageColors : UIImageColors?) {
+        self.wrapperView.backgroundColor = imageColors?.secondary
+        if self.wrapperView.backgroundColor!.isLight {
+            self.getBtn.backgroundColor = UIColor(hexString: "5578C0")
+            self.getBtn.setTitleColor(.white, for: .normal)
+        } else {
+            self.getBtn.backgroundColor = .white
+            self.getBtn.setTitleColor(.black, for: .normal)
+        }
+    }
+
     func configDetailCell(data : MainModel.Response) {
         self.configCell(data: data)
     }
