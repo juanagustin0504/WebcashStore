@@ -87,8 +87,9 @@ class DetailBottomViewController: BottomPopupViewController {
 
     //MARK: button action
     @IBAction func downloadBtnDidClicked(_ sender: UIButtonDynamicSizeClass) {
-        var url : String?
+        UIDevice.hapticWithStyle(style: .medium)
         
+        var url : String?
         if sender == realBtn {
             url = detailVM.getURLString(server: .RealServer)
         } else {

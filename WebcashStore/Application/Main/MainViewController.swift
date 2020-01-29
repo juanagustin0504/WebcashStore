@@ -75,48 +75,9 @@ class MainViewController: UIViewController {
             self.mainListDataArr = self.mainVM.mainResponse
         }
     }
-}
-
-
-//MARK: - tableview data source and delegate
-extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell : MainListCustomCell!
-        let responseObj = mainListDataArr[indexPath.row]
-        
-        switch viewStyle {
-        case .Detail:
-            cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? MainListCustomCell
-            cell.configDetailCell(data: responseObj)
-        case .Normal:
-            cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as? MainListCustomCell
-            cell.configCell(data: responseObj)
-        case .none:
-            return UITableViewCell()
-        }
-        
-        cell.getBtn.tag = indexPath.row
-        cell.getBtn.addTarget(self, action: #selector(getBtnDidTapped(_:)), for: .touchUpInside)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainListDataArr.count
-    }
-    
-    
-}
-
-//MARK: - filet delegate
-extension MainViewController : FilterDelegate {
-    func filterDidApplied(sortBy: SortBy, listStyle: ViewStyle) {
-        self.sortBy = sortBy
-        self.viewStyle = listStyle
-        
-        switch sortBy {
+    fileprivate func sortData() {
+        switch self.sortBy {
         case .Accending:
             self.mainListDataArr = self.mainListDataArr.sorted {
                 ($0.app_name ?? "") < ($1.app_name ?? "")
@@ -126,6 +87,53 @@ extension MainViewController : FilterDelegate {
                 ($0.app_name ?? "") > ($1.app_name ?? "")
             }
         }
+    }
+    
+}
+
+
+//MARK: - tableview data source and delegate
+extension MainViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell : MainListCustomCell!
+
+        if mainListDataArr.count > 0 {
+            let responseObj = mainListDataArr[indexPath.row]
+            switch viewStyle {
+            case .Detail:
+                cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? MainListCustomCell
+                cell.configDetailCell(data: responseObj)
+            case .Normal:
+                cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath) as? MainListCustomCell
+                cell.configCell(data: responseObj)
+            case .none:
+                return UITableViewCell()
+            }
+            
+            cell.getBtn.tag = indexPath.row
+            cell.getBtn.addTarget(self, action: #selector(getBtnDidTapped(_:)), for: .touchUpInside)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as? MainListCustomCell
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mainListDataArr.count == 0 ? 1 : mainListDataArr.count
+    }
+    
+    
+}
+
+//MARK: - filter delegate
+extension MainViewController : FilterDelegate {
+    func filterDidApplied(sortBy: SortBy, listStyle: ViewStyle) {
+        self.sortBy = sortBy
+        self.viewStyle = listStyle
+        
+        self.sortData()
     }
 }
 

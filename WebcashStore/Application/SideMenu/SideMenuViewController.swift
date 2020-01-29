@@ -14,14 +14,14 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             self.tableView.rowHeight = UITableView.automaticDimension
-            self.tableView.estimatedRowHeight = 50
+            self.tableView.estimatedRowHeight = 60
         }
     }
     
     //MARK: - properties
-    private let sideMenuArr = [(img_name : "home", title : "Home"),
-                               (img_name : "recent", title : "Recent Visited"),
-                               (img_name : "setting", title : "Settings")]
+    private let sideMenuArr = [(img_name : "home", title : "Home".localiz()),
+                               (img_name : "recent", title : "Recent".localiz()),
+                               (img_name : "setting", title : "Settings".localiz())]
     
     
 

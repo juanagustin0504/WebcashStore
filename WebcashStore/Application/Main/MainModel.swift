@@ -38,7 +38,5 @@ struct MainModel {
                 let view_count  : Int?
             }
         }
-        
     }
-    
 }

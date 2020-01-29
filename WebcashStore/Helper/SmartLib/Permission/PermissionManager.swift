@@ -20,6 +20,10 @@ class PermissionManager :NSObject {
     fileprivate var completeBlock : ((Bool) -> ())!
     fileprivate var locationManger : CLLocationManager!
     
+    fileprivate var audioEngine = AVAudioEngine()
+    fileprivate var speechRecognizer   : SFSpeechRecognizer? = SFSpeechRecognizer()
+    fileprivate var recognitionRequest : SFSpeechAudioBufferRecognitionRequest? = SFSpeechAudioBufferRecognitionRequest()
+    fileprivate var recognitionTask         : SFSpeechRecognitionTask?
     //MARK: - methods
     
     /// Request camera permission
@@ -162,6 +166,55 @@ class PermissionManager :NSObject {
             }
         })
     }
+    
+    
+    func startSpeechRecognition() {
+        let inputNode = audioEngine.inputNode
+        inputNode.removeTap(onBus: 0)
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.recognitionRequest?.append(buffer)
+        }
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+        } catch {
+            //            self.sendAlert(title: "Speech Recognizer Error", message: "There has been an audio engine error.")
+            print("~~~~ ERROR :::: There has been an audio engine error.")
+            return print(error)
+        }
+        guard let myRecognizer = SFSpeechRecognizer() else {
+            //            self.sendAlert(title: "Speech Recognizer Error", message: "Speech recognition is not supported for your current locale.")
+            print("~~~~ ERROR :::: Speech recognition is not supported for your current locale.")
+            return
+        }
+        if !myRecognizer.isAvailable {
+            //            self.sendAlert(title: "Speech Recognizer Error", message: "Speech recognition is not currently available. Check back at a later time.")
+            print("~~~~ ERROR :::: Speech recognition is not currently available. Check back at a later time.")
+            // Recognizer is not available right now
+            return
+        }
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest!, resultHandler: { result, error in
+            if let result = result {
+                
+                let bestString = result.bestTranscription.formattedString
+                print("===== best string :\(bestString)")
+
+            } else if let error = error {
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+                
+                print("~~~~ ERROR :::: \(error.localizedDescription)")
+            }
+        })
+    }
+    
+    func stopSpeechRecognition() {
+        self.recognitionTask?.finish()
+        self.audioEngine.stop()
+    }
+    
 }
 
 //MARK: - location manager delegate method
