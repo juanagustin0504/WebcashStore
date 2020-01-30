@@ -39,4 +39,8 @@ struct MainModel {
             }
         }
     }
+    
+    struct Search : Encodable {
+        let search_text : String
+    }
 }

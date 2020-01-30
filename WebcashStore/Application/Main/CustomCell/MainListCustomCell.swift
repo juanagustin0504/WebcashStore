@@ -20,7 +20,9 @@ class MainListCustomCell: UITableViewCell {
     @IBOutlet weak var wrapperView: DesignableView!
     
     
-    
+    override func prepareForReuse() {
+        self.wrapperView.backgroundColor = self.wrapperView.backgroundColor 
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,18 +39,18 @@ class MainListCustomCell: UITableViewCell {
         
         let url = URL(string: data.app_image ?? "")
         #warning("Fix this later")
-//        self.appImage.sd_setImage(with: url) { (img, err, _, _) in
-//            if err == nil {
-//                img?.getColors({ (imgColor) in
-//                    self.wrapperView.backgroundColor = imgColor?.background
-//                    self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
-//                })
-//            } else {
-//                self.appImage.image = UIImage(named: "image_placeholder")
-//                self.wrapperView.backgroundColor = UIColor(hexString: "F3F4EF")
-//                self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
-//            }
-//        }
+        self.appImage.sd_setImage(with: url) { (img, err, _, _) in
+            if err == nil {
+                img?.getColors({ (imgColor) in
+                    self.wrapperView.backgroundColor = imgColor?.background
+                    self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+                })
+            } else {
+                self.appImage.image = UIImage(named: "image_placeholder")
+                self.wrapperView.backgroundColor = UIColor(hexString: "F3F4EF")
+                self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+            }
+        }
         
         self.appNameLbl.text = data.app_name
     }

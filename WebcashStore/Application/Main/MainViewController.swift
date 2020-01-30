@@ -19,11 +19,7 @@ class MainViewController: UIViewController {
     
     //MARK: properties
     fileprivate lazy var mainVM = MainViewModel()
-    fileprivate var mainListDataArr : [MainModel.Response] = [] {
-        didSet {
-            self.reloadTableView()
-        }
-    }
+    fileprivate var mainListDataArr : [MainModel.Response] = []
     fileprivate var viewStyle : ViewStyle! = ViewStyle.Detail
     fileprivate var sortBy : SortBy! = SortBy.Accending
     
@@ -67,12 +63,13 @@ class MainViewController: UIViewController {
     }
     
     private func fetchMainList() {
-        mainVM.requestMainList { (err) in
+        mainVM.fetchMainList { (err) in
             guard err == nil else {
                 self.alert(message: err?.localizedDescription ?? "")
                 return
             }
             self.mainListDataArr = self.mainVM.mainResponse
+            self.sortData()
         }
     }
     
@@ -87,8 +84,11 @@ class MainViewController: UIViewController {
                 ($0.app_name ?? "") > ($1.app_name ?? "")
             }
         }
+        
+        DispatchQueue.main.async {
+            self.reloadTableView()
+        }
     }
-    
 }
 
 
@@ -137,3 +137,19 @@ extension MainViewController : FilterDelegate {
     }
 }
 
+//MARK: - textfield delegate
+extension MainViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        if !(textField.text?.trim().isEmpty)! {
+            self.mainListDataArr = mainVM.filter(searchText: textField.text!)
+            self.sortData()
+        } else {
+            self.mainListDataArr = mainVM.mainResponse
+            self.sortData()
+        }
+        
+        return true
+    }
+}
