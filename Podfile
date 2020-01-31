@@ -12,5 +12,7 @@ target 'WebcashStore' do
   pod 'IQKeyboardManagerSwift'
   pod 'UIImageColors'
   pod 'LanguageManager-iOS'
-  pod 'BottomPopup' 
+  pod 'BottomPopup'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 end
