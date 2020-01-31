@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // LanguageManager
         LanguageManager.shared.defaultLanguage = .en
         
-        
         //IQKeyboard
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
@@ -32,19 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Message
         Messaging.messaging().delegate = self
         
-
         registerForRemoteNotifications(application)
         
         return true
     }
 }
 
+//MARK: - Notifications Center -
 extension AppDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // let token = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        // Shared.Property.deviceToken = token
-        
         Messaging.messaging().apnsToken = deviceToken
     }
     
@@ -54,12 +50,14 @@ extension AppDelegate {
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        
+        print("didFailToRegisterForRemoteNotificationsWithError")
+        print(error)
     }
     
     // If the app is in the background, and "content-available" == true
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        
+        print("didReceiveRemoteNotification")
+        print(userInfo)
     }
     
     fileprivate func registerForRemoteNotifications(_ application: UIApplication) {
@@ -98,20 +96,18 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // If the app is in the foreground, the app will call this
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-       
-       
-        
         completionHandler([.alert, .badge, .sound])
     }
-    
     // If the app is in the background, nothing is called until the user taps the notification, at that point, the app will open and call this
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
+        print("didReceive Notification")
+        print(userInfo)
       
     }
 }
 
+//MARK: - MessagingDelegate -
 extension AppDelegate: MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
@@ -120,6 +116,7 @@ extension AppDelegate: MessagingDelegate {
                 print(error)
                 
             } else if let result = result {
+                print("didReceiveRegistrationToken")
                 print(result.token)
                 
             }

@@ -80,6 +80,7 @@
 		7634D0A723E3E78F00599BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7634D0A923E3E7A600599BF7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7634D0AA23E3E7B400599BF7 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
+		765C7F0623E4225F0020D21B /* WebcashStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebcashStore.entitlements; sourceTree = "<group>"; };
 		76CDE78423D6B3520025C9F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CDE78623D6B3520025C9F3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 		FD62D79123D1A159007667BE /* WebcashStore */ = {
 			isa = PBXGroup;
 			children = (
+				765C7F0623E4225F0020D21B /* WebcashStore.entitlements */,
 				FDDB620C23D6AEAA003D8919 /* WebcashStore-Bridging-Header.h */,
 				FDDB620723D6AE1E003D8919 /* Networking */,
 				FD62D7AD23D1A2C7007667BE /* Helper */,
@@ -817,6 +819,7 @@
 			baseConfigurationReference = F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebcashStore/WebcashStore.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
@@ -842,6 +845,7 @@
 			baseConfigurationReference = FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebcashStore/WebcashStore.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
