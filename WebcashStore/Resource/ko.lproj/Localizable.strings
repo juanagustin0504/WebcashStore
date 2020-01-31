@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  WebcashStore
+
+  Created by Webcash on 2020/01/31.
+  Copyright © 2020 Webcash. All rights reserved.
+*/
+
+
+// ----------- Footer and Launch Screen
+"copyright © 2020 WEBCASH" = "copyright © 2020 WEBCASH";
+
+// ----------- Menu
+"recent_visited"="최근 방문";
+"home"="홈";
+"settings"="설정";
+
+// ----------- Home Menu
+"search_for_apps"="앱 검색";
+"list_of_all_apps"="모든 앱 목록";
+"get"="다운로드";
+"server_real"="서버 리얼";
+"server_develop"="서버 개발";
+
+// ----------- Time formate
+"years_ago"="년 전에";
+"months_ago"="달 전에";
+"days_ago"="일 전에";
+"hours_ago"="시간 전에";
+"minutes_ago"="분 전에";
+"seconds_ago"="초 전에";
+"year_ago"="일 년 전에";
+"month_ago"="한 달 전에";
+"day_ago"="하루 전에";
+"hour_ago"="한 시간 전에";
+"minute_ago"="일 분 전에";
+"second_ago"="일 초 전에";
+
+"moment_ago"="조금 전에";
+
+// ----------- Filter Popup
+"sort_the_list_by"="목록 정렬 기준 :";
+"last_update"="마지막 업데이트";
+"a_to_z"="오름차순";
+"z_to_a"="내림차순";
+"select_list_styles_by"="목록 스타일 선택 기준 :";
+"apply_filter"="필터 적용";
+
+// ----------- Quick Detail
+"latest_version"="마지막 버전 :";
+"real"="리얼";
+"develop"="개발";
+"list_of_all_app_version"="모든 앱의 버전 목록";
+"version"="버전 :";
+
+// ----------- Settings
+"notification"="알림";
+"notification_detail"="새로운 앱 뉴스에 대한 알림";
+"display_language"="언어 표시";
+"choose_language"="언어를 선택하십시오.";
+"about_us"="About Us";
+"about_us_detail"="캄보디아 프놈펜의 사랑에 의해 만들어졌습니다.";
+
+"loading"="잠시만 기다려주세요…";
