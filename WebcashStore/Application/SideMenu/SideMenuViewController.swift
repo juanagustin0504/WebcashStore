@@ -54,6 +54,14 @@ extension SideMenuViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.sideMenuViewController.hideViewController()
         self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.row == 0 { // Home
+            
+        } else if indexPath.row == 1 { // Recent
+            
+        } else if indexPath.row == 2 { // Settings
+            self.presentVC(sbName: "Settings", identifier: "SettingsViewController_sid")
+        }
     }
     
 }

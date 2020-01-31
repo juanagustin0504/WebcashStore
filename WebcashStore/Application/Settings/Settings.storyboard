@@ -177,7 +177,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LanguageCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" rowHeight="56" id="Zjg-gU-Jwk" customClass="LanguageSelectionCell" customModule="WebcashStore_SettingsAndRecentVisited" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LanguageCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" rowHeight="56" id="Zjg-gU-Jwk" customClass="LanguageSelectionCell" customModule="WebcashStore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="120" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zjg-gU-Jwk" id="szd-8M-5Xp">
@@ -197,7 +197,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozF-hc-GWy">
-                                                    <rect key="frame" x="360.66666666666669" y="11" width="33.333333333333314" height="34"/>
+                                                    <rect key="frame" x="359" y="11" width="35" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="QNy-2g-dtK"/>
+                                                        <constraint firstAttribute="width" constant="35" id="kji-fw-tty"/>
+                                                    </constraints>
                                                     <state key="normal" backgroundImage="radio_button_unchecked"/>
                                                     <connections>
                                                         <action selector="changeLanguage:" destination="4mb-r3-Ajc" eventType="touchUpInside" id="v6m-00-kQp"/>
@@ -206,21 +210,16 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="41E-Cq-fx0" secondAttribute="bottom" id="39O-Ul-AEV"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ozF-hc-GWy" secondAttribute="bottom" id="3Ih-oX-flJ"/>
                                                 <constraint firstItem="eIO-Fc-stV" firstAttribute="centerY" secondItem="szd-8M-5Xp" secondAttribute="centerY" id="7T1-Sx-V6v"/>
-                                                <constraint firstItem="ozF-hc-GWy" firstAttribute="trailing" secondItem="szd-8M-5Xp" secondAttribute="trailingMargin" id="EaB-Zd-Azv"/>
+                                                <constraint firstItem="ozF-hc-GWy" firstAttribute="bottom" secondItem="szd-8M-5Xp" secondAttribute="bottomMargin" id="CZT-Ow-Ax2"/>
                                                 <constraint firstItem="41E-Cq-fx0" firstAttribute="leading" secondItem="eIO-Fc-stV" secondAttribute="trailing" constant="20" id="Eck-X0-mHq"/>
                                                 <constraint firstItem="41E-Cq-fx0" firstAttribute="top" secondItem="szd-8M-5Xp" secondAttribute="topMargin" id="PhL-gX-2ut"/>
+                                                <constraint firstItem="ozF-hc-GWy" firstAttribute="top" secondItem="szd-8M-5Xp" secondAttribute="topMargin" id="Quc-n5-cPH"/>
                                                 <constraint firstItem="eIO-Fc-stV" firstAttribute="top" secondItem="szd-8M-5Xp" secondAttribute="topMargin" id="a6L-sq-G8R"/>
-                                                <constraint firstItem="ozF-hc-GWy" firstAttribute="top" secondItem="szd-8M-5Xp" secondAttribute="topMargin" id="mLB-Wp-pxb"/>
+                                                <constraint firstItem="ozF-hc-GWy" firstAttribute="trailing" secondItem="szd-8M-5Xp" secondAttribute="trailingMargin" id="amG-Wb-2Pa"/>
                                                 <constraint firstItem="eIO-Fc-stV" firstAttribute="leading" secondItem="szd-8M-5Xp" secondAttribute="leadingMargin" id="qpE-6n-ehL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="btnSelection" destination="ozF-hc-GWy" id="F6y-8X-vCq"/>
-                                            <outlet property="languageImageView" destination="eIO-Fc-stV" id="MI9-fw-e0F"/>
-                                            <outlet property="lblLanguage" destination="41E-Cq-fx0" id="4pi-Hd-ner"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -245,24 +244,24 @@
                         <viewLayoutGuide key="safeArea" id="bSA-hH-Ntl"/>
                     </view>
                     <connections>
-                        <outlet property="about_us" destination="GsD-4E-9E9" id="I7b-W9-2wx"/>
-                        <outlet property="about_us_detail" destination="SNe-JJ-b3R" id="X2n-Wh-KTO"/>
-                        <outlet property="backButton" destination="Cvp-gJ-Jvc" id="Oj6-Cm-2BP"/>
-                        <outlet property="choose_language" destination="dcd-hC-ILU" id="81b-KZ-Rmk"/>
-                        <outlet property="display_language" destination="iM7-VD-kog" id="zke-Mv-akK"/>
-                        <outlet property="notification" destination="F5b-3R-qfF" id="oR3-gI-U5K"/>
-                        <outlet property="notificationSwitch" destination="Sp0-3M-BZ2" id="Aui-UN-Utu"/>
-                        <outlet property="notificationView" destination="Epa-lR-h2f" id="Csk-t1-7Lx"/>
-                        <outlet property="notification_detail" destination="ruH-kK-V9e" id="eye-WB-ghq"/>
-                        <outlet property="settingsTitle" destination="dwL-hc-473" id="171-WQ-Brm"/>
-                        <outlet property="shadowView" destination="IDN-Cr-gf3" id="9eg-ph-kY3"/>
-                        <outlet property="tableView" destination="zIM-vi-QvJ" id="sMh-67-wD2"/>
-                        <outlet property="touchAreaView" destination="NjM-I1-NSb" id="JvF-4l-o4x"/>
+                        <outlet property="about_us" destination="GsD-4E-9E9" id="cfF-5l-Bxk"/>
+                        <outlet property="about_us_detail" destination="SNe-JJ-b3R" id="Lx5-bT-eeA"/>
+                        <outlet property="backButton" destination="Cvp-gJ-Jvc" id="xc5-9k-hJ7"/>
+                        <outlet property="choose_language" destination="dcd-hC-ILU" id="AMT-Wk-Rdq"/>
+                        <outlet property="display_language" destination="iM7-VD-kog" id="Wq7-HR-aQY"/>
+                        <outlet property="notification" destination="F5b-3R-qfF" id="Eup-DD-WUW"/>
+                        <outlet property="notificationSwitch" destination="Sp0-3M-BZ2" id="Hy0-8R-QOO"/>
+                        <outlet property="notificationView" destination="Epa-lR-h2f" id="XwG-Yu-7LE"/>
+                        <outlet property="notification_detail" destination="ruH-kK-V9e" id="Lxm-Jb-NE6"/>
+                        <outlet property="settingsTitle" destination="dwL-hc-473" id="PSe-jI-cIk"/>
+                        <outlet property="shadowView" destination="IDN-Cr-gf3" id="PV1-K5-OgW"/>
+                        <outlet property="tableView" destination="zIM-vi-QvJ" id="Tia-9S-EC1"/>
+                        <outlet property="touchAreaView" destination="NjM-I1-NSb" id="Qx2-Tu-qiV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzA-kh-c2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="33"/>
+            <point key="canvasLocation" x="24.637681159420293" y="32.8125"/>
         </scene>
     </scenes>
     <resources>
