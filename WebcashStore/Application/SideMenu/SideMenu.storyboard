@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bmi-fu-Zvv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="515.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="513.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="qVH-k4-z3h">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
@@ -38,37 +38,38 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="cVA-FM-rgh" customClass="SideMenuCustomCell" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="206" width="320" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="cVA-FM-rgh" customClass="SideMenuCustomCell" customModule="WebcashStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="206" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cVA-FM-rgh" id="kti-tV-L2x">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1dJ-lj-Bv3">
-                                                    <rect key="frame" x="32" y="12.5" width="25" height="25"/>
+                                                    <rect key="frame" x="32" y="17.5" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="Mmt-bb-VSI"/>
-                                                        <constraint firstAttribute="width" secondItem="1dJ-lj-Bv3" secondAttribute="height" multiplier="1:1" id="ZOp-yZ-zCd"/>
-                                                        <constraint firstAttribute="height" constant="25" id="zkz-pN-ix0"/>
+                                                        <constraint firstAttribute="width" constant="25" id="7tE-P9-x1s"/>
+                                                        <constraint firstAttribute="width" secondItem="1dJ-lj-Bv3" secondAttribute="height" multiplier="1:1" id="ceU-hs-jvQ"/>
+                                                        <constraint firstAttribute="height" constant="25" id="hAz-cJ-kV3"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQz-gA-4JV" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                                    <rect key="frame" x="72" y="0.0" width="233" height="50"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="73" y="17.5" width="231" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rQz-gA-4JV" firstAttribute="top" secondItem="kti-tV-L2x" secondAttribute="top" id="59w-cf-QYz"/>
-                                                <constraint firstItem="rQz-gA-4JV" firstAttribute="leading" secondItem="1dJ-lj-Bv3" secondAttribute="trailing" constant="15" id="KXW-rL-SaF"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1dJ-lj-Bv3" secondAttribute="bottom" constant="1.5" id="NxG-GH-SvH"/>
-                                                <constraint firstItem="1dJ-lj-Bv3" firstAttribute="leading" secondItem="kti-tV-L2x" secondAttribute="leading" constant="32" id="PSP-Al-QEd"/>
-                                                <constraint firstItem="1dJ-lj-Bv3" firstAttribute="top" secondItem="kti-tV-L2x" secondAttribute="topMargin" constant="1.5" id="SnZ-Lp-BWP"/>
-                                                <constraint firstAttribute="bottom" secondItem="rQz-gA-4JV" secondAttribute="bottom" id="Vg2-m1-DDW"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="rQz-gA-4JV" secondAttribute="trailing" id="XPa-x8-eoI"/>
-                                                <constraint firstItem="1dJ-lj-Bv3" firstAttribute="centerY" secondItem="kti-tV-L2x" secondAttribute="centerY" id="pIL-Iz-FOu"/>
+                                                <constraint firstItem="rQz-gA-4JV" firstAttribute="leading" secondItem="1dJ-lj-Bv3" secondAttribute="trailing" constant="16" id="2Ih-YO-02m"/>
+                                                <constraint firstItem="1dJ-lj-Bv3" firstAttribute="leading" secondItem="kti-tV-L2x" secondAttribute="leading" constant="32" id="Ugs-NP-GZR"/>
+                                                <constraint firstItem="rQz-gA-4JV" firstAttribute="centerY" secondItem="1dJ-lj-Bv3" secondAttribute="centerY" id="Ul6-8h-mo9"/>
+                                                <constraint firstAttribute="trailing" secondItem="rQz-gA-4JV" secondAttribute="trailing" constant="16" id="W9w-fU-WKW"/>
+                                                <constraint firstAttribute="bottom" secondItem="rQz-gA-4JV" secondAttribute="bottom" constant="17.5" id="cfU-qt-Zi4"/>
+                                                <constraint firstAttribute="bottom" secondItem="1dJ-lj-Bv3" secondAttribute="bottom" constant="17.5" id="dSP-A0-PwO"/>
+                                                <constraint firstItem="1dJ-lj-Bv3" firstAttribute="top" secondItem="kti-tV-L2x" secondAttribute="top" constant="17.5" id="fNr-7Y-jOH"/>
+                                                <constraint firstItem="rQz-gA-4JV" firstAttribute="top" secondItem="kti-tV-L2x" secondAttribute="top" constant="17.5" id="i5M-70-seg"/>
+                                                <constraint firstItem="1dJ-lj-Bv3" firstAttribute="centerY" secondItem="kti-tV-L2x" secondAttribute="centerY" id="opf-Kb-VB4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -83,9 +84,9 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright © 2020 WEBCASH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJI-wW-hpw" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                <rect key="frame" x="17" y="523.5" width="271" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="17" y="521.5" width="271" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -93,11 +94,11 @@
                         <constraints>
                             <constraint firstItem="nJI-wW-hpw" firstAttribute="leading" secondItem="rE2-hw-r6F" secondAttribute="leading" constant="17" id="1DQ-ru-ase"/>
                             <constraint firstItem="Bmi-fu-Zvv" firstAttribute="leading" secondItem="rE2-hw-r6F" secondAttribute="leading" id="UOl-zU-tQU"/>
-                            <constraint firstItem="rE2-hw-r6F" firstAttribute="bottom" secondItem="nJI-wW-hpw" secondAttribute="bottom" constant="30" id="V83-cY-WUH"/>
                             <constraint firstItem="Bmi-fu-Zvv" firstAttribute="top" secondItem="rE2-hw-r6F" secondAttribute="top" id="Wy6-sm-OPO"/>
                             <constraint firstItem="rE2-hw-r6F" firstAttribute="trailing" secondItem="Bmi-fu-Zvv" secondAttribute="trailing" id="awc-l6-tqg"/>
                             <constraint firstItem="nJI-wW-hpw" firstAttribute="top" secondItem="Bmi-fu-Zvv" secondAttribute="bottom" constant="8" symbolic="YES" id="kOr-4D-bc0"/>
                             <constraint firstItem="rE2-hw-r6F" firstAttribute="trailing" secondItem="nJI-wW-hpw" secondAttribute="trailing" constant="32" id="mEE-KW-1wi"/>
+                            <constraint firstItem="rE2-hw-r6F" firstAttribute="bottom" secondItem="Bmi-fu-Zvv" secondAttribute="bottom" constant="54.5" id="z1U-rH-4sb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rE2-hw-r6F"/>
                     </view>

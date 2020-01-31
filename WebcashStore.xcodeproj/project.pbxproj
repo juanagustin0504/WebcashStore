@@ -25,7 +25,7 @@
 		FD62D79523D1A159007667BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79423D1A159007667BE /* SceneDelegate.swift */; };
 		FD62D79C23D1A15A007667BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD62D79B23D1A15A007667BE /* Assets.xcassets */; };
 		FDC5EAD723D952950081B795 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD623D952950081B795 /* Date.swift */; };
-		FDC5EAD923D958F70081B795 /* DetailBottomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD823D958F70081B795 /* DetailBottomViewModel.swift */; };
+		FDC5EAD923D958F70081B795 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD823D958F70081B795 /* DetailViewModel.swift */; };
 		FDDB61EF23D6AE14003D8919 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CB23D6AE14003D8919 /* Constant.swift */; };
 		FDDB61F023D6AE14003D8919 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CC23D6AE14003D8919 /* Share.swift */; };
 		FDDB61F123D6AE14003D8919 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CF23D6AE14003D8919 /* UIView.swift */; };
@@ -68,6 +68,7 @@
 		FDDB628123D6B1A8003D8919 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626C23D6B1A8003D8919 /* LoginViewModel.swift */; };
 		FDDB628223D6B1A8003D8919 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626D23D6B1A8003D8919 /* LoginModel.swift */; };
 		FDDB628323D6B1A8003D8919 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB626E23D6B1A8003D8919 /* Login.storyboard */; };
+		FDE7D3D723E3A50200A3B5B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDE7D3D623E3A50200A3B5B2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +94,7 @@
 		FD62D79B23D1A15A007667BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD62D7A023D1A15A007667BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDC5EAD623D952950081B795 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		FDC5EAD823D958F70081B795 /* DetailBottomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBottomViewModel.swift; sourceTree = "<group>"; };
+		FDC5EAD823D958F70081B795 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FDDB61CB23D6AE14003D8919 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FDDB61CC23D6AE14003D8919 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		FDDB61CF23D6AE14003D8919 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		FDDB626C23D6B1A8003D8919 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FDDB626D23D6B1A8003D8919 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		FDDB626E23D6B1A8003D8919 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FDE7D3D623E3A50200A3B5B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +222,7 @@
 			children = (
 				FD01BC3123D6E5C600A26FD8 /* Detail.storyboard */,
 				FD01BC3323D6E5D000A26FD8 /* DetailBottomViewController.swift */,
-				FDC5EAD823D958F70081B795 /* DetailBottomViewModel.swift */,
+				FDC5EAD823D958F70081B795 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -280,6 +282,7 @@
 			children = (
 				FD62D79B23D1A15A007667BE /* Assets.xcassets */,
 				FD62D7A023D1A15A007667BE /* Info.plist */,
+				FDE7D3D623E3A50200A3B5B2 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -306,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				FDDB61CB23D6AE14003D8919 /* Constant.swift */,
-				FDDB61EC23D6AE14003D8919 /* Custom */,
 				FDDB61EE23D6AE14003D8919 /* Pulsator.swift */,
 				FDDB61CC23D6AE14003D8919 /* Share.swift */,
 				FDDB61EB23D6AE14003D8919 /* Enum.swift */,
@@ -318,6 +320,7 @@
 		FDDB61CD23D6AE14003D8919 /* SmartLib */ = {
 			isa = PBXGroup;
 			children = (
+				FDDB61EC23D6AE14003D8919 /* Custom */,
 				FD4EEFFB23D81C710034F6EA /* Networking */,
 				FDDB61CE23D6AE14003D8919 /* Extension */,
 				FDDB61DA23D6AE14003D8919 /* DynamicSizeClass */,
@@ -445,11 +448,11 @@
 		FDDB626323D6B1A8003D8919 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FDDB626423D6B1A8003D8919 /* RootViewController.swift */,
-				FDDB626523D6B1A8003D8919 /* MainViewController.swift */,
 				FDDB626623D6B1A8003D8919 /* Main.storyboard */,
+				FDDB626523D6B1A8003D8919 /* MainViewController.swift */,
 				FDDB626723D6B1A8003D8919 /* MainViewModel.swift */,
 				FDDB626823D6B1A8003D8919 /* MainModel.swift */,
+				FDDB626423D6B1A8003D8919 /* RootViewController.swift */,
 				FDDB626923D6B1A8003D8919 /* CustomCell */,
 			);
 			path = Main;
@@ -540,6 +543,7 @@
 				FD62D79C23D1A15A007667BE /* Assets.xcassets in Resources */,
 				FDDB627523D6B1A8003D8919 /* Filter.storyboard in Resources */,
 				76CDE78C23D6B3520025C9F3 /* SideMenu.storyboard in Resources */,
+				FDE7D3D723E3A50200A3B5B2 /* GoogleService-Info.plist in Resources */,
 				FDDB627323D6B1A8003D8919 /* VoicePopup.storyboard in Resources */,
 				FDDB627023D6B1A8003D8919 /* Intro.storyboard in Resources */,
 				760725C023E255FE005294A3 /* Settings.storyboard in Resources */,
@@ -638,7 +642,7 @@
 				FDDB627723D6B1A8003D8919 /* Loading.swift in Sources */,
 				FDDB61FF23D6AE14003D8919 /* NSString+url.m in Sources */,
 				FDDB627623D6B1A8003D8919 /* FilterViewController.swift in Sources */,
-				FDC5EAD923D958F70081B795 /* DetailBottomViewModel.swift in Sources */,
+				FDC5EAD923D958F70081B795 /* DetailViewModel.swift in Sources */,
 				FDDB61FC23D6AE14003D8919 /* DynamicSizeClass.swift in Sources */,
 				FD4EEFFD23D822F80034F6EA /* APIManager.swift in Sources */,
 				FD62D79523D1A159007667BE /* SceneDelegate.swift in Sources */,
@@ -781,9 +785,10 @@
 			baseConfigurationReference = F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEVELOPMENT_TEAM = YXK57W277A;
+				DEVELOPMENT_TEAM = DL7DPUW7R9;
 				INFOPLIST_FILE = WebcashStore/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -791,8 +796,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.webcash.WebcashStore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kr.webcashstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WebcashStore/WebcashStore-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -804,9 +810,10 @@
 			baseConfigurationReference = FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEVELOPMENT_TEAM = YXK57W277A;
+				DEVELOPMENT_TEAM = DL7DPUW7R9;
 				INFOPLIST_FILE = WebcashStore/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -814,8 +821,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.webcash.WebcashStore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kr.webcashstore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WebcashStore/WebcashStore-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

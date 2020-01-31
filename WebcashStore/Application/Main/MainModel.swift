@@ -38,7 +38,9 @@ struct MainModel {
                 let view_count  : Int?
             }
         }
-        
     }
     
+    struct Search : Encodable {
+        let search_text : String
+    }
 }

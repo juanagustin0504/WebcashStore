@@ -25,10 +25,10 @@ class RootViewController: RESideMenu,RESideMenuDelegate {
         let leftMenu    = self.VC(sbName: "SideMenu", identifier: "leftMenuViewController")
         let mainVC    = self.VC(sbName: "Main", identifier: "MainViewController")
         
-        self.contentViewScaleValue  = 0.9
+
         self.leftMenuViewController = leftMenu
         self.contentViewController  = mainVC
-        self.scaleMenuView = true
+        self.scaleMenuView = false
         self.scaleContentView = false
     }
 

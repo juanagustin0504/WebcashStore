@@ -20,7 +20,9 @@ class MainListCustomCell: UITableViewCell {
     @IBOutlet weak var wrapperView: DesignableView!
     
     
-    
+    override func prepareForReuse() {
+        self.wrapperView.backgroundColor = self.wrapperView.backgroundColor 
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,26 +35,28 @@ class MainListCustomCell: UITableViewCell {
     
     
     func configCell(data : MainModel.Response) {
+        self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        
         let url = URL(string: data.app_image ?? "")
+        #warning("Fix this later")
         self.appImage.sd_setImage(with: url) { (img, err, _, _) in
             if err == nil {
                 img?.getColors({ (imgColor) in
-                    self.changeBackgroundColor(imageColors: imgColor)
+                    self.wrapperView.backgroundColor = imgColor?.background
+                    self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
                 })
             } else {
                 self.appImage.image = UIImage(named: "image_placeholder")
-                self.appImage.image?.getColors({ (imgColor) in
-                    self.changeBackgroundColor(imageColors: imgColor)
-                })
+                self.wrapperView.backgroundColor = UIColor(hexString: "F3F4EF")
+                self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
             }
         }
         
         self.appNameLbl.text = data.app_name
     }
     
-    private func changeBackgroundColor(imageColors : UIImageColors?) {
-        self.wrapperView.backgroundColor = imageColors?.secondary
-        if self.wrapperView.backgroundColor!.isLight {
+    private func changeBtnBackgroundColor(color : UIColor?) {
+        if color!.isLight {
             self.getBtn.backgroundColor = UIColor(hexString: "5578C0")
             self.getBtn.setTitleColor(.white, for: .normal)
         } else {
@@ -63,6 +67,10 @@ class MainListCustomCell: UITableViewCell {
 
     func configDetailCell(data : MainModel.Response) {
         self.configCell(data: data)
+        
+        let detailVM = DetailViewModel(responseObj: data)
+        self.developServerDateLbl.text = detailVM.getAgoDate(server: .DevelopeServer) ?? "-"
+        self.realServerDateLbl.text = detailVM.getAgoDate(server: .RealServer) ?? "-"
     }
     
 }

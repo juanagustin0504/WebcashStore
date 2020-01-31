@@ -96,6 +96,14 @@ extension UIDevice {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
+    public static func hapticWithStyle(style :  UIImpactFeedbackGenerator.FeedbackStyle = .medium) {
+        UIImpactFeedbackGenerator(style: style).impactOccurred()
+    }
+    
+    public static func hapticWithType(type : UINotificationFeedbackGenerator.FeedbackType = .success) {
+        UINotificationFeedbackGenerator().notificationOccurred(type)
+    }
+    
     public var type: EnumModel {
         var systemInfo = utsname()
         uname(&systemInfo)

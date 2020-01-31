@@ -73,7 +73,7 @@ import UIKit
             myView = UIView(frame: currentWindow.bounds)
             myView?.backgroundColor = UIColor.black.withAlphaComponent(0)
             UIView.animate(withDuration: 0.2) {
-                self.myView?.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                self.myView?.backgroundColor = UIColor.black.withAlphaComponent(0.8)
             }
             newLoadingImageView = imageLoadingStyle1
         }
