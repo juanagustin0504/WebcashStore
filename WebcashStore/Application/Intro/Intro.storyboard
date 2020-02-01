@@ -16,26 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright © 2019 WEBCASH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exq-t1-GVb">
-                                <rect key="frame" x="79" y="535.5" width="162" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright © 2020 Webcash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exq-t1-GVb">
+                                <rect key="frame" x="82" y="538.5" width="156" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webcash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="kFP-d6-btp">
-                                <rect key="frame" x="85" y="209" width="150" height="150"/>
+                                <rect key="frame" x="60" y="154" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="N4K-uS-NWH"/>
-                                    <constraint firstAttribute="height" constant="150" id="UAE-Y8-PMO"/>
+                                    <constraint firstAttribute="width" constant="200" id="N4K-uS-NWH"/>
+                                    <constraint firstAttribute="height" constant="200" id="UAE-Y8-PMO"/>
                                     <constraint firstAttribute="width" secondItem="kFP-d6-btp" secondAttribute="height" multiplier="1:1" id="hff-2u-Ouq"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="z2W-9T-Adp" firstAttribute="bottom" secondItem="Exq-t1-GVb" secondAttribute="bottom" constant="18" id="1JS-ys-25X"/>
+                            <constraint firstItem="z2W-9T-Adp" firstAttribute="bottom" secondItem="Exq-t1-GVb" secondAttribute="bottom" constant="15" id="1JS-ys-25X"/>
                             <constraint firstItem="kFP-d6-btp" firstAttribute="centerX" secondItem="Rwf-KM-xeH" secondAttribute="centerX" id="AH5-Of-xwj"/>
-                            <constraint firstItem="kFP-d6-btp" firstAttribute="centerY" secondItem="Rwf-KM-xeH" secondAttribute="centerY" id="Ube-2h-H1r"/>
+                            <constraint firstItem="kFP-d6-btp" firstAttribute="centerY" secondItem="Rwf-KM-xeH" secondAttribute="centerY" constant="-30" id="Ube-2h-H1r"/>
                             <constraint firstItem="Exq-t1-GVb" firstAttribute="centerX" secondItem="Rwf-KM-xeH" secondAttribute="centerX" id="b1A-kE-SOW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z2W-9T-Adp"/>
