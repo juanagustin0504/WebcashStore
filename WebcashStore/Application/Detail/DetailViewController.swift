@@ -64,10 +64,12 @@ class DetailViewController: UIViewController {
     
     //MARK: - button action
     @IBAction func realBtnDidClicked(_ sender: UIButtonDynamicSizeClass) {
+        sender.scaleState()
         self.downloadApp(server: .RealServer, atIndex: sender.tag)
     }
     
     @IBAction func devBtnDidClicked(_ sender: UIButtonDynamicSizeClass) {
+        sender.scaleState()
         self.downloadApp(server: .DevelopeServer, atIndex: sender.tag)
     }
     

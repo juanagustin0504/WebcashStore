@@ -11,6 +11,7 @@ import Foundation
 class MainViewModel {
     
     private(set) var mainResponse : [MainModel.Response]! = []
+    private var coreDataManager : CoreDataManager!
     
     /// Fetch all record
     /// - Parameter completion: complete block
@@ -31,25 +32,35 @@ class MainViewModel {
     
     /// Search
     /// - Parameters:
-    ///   - search: App name to search
+    ///   - appName: App name to search
     ///   - completion: complete block
-//    func fetchMainList(searchWord search : String, completion : @escaping Completion_NSError) {
-//        let body = MainModel.Search(search_text: search)
-//        DataAccess.shared.request(apiKey: APIKey.KS_IOS_SEARCH, body: body, responseType: [MainModel.Response].self) { (result) in
-//
-//            switch result {
-//            case .failure(let err) :
-//                completion(err)
-//            case .success(let response):
-//                self.mainResponse = response?.DATA
-//                completion(nil)
-//            }
-//        }
-//    }
-    
-    func filter(searchText text : String ) -> [MainModel.Response] {
+    func filter(appName text : String ) -> [MainModel.Response] {
         mainResponse.filter {
             ($0.app_name?.lowercased().contains(text.lowercased()))!
         }
     }
+ 
+    /// Initialize a database
+    func initDataBase() {
+        if coreDataManager == nil {
+            self.coreDataManager = CoreDataManager.shared
+            self.coreDataManager.initalizeStack()
+            
+        }
+    }
+    
+    /// Save App ID to a database
+    /// - Parameter id: id to save
+    func saveAppID(id : String) {
+        
+        let predic = NSPredicate(format: "app_id == %@", id)
+        let arr = self.coreDataManager.fetch(withPredicate: predic, responseType: App.self, andEntityName: "App")
+        
+        if arr?.count == 0 {
+            let appObj = App(context: self.coreDataManager.context)
+            appObj.app_id = id
+            self.coreDataManager.insert(obj: appObj)
+        }
+    }
+    
 }

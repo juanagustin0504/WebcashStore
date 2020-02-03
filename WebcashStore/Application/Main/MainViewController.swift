@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchMainList()
+        self.mainVM.initDataBase()
     }
 
     //MARK: - button actions
@@ -51,7 +52,10 @@ class MainViewController: UIViewController {
         
         let vc = self.VC(sbName: "Detail", identifier: "DetailBottomViewController") as! DetailBottomViewController
         vc.detailVM.responseObj = responseObj
-
+        
+        // save app id to database
+        mainVM.saveAppID(id: responseObj.app_id ?? "")
+        
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -130,6 +134,8 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         let detailVC = self.VC(sbName: "Detail", identifier: "DetailViewController") as! DetailViewController
         detailVC.dataResponse = responseObj
         
+        // save app id to database
+        mainVM.saveAppID(id: responseObj.app_id ?? "")
         DispatchQueue.main.async {
             self.present(detailVC, animated: true, completion: nil)
         }
@@ -154,13 +160,11 @@ extension MainViewController : UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if !(textField.text?.trim().isEmpty)! {
-            self.mainListDataArr = mainVM.filter(searchText: textField.text!)
-            self.sortData()
+            self.mainListDataArr = mainVM.filter(appName: textField.text!)
         } else {
             self.mainListDataArr = mainVM.mainResponse
-            self.sortData()
         }
-        
+        self.sortData()
         return true
     }
 }

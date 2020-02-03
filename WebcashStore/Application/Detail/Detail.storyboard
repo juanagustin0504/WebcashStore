@@ -290,9 +290,6 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cli-4c-oUw" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="139.5" height="45"/>
                                                             <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="45" id="bGi-Za-mdp"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <state key="normal" title="Real">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,9 +307,6 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZH-GU-5l6" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
                                                             <rect key="frame" x="169.5" y="0.0" width="139.5" height="45"/>
                                                             <color key="backgroundColor" red="1" green="0.4431372549" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="45" id="IlQ-qr-g9R"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                             <state key="normal" title="Develop">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -329,7 +323,7 @@
                                                         </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="U8z-6M-DK8"/>
+                                                        <constraint firstAttribute="height" constant="45" id="I9f-6S-8Mf"/>
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj4-rs-OFY" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
@@ -344,22 +338,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMV-Bn-9ff" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                                    <rect key="frame" x="41" y="155.5" width="93" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbY-SF-hig">
                                                     <rect key="frame" x="41" y="185.5" width="317" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMV-Bn-9ff" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                    <rect key="frame" x="41" y="155" width="93" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AT5-kk-NOL" firstAttribute="top" secondItem="hi3-xD-1p1" secondAttribute="bottom" constant="10" id="0IJ-3b-aep"/>
-                                                <constraint firstItem="tbY-SF-hig" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="41" id="2Wk-9Q-efQ"/>
                                                 <constraint firstItem="tbY-SF-hig" firstAttribute="top" secondItem="AMV-Bn-9ff" secondAttribute="bottom" constant="5" id="9fK-yo-RsE"/>
                                                 <constraint firstAttribute="bottom" secondItem="tbY-SF-hig" secondAttribute="bottom" constant="21" id="CLF-xG-dP8"/>
                                                 <constraint firstItem="Oj4-rs-OFY" firstAttribute="top" secondItem="hi3-xD-1p1" secondAttribute="bottom" constant="10" id="CSG-Yl-yIY"/>
@@ -367,12 +360,13 @@
                                                 <constraint firstItem="Oj4-rs-OFY" firstAttribute="centerX" secondItem="cli-4c-oUw" secondAttribute="centerX" id="H50-lu-pP1"/>
                                                 <constraint firstAttribute="trailing" secondItem="hi3-xD-1p1" secondAttribute="trailing" constant="33" id="MBH-up-zK0"/>
                                                 <constraint firstAttribute="trailing" secondItem="tbY-SF-hig" secondAttribute="trailing" constant="17" id="SwD-qC-gB8"/>
+                                                <constraint firstItem="AMV-Bn-9ff" firstAttribute="top" secondItem="cdH-iD-P4E" secondAttribute="top" constant="155.5" id="USH-Bk-RdJ"/>
                                                 <constraint firstItem="hi3-xD-1p1" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="33" id="YWN-8y-qeR"/>
                                                 <constraint firstItem="AT5-kk-NOL" firstAttribute="centerX" secondItem="SZH-GU-5l6" secondAttribute="centerX" id="cJZ-Dq-P3e"/>
                                                 <constraint firstAttribute="trailing" secondItem="eTq-ud-yi3" secondAttribute="trailing" constant="40" id="dmD-3m-HhQ"/>
                                                 <constraint firstItem="A30-de-aBM" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="33" id="eZy-G8-7sp"/>
                                                 <constraint firstItem="hi3-xD-1p1" firstAttribute="top" secondItem="A30-de-aBM" secondAttribute="bottom" constant="19" id="gVG-W8-p4s"/>
-                                                <constraint firstItem="AMV-Bn-9ff" firstAttribute="top" secondItem="A30-de-aBM" secondAttribute="bottom" constant="115" id="kib-73-C7q"/>
+                                                <constraint firstItem="tbY-SF-hig" firstAttribute="leading" secondItem="AMV-Bn-9ff" secondAttribute="leading" id="ifd-QE-2ph"/>
                                                 <constraint firstItem="eTq-ud-yi3" firstAttribute="centerY" secondItem="A30-de-aBM" secondAttribute="centerY" id="vGK-K1-LJV"/>
                                                 <constraint firstItem="AMV-Bn-9ff" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="41" id="yiU-y6-uCZ"/>
                                             </constraints>

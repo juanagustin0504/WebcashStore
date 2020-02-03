@@ -18,7 +18,13 @@ class DetailBottomViewController: BottomPopupViewController {
         }
     }
     
-    @IBOutlet weak var appImage: UIImageView!
+    @IBOutlet weak var appImage: UIImageView! {
+        didSet {
+            let url = URL(string: detailVM.responseObj.app_image ?? "")
+            self.appImage.sd_setImage(with: url)
+        }
+    }
+    
     @IBOutlet weak var versionLbl: UILabelDynamicSizeClass! {
         didSet {
             self.versionLbl.text = "Latest version : \((self.detailVM.responseObj.ios?.first)?.version ?? "")"
@@ -91,6 +97,7 @@ class DetailBottomViewController: BottomPopupViewController {
 
     //MARK: button action
     @IBAction func downloadBtnDidClicked(_ sender: UIButtonDynamicSizeClass) {
+        sender.scaleState()
         UIDevice.hapticWithStyle(style: .medium)
         
         var url : String?
