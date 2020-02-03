@@ -84,7 +84,7 @@ extension UIDevice {
         iPhoneXR           = "iPhone XR",
         iPhone11           = "iPhone 11",
         iPhone11Pro        = "iPhone 11 Pro",
-        iPHone11ProMax     = "iPhone 11 Pro Max",
+        iPhone11ProMax     = "iPhone 11 Pro Max",
         
         //Apple TV
         AppleTV            = "Apple TV",
@@ -200,7 +200,7 @@ extension UIDevice {
             "iPhone11,8": .iPhoneXR,
             "iPhone12,1": .iPhone11,
             "iPhone12,3": .iPhone11Pro,
-            "iPhone12,5": .iPHone11ProMax,
+            "iPhone12,5": .iPhone11ProMax,
             
             //AppleTV
             "AppleTV5,3": .AppleTV,
@@ -220,10 +220,20 @@ extension UIDevice {
         return EnumModel.unrecognized
     }
     
+    static func getOSVerstion() -> Int {
+        Int(UIDevice.current.systemVersion) ?? 0
+    }
+    
     /// 앱 버전 가져옴
     static func getAppVersion() -> String {
         let mainBundleDictionary = Bundle.main.infoDictionary! as NSDictionary
         return mainBundleDictionary.object(forKey: "CFBundleShortVersionString") as? String ?? ""
+    }
+    
+    static func getAppVersionInt() -> Int {
+        let plainVersion = UIDevice.getAppVersion().replace(of: ".", with: "")
+        let intVersion = Int(plainVersion) ?? 0
+        return intVersion
     }
     
     static func isEnableAPNS() -> Bool {
@@ -233,7 +243,7 @@ extension UIDevice {
     
     /// UUID 가져옴
     static func getUUID() -> String {
-        return UUID().uuidString
+        (UIDevice.current.identifierForVendor?.uuidString)!
     }
     
     /// device 토큰 가져옴

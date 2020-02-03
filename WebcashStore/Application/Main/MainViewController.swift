@@ -124,6 +124,17 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         return mainListDataArr.count == 0 ? 1 : mainListDataArr.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let responseObj = mainListDataArr[indexPath.row]
+
+        let detailVC = self.VC(sbName: "Detail", identifier: "DetailViewController") as! DetailViewController
+        detailVC.dataResponse = responseObj
+        
+        DispatchQueue.main.async {
+            self.present(detailVC, animated: true, completion: nil)
+        }
+    }
+    
     
 }
 

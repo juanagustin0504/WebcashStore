@@ -21,7 +21,7 @@ class DetailBottomViewController: BottomPopupViewController {
     @IBOutlet weak var appImage: UIImageView!
     @IBOutlet weak var versionLbl: UILabelDynamicSizeClass! {
         didSet {
-            self.versionLbl.text = (self.detailVM.responseObj.ios?.first)?.version
+            self.versionLbl.text = "Latest version : \((self.detailVM.responseObj.ios?.first)?.version ?? "")"
         }
     }
 
@@ -45,7 +45,11 @@ class DetailBottomViewController: BottomPopupViewController {
 
     @IBOutlet weak var contentTextView: UITextViewDynamicSizeClass! {
         didSet {
-            self.contentTextView.text = (self.detailVM.responseObj.ios?.first)?.description
+            if ((self.detailVM.responseObj.ios?.first)?.description?.isEmpty)! {
+                self.contentTextView.text = "No Description"
+            } else {
+                self.contentTextView.text = (self.detailVM.responseObj.ios?.first)?.description
+            }
         }
     }
     
@@ -59,7 +63,7 @@ class DetailBottomViewController: BottomPopupViewController {
     
     @IBOutlet weak var devBtn: UIButtonDynamicSizeClass! {
         didSet {
-            self.devBtn.backgroundColor = self.detailVM.serverIsAvailable(version: .DevelopeServer) ? UIColor(hexString: "4B70FF") : UIColor(hexString: "BFBFBF")
+            self.devBtn.backgroundColor = self.detailVM.serverIsAvailable(version: .DevelopeServer) ? UIColor(hexString: "FF7137") : UIColor(hexString: "BFBFBF")
             self.devBtn.isUserInteractionEnabled = self.detailVM.serverIsAvailable(version: .DevelopeServer)
         }
     }

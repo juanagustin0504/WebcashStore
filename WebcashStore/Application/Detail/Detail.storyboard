@@ -119,7 +119,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Ap4-vS-Ixg"/>
                                     <constraint firstItem="KGI-3e-CJo" firstAttribute="leading" secondItem="3na-bi-h4g" secondAttribute="leading" id="EBh-hE-lya"/>
@@ -190,5 +190,283 @@
             </objects>
             <point key="canvasLocation" x="98.400000000000006" y="-431.33433283358323"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Bn6-Jc-X6D">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="ELB-lp-SGJ" customClass="DetailViewController" customModule="WebcashStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HCy-dH-m1q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBq-vH-HC4" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                <rect key="frame" x="17" y="36" width="51" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mHB-lM-FQv">
+                                <rect key="frame" x="167.5" y="10" width="40" height="3"/>
+                                <color key="backgroundColor" red="0.69411764710000001" green="0.69411764710000001" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="IgW-Ym-8Ij"/>
+                                    <constraint firstAttribute="height" constant="3" id="Zvu-IN-aVI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndd-QW-0f8" customClass="DesignableView" customModule="WebcashStore" customModuleProvider="target">
+                                <rect key="frame" x="16" y="83.5" width="80" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cV2-D1-EJO">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ndd-QW-0f8" secondAttribute="height" multiplier="1:1" id="NQI-Tu-cJU"/>
+                                    <constraint firstAttribute="width" constant="80" id="R8s-Bg-eM3"/>
+                                    <constraint firstAttribute="trailing" secondItem="cV2-D1-EJO" secondAttribute="trailing" id="Vap-ZT-fsC"/>
+                                    <constraint firstItem="cV2-D1-EJO" firstAttribute="leading" secondItem="ndd-QW-0f8" secondAttribute="leading" id="lUz-wK-71k"/>
+                                    <constraint firstAttribute="height" constant="80" id="p9i-Se-0Lo"/>
+                                    <constraint firstItem="cV2-D1-EJO" firstAttribute="top" secondItem="ndd-QW-0f8" secondAttribute="top" id="wPx-SP-qa8"/>
+                                    <constraint firstAttribute="bottom" secondItem="cV2-D1-EJO" secondAttribute="bottom" id="wv1-20-kXa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aey-tm-awY">
+                                <rect key="frame" x="0.0" y="230.5" width="375" height="436.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="227" id="ydK-yH-IsN" customClass="DetailCustomCell" customModule="WebcashStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="227"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydK-yH-IsN" id="cdH-iD-P4E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A30-de-aBM">
+                                                    <rect key="frame" x="33" y="13" width="51" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27.5" id="A37-2d-tt9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_expand_more" highlightedImage="ic_expand_less" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-ud-yi3">
+                                                    <rect key="frame" x="318" y="22" width="17" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="17" id="Zye-W4-F4f"/>
+                                                        <constraint firstAttribute="height" constant="10" id="k0H-yW-x4x"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hi3-xD-1p1">
+                                                    <rect key="frame" x="33" y="59.5" width="309" height="45"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cli-4c-oUw" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="139.5" height="45"/>
+                                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="bGi-Za-mdp"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <state key="normal" title="Real">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="22.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="downloadBtnDidClicked:" destination="h1a-Lb-RkB" eventType="touchUpInside" id="DZu-tb-1UE"/>
+                                                                <action selector="realBtnDidClicked:" destination="ELB-lp-SGJ" eventType="touchUpInside" id="uJa-63-zkO"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZH-GU-5l6" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                            <rect key="frame" x="169.5" y="0.0" width="139.5" height="45"/>
+                                                            <color key="backgroundColor" red="1" green="0.4431372549" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="IlQ-qr-g9R"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <state key="normal" title="Develop">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="22.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="devBtnDidClicked:" destination="ELB-lp-SGJ" eventType="touchUpInside" id="5gi-cd-fgX"/>
+                                                                <action selector="downloadBtnDidClicked:" destination="h1a-Lb-RkB" eventType="touchUpInside" id="FQe-Nj-qxF"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="U8z-6M-DK8"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oj4-rs-OFY" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                    <rect key="frame" x="87" y="114.5" width="32" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AT5-kk-NOL" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                    <rect key="frame" x="256.5" y="114.5" width="32" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMV-Bn-9ff" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                    <rect key="frame" x="41" y="155.5" width="93" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbY-SF-hig">
+                                                    <rect key="frame" x="41" y="185.5" width="317" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AT5-kk-NOL" firstAttribute="top" secondItem="hi3-xD-1p1" secondAttribute="bottom" constant="10" id="0IJ-3b-aep"/>
+                                                <constraint firstItem="tbY-SF-hig" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="41" id="2Wk-9Q-efQ"/>
+                                                <constraint firstItem="tbY-SF-hig" firstAttribute="top" secondItem="AMV-Bn-9ff" secondAttribute="bottom" constant="5" id="9fK-yo-RsE"/>
+                                                <constraint firstAttribute="bottom" secondItem="tbY-SF-hig" secondAttribute="bottom" constant="21" id="CLF-xG-dP8"/>
+                                                <constraint firstItem="Oj4-rs-OFY" firstAttribute="top" secondItem="hi3-xD-1p1" secondAttribute="bottom" constant="10" id="CSG-Yl-yIY"/>
+                                                <constraint firstItem="A30-de-aBM" firstAttribute="top" secondItem="cdH-iD-P4E" secondAttribute="top" constant="13" id="GvK-by-4bJ"/>
+                                                <constraint firstItem="Oj4-rs-OFY" firstAttribute="centerX" secondItem="cli-4c-oUw" secondAttribute="centerX" id="H50-lu-pP1"/>
+                                                <constraint firstAttribute="trailing" secondItem="hi3-xD-1p1" secondAttribute="trailing" constant="33" id="MBH-up-zK0"/>
+                                                <constraint firstAttribute="trailing" secondItem="tbY-SF-hig" secondAttribute="trailing" constant="17" id="SwD-qC-gB8"/>
+                                                <constraint firstItem="hi3-xD-1p1" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="33" id="YWN-8y-qeR"/>
+                                                <constraint firstItem="AT5-kk-NOL" firstAttribute="centerX" secondItem="SZH-GU-5l6" secondAttribute="centerX" id="cJZ-Dq-P3e"/>
+                                                <constraint firstAttribute="trailing" secondItem="eTq-ud-yi3" secondAttribute="trailing" constant="40" id="dmD-3m-HhQ"/>
+                                                <constraint firstItem="A30-de-aBM" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="33" id="eZy-G8-7sp"/>
+                                                <constraint firstItem="hi3-xD-1p1" firstAttribute="top" secondItem="A30-de-aBM" secondAttribute="bottom" constant="19" id="gVG-W8-p4s"/>
+                                                <constraint firstItem="AMV-Bn-9ff" firstAttribute="top" secondItem="A30-de-aBM" secondAttribute="bottom" constant="115" id="kib-73-C7q"/>
+                                                <constraint firstItem="eTq-ud-yi3" firstAttribute="centerY" secondItem="A30-de-aBM" secondAttribute="centerY" id="vGK-K1-LJV"/>
+                                                <constraint firstItem="AMV-Bn-9ff" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="41" id="yiU-y6-uCZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLbl" destination="tbY-SF-hig" id="PKA-eL-y1E"/>
+                                            <outlet property="devAgoDateLbl" destination="AT5-kk-NOL" id="l5b-pU-JQI"/>
+                                            <outlet property="devBtn" destination="SZH-GU-5l6" id="NC1-ic-bHI"/>
+                                            <outlet property="expandImg" destination="eTq-ud-yi3" id="z0z-Dm-Aw8"/>
+                                            <outlet property="realAgoDateLbl" destination="Oj4-rs-OFY" id="dK9-Uj-xR1"/>
+                                            <outlet property="realBtn" destination="cli-4c-oUw" id="QPe-RX-FPw"/>
+                                            <outlet property="versionLbl" destination="A30-de-aBM" id="8Q2-Te-duF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ELB-lp-SGJ" id="c4h-jN-qTG"/>
+                                    <outlet property="delegate" destination="ELB-lp-SGJ" id="mcm-8R-08p"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List of all app’s version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usx-y1-izJ" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                <rect key="frame" x="17" y="184.5" width="162" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7T-nM-Y8g" userLabel="Close View">
+                                <rect key="frame" x="306" y="30" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_close_blue" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-du-7ej">
+                                        <rect key="frame" x="11" y="11" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="DCs-nc-MuM"/>
+                                            <constraint firstAttribute="width" constant="18" id="LHp-sb-2mm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJD-MJ-GUb">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="7fr-nB-SHB"/>
+                                            <constraint firstAttribute="height" constant="40" id="v2t-tt-QHH"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="closeBtnDidTapped:" destination="ELB-lp-SGJ" eventType="touchUpInside" id="uIq-Yd-pq2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="aaq-du-7ej" firstAttribute="centerY" secondItem="w7T-nM-Y8g" secondAttribute="centerY" id="40W-6F-XyX"/>
+                                    <constraint firstAttribute="bottom" secondItem="tJD-MJ-GUb" secondAttribute="bottom" id="819-PO-pP3"/>
+                                    <constraint firstAttribute="trailing" secondItem="tJD-MJ-GUb" secondAttribute="trailing" id="CUJ-1N-9i1"/>
+                                    <constraint firstItem="aaq-du-7ej" firstAttribute="centerX" secondItem="w7T-nM-Y8g" secondAttribute="centerX" id="MxZ-lD-bmU"/>
+                                    <constraint firstItem="tJD-MJ-GUb" firstAttribute="top" secondItem="w7T-nM-Y8g" secondAttribute="top" id="dDo-nW-1aJ"/>
+                                    <constraint firstItem="tJD-MJ-GUb" firstAttribute="leading" secondItem="w7T-nM-Y8g" secondAttribute="leading" id="oSm-1u-VgJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dBq-vH-HC4" firstAttribute="leading" secondItem="9M6-DN-T9q" secondAttribute="leading" constant="17" id="2Vr-hs-xRR"/>
+                            <constraint firstItem="usx-y1-izJ" firstAttribute="top" secondItem="ndd-QW-0f8" secondAttribute="bottom" constant="21" id="ByU-YQ-6GR"/>
+                            <constraint firstItem="mHB-lM-FQv" firstAttribute="top" secondItem="9M6-DN-T9q" secondAttribute="top" constant="10" id="CC7-wM-mci"/>
+                            <constraint firstItem="9M6-DN-T9q" firstAttribute="bottom" secondItem="Aey-tm-awY" secondAttribute="bottom" id="DYR-tR-Is0"/>
+                            <constraint firstItem="Aey-tm-awY" firstAttribute="leading" secondItem="9M6-DN-T9q" secondAttribute="leading" id="Gaq-Kc-Qch"/>
+                            <constraint firstItem="ndd-QW-0f8" firstAttribute="top" secondItem="dBq-vH-HC4" secondAttribute="bottom" constant="20" id="K8C-d3-6Ij"/>
+                            <constraint firstItem="9M6-DN-T9q" firstAttribute="trailing" secondItem="Aey-tm-awY" secondAttribute="trailing" id="KJl-Er-2eR"/>
+                            <constraint firstItem="usx-y1-izJ" firstAttribute="leading" secondItem="9M6-DN-T9q" secondAttribute="leading" constant="17" id="aOG-ki-Z2o"/>
+                            <constraint firstItem="Aey-tm-awY" firstAttribute="top" secondItem="usx-y1-izJ" secondAttribute="bottom" constant="24" id="bGB-rR-Ddk"/>
+                            <constraint firstItem="dBq-vH-HC4" firstAttribute="top" secondItem="9M6-DN-T9q" secondAttribute="top" constant="36" id="hSI-7V-Bj3"/>
+                            <constraint firstItem="mHB-lM-FQv" firstAttribute="centerX" secondItem="HCy-dH-m1q" secondAttribute="centerX" id="lE5-yA-7cm"/>
+                            <constraint firstItem="w7T-nM-Y8g" firstAttribute="centerY" secondItem="dBq-vH-HC4" secondAttribute="centerY" id="sh0-ZA-gxH"/>
+                            <constraint firstItem="ndd-QW-0f8" firstAttribute="width" secondItem="ndd-QW-0f8" secondAttribute="height" multiplier="1:1" id="wF3-Aw-Uaq"/>
+                            <constraint firstItem="9M6-DN-T9q" firstAttribute="trailing" secondItem="w7T-nM-Y8g" secondAttribute="trailing" constant="29" id="xlJ-V2-jfx"/>
+                            <constraint firstItem="ndd-QW-0f8" firstAttribute="leading" secondItem="9M6-DN-T9q" secondAttribute="leading" constant="16" id="zyj-g1-3VD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9M6-DN-T9q"/>
+                    </view>
+                    <connections>
+                        <outlet property="appIconImage" destination="cV2-D1-EJO" id="7Fl-8h-lEj"/>
+                        <outlet property="appNameLbl" destination="dBq-vH-HC4" id="hKV-Bq-HdF"/>
+                        <outlet property="closeView" destination="w7T-nM-Y8g" id="Fjt-wV-6is"/>
+                        <outlet property="lineImage" destination="mHB-lM-FQv" id="lHw-J7-Gx7"/>
+                        <outlet property="tableView" destination="Aey-tm-awY" id="aZH-62-E3j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPf-Ie-Hub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.60000000000002" y="-431.33433283358323"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ic_close_blue" width="33.5" height="33.5"/>
+        <image name="ic_expand_less" width="6" height="4"/>
+        <image name="ic_expand_more" width="6" height="4"/>
+    </resources>
 </document>
