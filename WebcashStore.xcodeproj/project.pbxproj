@@ -20,6 +20,8 @@
 		FD01BC2E23D6E17F00A26FD8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC2D23D6E17F00A26FD8 /* UITextField.swift */; };
 		FD01BC3223D6E5C600A26FD8 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD01BC3123D6E5C600A26FD8 /* Detail.storyboard */; };
 		FD01BC3423D6E5D000A26FD8 /* DetailBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC3323D6E5D000A26FD8 /* DetailBottomViewController.swift */; };
+		FD0CDE2223E7DEC9002244D7 /* DetailCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CDE2023E7DEC9002244D7 /* DetailCustomCell.swift */; };
+		FD0CDE2323E7DEC9002244D7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CDE2123E7DEC9002244D7 /* DetailViewController.swift */; };
 		FD4EEFF823D810610034F6EA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF723D810610034F6EA /* Reachability.swift */; };
 		FD4EEFFA23D81A290034F6EA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF923D81A290034F6EA /* NetworkManager.swift */; };
 		FD4EEFFD23D822F80034F6EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFFC23D822F80034F6EA /* APIManager.swift */; };
@@ -92,6 +94,8 @@
 		FD01BC2D23D6E17F00A26FD8 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		FD01BC3123D6E5C600A26FD8 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		FD01BC3323D6E5D000A26FD8 /* DetailBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBottomViewController.swift; sourceTree = "<group>"; };
+		FD0CDE2023E7DEC9002244D7 /* DetailCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCustomCell.swift; sourceTree = "<group>"; };
+		FD0CDE2123E7DEC9002244D7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FD4EEFF723D810610034F6EA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FD4EEFF923D81A290034F6EA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FD4EEFFC23D822F80034F6EA /* APIManager.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -236,11 +240,21 @@
 		FD01BC2F23D6E56A00A26FD8 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				FD0CDE1F23E7DEC9002244D7 /* Cell */,
+				FD0CDE2123E7DEC9002244D7 /* DetailViewController.swift */,
 				FD01BC3123D6E5C600A26FD8 /* Detail.storyboard */,
 				FD01BC3323D6E5D000A26FD8 /* DetailBottomViewController.swift */,
 				FDC5EAD823D958F70081B795 /* DetailViewModel.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		FD0CDE1F23E7DEC9002244D7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD0CDE2023E7DEC9002244D7 /* DetailCustomCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FD4EEFFB23D81C710034F6EA /* Networking */ = {
@@ -635,10 +649,12 @@
 				FD01BC3423D6E5D000A26FD8 /* DetailBottomViewController.swift in Sources */,
 				FDDB627123D6B1A8003D8919 /* IntroViewModel.swift in Sources */,
 				FDDB61EF23D6AE14003D8919 /* Constant.swift in Sources */,
+				FD0CDE2223E7DEC9002244D7 /* DetailCustomCell.swift in Sources */,
 				76CDE78D23D6B3520025C9F3 /* SideMenuCustomCell.swift in Sources */,
 				76CDE78F23D6B3960025C9F3 /* MainListCustomCell.swift in Sources */,
 				FDDB620123D6AE14003D8919 /* NSString+AESCrypt.m in Sources */,
 				76CDE78B23D6B3520025C9F3 /* SideMenuViewController.swift in Sources */,
+				FD0CDE2323E7DEC9002244D7 /* DetailViewController.swift in Sources */,
 				FDC5EAD723D952950081B795 /* Date.swift in Sources */,
 				FDDB61FA23D6AE14003D8919 /* UIWindow.swift in Sources */,
 				FDDB627E23D6B1A8003D8919 /* MainViewModel.swift in Sources */,
