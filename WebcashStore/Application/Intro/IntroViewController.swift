@@ -17,7 +17,7 @@ class IntroViewController: UIViewController {
         NetworkManager.shared.checkNetworkConnection { isReaching in
             print("Network is reachable ::::::: \(isReaching)")
         }
-        
+        self.clearConstraintLog()
         self.requestToken()
     }
     

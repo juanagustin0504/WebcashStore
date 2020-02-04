@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.fetchMainList()
         self.mainVM.initDataBase()
+        KeychainManager.setSynchronizable()
     }
 
     //MARK: - button actions

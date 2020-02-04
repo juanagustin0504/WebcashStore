@@ -5,8 +5,7 @@ target 'WebcashStore' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   # Pods for WebcashStore
-
-  pod "Pulsator"
+  
   pod 'RESideMenu'
   pod 'SDWebImage'
   pod 'IQKeyboardManagerSwift'

@@ -8,14 +8,6 @@
 
 import Foundation
 import UIKit
-
-typealias Completion                = ()                -> Void
-typealias Completion_Int            = (Int)             -> Void
-typealias Completion_Bool           = (Bool)            -> Void
-typealias Completion_NSError        = (NSError?)        -> Void
-typealias Completion_String         = (String)          -> Void
-typealias Completion_String_Error   = (String, Error?)  -> Void
-
 struct NetworkManager {
     static var  shared : NetworkManager! = NetworkManager()
     private lazy var reachability : Reachability! = Reachability()

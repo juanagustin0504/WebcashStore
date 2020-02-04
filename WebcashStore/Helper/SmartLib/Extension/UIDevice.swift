@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 import AVFoundation
+import LocalAuthentication
+
+enum BiometryType: String {
+    case none = "None"
+    case faceID = "Face ID"
+    case touchID = "Touch ID"
+    case passcode = "Passcode"
+}
 
 extension UIDevice {
     
@@ -220,8 +228,8 @@ extension UIDevice {
         return EnumModel.unrecognized
     }
     
-    static func getOSVerstion() -> Int {
-        Int(UIDevice.current.systemVersion) ?? 0
+    static func getOSVerstion() -> Double {
+        Double(UIDevice.current.systemVersion) ?? 0
     }
     
     /// 앱 버전 가져옴
@@ -251,5 +259,71 @@ extension UIDevice {
     static func getDeviceToken(deviceToken : Data) -> String {
         let token = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         return token
+    }
+    
+    
+    static func faceIDAvailable() -> Bool {
+        if #available(iOS 11.0, *) {
+            let context = LAContext()
+            return (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: nil) && context.biometryType == .faceID)
+        }
+        return false
+    }
+    
+    static func checkSecurityType() -> BiometryType {
+        let myContext = LAContext()
+        
+        let hasAuthenticationBiometrics = myContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        let hasAuthentication = myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
+        
+        if #available(iOS 11.0, *) {
+            if hasAuthentication {
+                if hasAuthenticationBiometrics {
+                    switch myContext.biometryType {
+                    case .none: return .none
+                    case .faceID: return .faceID
+                    case .touchID: return .touchID
+                    @unknown default:
+                        fatalError()
+                    }
+                } else {
+                    return .passcode
+                }
+            } else {
+                return .none
+            }
+        } else {
+            if hasAuthentication {
+                if hasAuthenticationBiometrics {
+                    return .touchID
+                } else {
+                    return .passcode
+                }
+            } else {
+                return .none
+            }
+        }
+    }
+    
+    static func checkSecurity(completion: @escaping Completion_Bool) {
+        switch checkSecurityType() {
+        case .touchID, .passcode:
+            LAContext().evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Authenticaton is required.") { success, error in
+                DispatchQueue.main.async {
+                    completion(success)
+                }
+            }
+        case .faceID:
+            LAContext().evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "FaceID Authenticaton is required.") { success, error in
+                DispatchQueue.main.async {
+                    completion(success)
+                }
+            }
+        default:
+            DispatchQueue.main.async {
+                completion(false)
+            }
+            break
+        }
     }
 }

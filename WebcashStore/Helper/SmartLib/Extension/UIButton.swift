@@ -2,7 +2,7 @@
 //  UIButton.swift
 //  WebcashStore
 //
-//  Created by kosign webcash on 2/3/20.
+//  Created by God Save The King on 2/3/20.
 //  Copyright © 2020 Webcash. All rights reserved.
 //
 

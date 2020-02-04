@@ -1,5 +1,4 @@
 import UIKit
-import LocalAuthentication
 import SafariServices
 
 extension UIViewController: SFSafariViewControllerDelegate {
@@ -239,74 +238,6 @@ extension UIViewController {
     }
 }
 
-extension UIViewController {
-    func faceIDAvailable() -> Bool {
-        if #available(iOS 11.0, *) {
-            let context = LAContext()
-            return (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: nil) && context.biometryType == .faceID)
-        }
-        return false
-    }
-    
-    enum BiometryType: String {
-        case none = "None"
-        case faceID = "Face ID"
-        case touchID = "Touch ID"
-        case passcode = "Passcode"
-    }
-    
-    func checkSecurityType() -> BiometryType {
-        let myContext = LAContext()
-        
-        let hasAuthenticationBiometrics = myContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-        let hasAuthentication = myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
-        
-        if #available(iOS 11.0, *) {
-            if hasAuthentication {
-                if hasAuthenticationBiometrics {
-                    switch myContext.biometryType {
-                    case .none: return .none
-                    case .faceID: return .faceID
-                    case .touchID: return .touchID
-                    @unknown default:
-                        fatalError()
-                    }
-                } else {
-                    return .passcode
-                }
-            } else {
-                return .none
-            }
-        } else {
-            if hasAuthentication {
-                if hasAuthenticationBiometrics {
-                    return .touchID
-                } else {
-                    return .passcode
-                }
-            } else {
-                return .none
-            }
-        }
-    }
-    
-    func checkSecurity(completion: @escaping Completion = { }) {
-        switch checkSecurityType() {
-        case .faceID, .touchID, .passcode:
-            LAContext().evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Authenticaton is required.") { success, error in
-                DispatchQueue.main.async {
-                    if success {
-                        completion()
-                    }
-                }
-            }
-        default:
-            completion()
-            break
-        }
-    }
-}
-
 import UserNotifications
 import Photos
 
@@ -318,15 +249,6 @@ extension UIViewController {
             }
         }
     }
-    // useless code, never use
-//    func gotoPasscodeSettings() {
-//        if #available(iOS 10.0, *) {
-//            DispatchQueue.main.async {
-//                UIApplication.shared.open(URL(string: "App-Prefs:root=TOUCHID_PASSCODE" + Bundle.main.bundleIdentifier!)!, options: [:], completionHandler: nil)
-//            }
-//        }
-//    }
-    
     func checkAllowNotificationPermission(completion: @escaping Completion_Bool) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
