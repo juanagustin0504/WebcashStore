@@ -31,7 +31,7 @@
 		FD2A80BB23E8FF7E000210FD /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BA23E8FF7E000210FD /* KeychainManager.swift */; };
 		FD2A80BF23E9091F000210FD /* RandomKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BD23E9091F000210FD /* RandomKeyGenerator.swift */; };
 		FD2A80C023E9091F000210FD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BE23E9091F000210FD /* Utils.swift */; };
-		FD2A80C623E938BC000210FD /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80C523E938BC000210FD /* UserDefault.swift */; };
+		FD2A80C623E938BC000210FD /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80C523E938BC000210FD /* Wrapper.swift */; };
 		FD2A80C823E9491A000210FD /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80C723E9491A000210FD /* Typealiases.swift */; };
 		FD4EEFF823D810610034F6EA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF723D810610034F6EA /* Reachability.swift */; };
 		FD4EEFFA23D81A290034F6EA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF923D81A290034F6EA /* NetworkManager.swift */; };
@@ -116,7 +116,7 @@
 		FD2A80BD23E9091F000210FD /* RandomKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomKeyGenerator.swift; sourceTree = "<group>"; };
 		FD2A80BE23E9091F000210FD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FD2A80C323E90C15000210FD /* SmartLib-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartLib-Header.h"; sourceTree = "<group>"; };
-		FD2A80C523E938BC000210FD /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		FD2A80C523E938BC000210FD /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		FD2A80C723E9491A000210FD /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		FD4EEFF723D810610034F6EA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FD4EEFF923D81A290034F6EA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 		FD2A80C423E93893000210FD /* Property Wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				FD2A80C523E938BC000210FD /* UserDefault.swift */,
+				FD2A80C523E938BC000210FD /* Wrapper.swift */,
 			);
 			path = "Property Wrapper";
 			sourceTree = "<group>";
@@ -739,7 +739,7 @@
 				FDDB627C23D6B1A8003D8919 /* MainViewController.swift in Sources */,
 				FDDB61F023D6AE14003D8919 /* Share.swift in Sources */,
 				760725C223E2560C005294A3 /* SettingsViewController.swift in Sources */,
-				FD2A80C623E938BC000210FD /* UserDefault.swift in Sources */,
+				FD2A80C623E938BC000210FD /* Wrapper.swift in Sources */,
 				FDDB61FE23D6AE14003D8919 /* PermissionManager.swift in Sources */,
 				FDDB61F823D6AE14003D8919 /* UIViewController.swift in Sources */,
 				FDDB620323D6AE14003D8919 /* AES256Encryption.m in Sources */,

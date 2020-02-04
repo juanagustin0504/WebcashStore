@@ -23,7 +23,8 @@ class RootViewController: RESideMenu,RESideMenuDelegate {
     //MAKR: - custom methods
     func setupSideMenu() {
         let leftMenu    = self.VC(sbName: "SideMenu", identifier: "leftMenuViewController")
-        let mainVC    = self.VC(sbName: "Main", identifier: "MainViewController")
+        
+        let mainVC    = self.VC(sbName: "Main", identifier: MainViewController.storyboardIdentifier)
         
 
         self.leftMenuViewController = leftMenu
