@@ -27,17 +27,19 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchMainList()
+        self.mainVM.initDataBase()
+        KeychainManager.setSynchronizable()
     }
 
     //MARK: - button actions
     
     @IBAction func microphoneBtnDidTapped(_ sender: UIButton) {
-        let popupVC = self.VC(sbName: "VoicePopup", identifier: "VoicePopupViewController")
+        let popupVC = self.VC(sbName: "VoicePopup", identifier: VoicePopupViewController.storyboardIdentifier)
         self.presentPopup(vc: popupVC)
     }
     
     @IBAction func filterBtnDidTapped(_ sender: UIButton) {
-        let vc = self.VC(sbName: "Filter", identifier: "FilterViewController") as! FilterViewController
+        let vc = self.VC(sbName: "Filter", identifier: FilterViewController.storyboardIdentifier) as! FilterViewController
         vc.sortBy = self.sortBy
         vc.listStyle = self.viewStyle
         vc.delegate = self
@@ -49,9 +51,12 @@ class MainViewController: UIViewController {
         let index = sender.tag
         let responseObj = mainListDataArr[index]
         
-        let vc = self.VC(sbName: "Detail", identifier: "DetailBottomViewController") as! DetailBottomViewController
+        let vc = self.VC(sbName: "Detail", identifier: DetailBottomViewController.storyboardIdentifier) as! DetailBottomViewController
         vc.detailVM.responseObj = responseObj
-
+        
+        // save app id to database
+        mainVM.saveAppID(id: responseObj.app_id ?? "")
+        
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -124,6 +129,19 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         return mainListDataArr.count == 0 ? 1 : mainListDataArr.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let responseObj = mainListDataArr[indexPath.row]
+
+        let detailVC = self.VC(sbName: "Detail", identifier: DetailViewController.storyboardIdentifier) as! DetailViewController
+        detailVC.dataResponse = responseObj
+        
+        // save app id to database
+        mainVM.saveAppID(id: responseObj.app_id ?? "")
+        DispatchQueue.main.async {
+            self.present(detailVC, animated: true, completion: nil)
+        }
+    }
+    
     
 }
 
@@ -143,13 +161,11 @@ extension MainViewController : UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if !(textField.text?.trim().isEmpty)! {
-            self.mainListDataArr = mainVM.filter(searchText: textField.text!)
-            self.sortData()
+            self.mainListDataArr = mainVM.filter(appName: textField.text!)
         } else {
             self.mainListDataArr = mainVM.mainResponse
-            self.sortData()
         }
-        
+        self.sortData()
         return true
     }
 }

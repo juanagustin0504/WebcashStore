@@ -21,7 +21,7 @@ class MainListCustomCell: UITableViewCell {
     
     
     override func prepareForReuse() {
-        self.wrapperView.backgroundColor = self.wrapperView.backgroundColor 
+//        self.wrapperView.backgroundColor = self.wrapperView.backgroundColor 
     }
     
     override func awakeFromNib() {
@@ -38,7 +38,6 @@ class MainListCustomCell: UITableViewCell {
         self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
         
         let url = URL(string: data.app_image ?? "")
-        #warning("Fix this later")
         self.appImage.sd_setImage(with: url) { (img, err, _, _) in
             if err == nil {
                 img?.getColors({ (imgColor) in

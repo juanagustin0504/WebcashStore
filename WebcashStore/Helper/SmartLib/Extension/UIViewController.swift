@@ -1,8 +1,12 @@
 import UIKit
-import LocalAuthentication
 import SafariServices
 
 extension UIViewController: SFSafariViewControllerDelegate {
+    
+    static var storyboardIdentifier : String {
+        String(describing: self)
+    }
+    
     private func canOpenURL(_ string: String?) -> Bool {
         guard let urlString = string, let url = URL(string: urlString) else {
             return false
@@ -47,9 +51,7 @@ extension UIViewController: SFSafariViewControllerDelegate {
     public func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
 //        dismiss(animated: true)
     }
-}
-
-extension UIViewController {
+    
     func openSafari(url : String) {
         let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
         guard let appUrl = URL(string: encoded) else { return }
@@ -237,238 +239,12 @@ extension UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-}
-
-extension UIViewController {
-    func faceIDAvailable() -> Bool {
-        if #available(iOS 11.0, *) {
-            let context = LAContext()
-            return (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: nil) && context.biometryType == .faceID)
-        }
-        return false
-    }
-    
-    enum BiometryType: String {
-        case none = "None"
-        case faceID = "Face ID"
-        case touchID = "Touch ID"
-        case passcode = "Passcode"
-    }
-    
-    func checkSecurityType() -> BiometryType {
-        let myContext = LAContext()
-        
-        let hasAuthenticationBiometrics = myContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-        let hasAuthentication = myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
-        
-        if #available(iOS 11.0, *) {
-            if hasAuthentication {
-                if hasAuthenticationBiometrics {
-                    switch myContext.biometryType {
-                    case .none: return .none
-                    case .faceID: return .faceID
-                    case .touchID: return .touchID
-                    @unknown default:
-                        fatalError()
-                    }
-                } else {
-                    return .passcode
-                }
-            } else {
-                return .none
-            }
-        } else {
-            if hasAuthentication {
-                if hasAuthenticationBiometrics {
-                    return .touchID
-                } else {
-                    return .passcode
-                }
-            } else {
-                return .none
-            }
-        }
-    }
-    
-    func checkSecurity(completion: @escaping Completion = { }) {
-        switch checkSecurityType() {
-        case .faceID, .touchID, .passcode:
-            LAContext().evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Authenticaton is required.") { success, error in
-                DispatchQueue.main.async {
-                    if success {
-                        completion()
-                    }
-                }
-            }
-        default:
-            completion()
-            break
-        }
-    }
-}
-
-import UserNotifications
-import Photos
-
-extension UIViewController {
     func gotoAppSettings() {
         if #available(iOS 10.0, *) {
             DispatchQueue.main.async {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
             }
         }
-    }
-    // useless code, never use
-//    func gotoPasscodeSettings() {
-//        if #available(iOS 10.0, *) {
-//            DispatchQueue.main.async {
-//                UIApplication.shared.open(URL(string: "App-Prefs:root=TOUCHID_PASSCODE" + Bundle.main.bundleIdentifier!)!, options: [:], completionHandler: nil)
-//            }
-//        }
-//    }
-    
-    func checkAllowNotificationPermission(completion: @escaping Completion_Bool) {
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-                if settings.authorizationStatus != .authorized {
-                    DispatchQueue.main.async {
-                        completion(false)
-                    }
-                }
-                else {
-                    completion(true)
-                }
-            }
-        }
-    }
-    
-    func checkDeniedCameraPermission(completion: @escaping Completion_Bool) {
-        if AVCaptureDevice.authorizationStatus(for: .video) == .denied {
-            DispatchQueue.main.async {
-                completion(true)
-            }
-        }
-        else {
-            DispatchQueue.main.async {
-                completion(false)
-            }
-        }
-    }
-    
-    func checkAllowCameraPermission(completion: @escaping Completion_Bool) {
-        if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
-            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) -> Void in
-                DispatchQueue.main.async {
-                    completion(granted)
-                }
-            })
-        }
-        else {
-            DispatchQueue.main.async {
-                completion(true)
-            }
-        }
-    }
-    
-    func checkDeniedPhotoPermission(completion: @escaping Completion_Bool) {
-        if (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.denied) {
-            DispatchQueue.main.async {
-                completion(true)
-            }
-        }
-        else {
-            DispatchQueue.main.async {
-                completion(false)
-            }
-        }
-    }
-    
-    func checkAllowPhotoPermission(completion: @escaping Completion_Bool) {
-        if (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized) {
-            DispatchQueue.main.async {
-                completion(true)
-            }
-        }
-        else if (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.notDetermined) {
-            PHPhotoLibrary.requestAuthorization({ (newStatus) in
-                if (newStatus == PHAuthorizationStatus.authorized) {
-                    DispatchQueue.main.async {
-                        completion(true)
-                    }
-                }
-                else {
-                    DispatchQueue.main.async {
-                        completion(false)
-                    }
-                }
-            })
-        }
-        else {
-            DispatchQueue.main.async {
-                completion(false)
-            }
-        }
-    }
-}
-
-extension UIViewController {
-    func getCGSizeText(st: String, fontSize: CGFloat) -> CGSize {
-        let font = UIFont.systemFont(ofSize: fontSize)
-        let fontAtrr = [NSAttributedString.Key.font: font]
-        let size = (st as NSString).size(withAttributes: fontAtrr)
-        return size
-    }
-    
-    /*
-     + TODO: Set Left Navigation Item
-     - param image : Your image name
-     - param action: Selector handle selection when click on left navigation
-     - param title : Your title when navigation title is not available
-     */
-    func setLeftNavigationItem(_ image:String, action:Selector, title:String, width: CGFloat) -> Void {
-        
-        // Image
-        let image_nav = UIImage(named: image)
-        
-        // Button
-        let leftNavBtn = UIButton()
-        leftNavBtn.setImage(image_nav, for: UIControl.State())
-        leftNavBtn.setTitle(title, for: UIControl.State())
-        leftNavBtn.titleLabel!.font = UIFont.systemFont(ofSize: 17)
-        let autoWidth = getCGSizeText(st: title, fontSize: 17).width
-        let frameBtn = CGRect(x: -16,y: 0,width: image_nav!.size.width + autoWidth, height: image_nav!.size.height)
-        leftNavBtn.frame = frameBtn
-        leftNavBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -26, bottom: 0, right: 0)
-        leftNavBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
-        leftNavBtn.contentHorizontalAlignment = .left
-        leftNavBtn.addTarget(self, action: action, for: UIControl.Event.touchUpInside)
-        
-        // leftBarButtonItem
-        let leftBarButtonItem = UIBarButtonItem(customView: leftNavBtn)
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
-    }
-    
-    func formatePhoneNumber(_ number : String?) -> String {
-        guard let phoneNumber = number else { return "" }
-        
-        if phoneNumber.count < 9 {
-            return number ?? ""
-        }
-        
-        var firstDigits = phoneNumber.substringWithRange(0, end: 3)
-        var secondDigits = phoneNumber.substringWithRange(3, end: 6)
-        var thirdDigits = phoneNumber.substringWithRange(6, end: phoneNumber.count)
-        
-        if phoneNumber.count > 10 {
-            
-            firstDigits = phoneNumber.substringWithRange(0, end: 3)
-            secondDigits = phoneNumber.substringWithRange(3, end: 7)
-            thirdDigits = phoneNumber.substringWithRange(7, end: phoneNumber.count)
-            
-            return "\(firstDigits) - \(secondDigits) - \(thirdDigits)"
-        }
-        return "\(firstDigits) - \(secondDigits) - \(thirdDigits)"
-        
     }
     
     func presentPopup(vc : UIViewController) {
@@ -477,3 +253,156 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
 }
+
+
+//extension UIViewController {
+//    func getCGSizeText(st: String, fontSize: CGFloat) -> CGSize {
+//        let font = UIFont.systemFont(ofSize: fontSize)
+//        let fontAtrr = [NSAttributedString.Key.font: font]
+//        let size = (st as NSString).size(withAttributes: fontAtrr)
+//        return size
+//    }
+//
+//    /*
+//     + TODO: Set Left Navigation Item
+//     - param image : Your image name
+//     - param action: Selector handle selection when click on left navigation
+//     - param title : Your title when navigation title is not available
+//     */
+//    func setLeftNavigationItem(_ image:String, action:Selector, title:String, width: CGFloat) -> Void {
+//
+//        // Image
+//        let image_nav = UIImage(named: image)
+//
+//        // Button
+//        let leftNavBtn = UIButton()
+//        leftNavBtn.setImage(image_nav, for: UIControl.State())
+//        leftNavBtn.setTitle(title, for: UIControl.State())
+//        leftNavBtn.titleLabel!.font = UIFont.systemFont(ofSize: 17)
+//        let autoWidth = getCGSizeText(st: title, fontSize: 17).width
+//        let frameBtn = CGRect(x: -16,y: 0,width: image_nav!.size.width + autoWidth, height: image_nav!.size.height)
+//        leftNavBtn.frame = frameBtn
+//        leftNavBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -26, bottom: 0, right: 0)
+//        leftNavBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+//        leftNavBtn.contentHorizontalAlignment = .left
+//        leftNavBtn.addTarget(self, action: action, for: UIControl.Event.touchUpInside)
+//
+//        // leftBarButtonItem
+//        let leftBarButtonItem = UIBarButtonItem(customView: leftNavBtn)
+//        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+//    }
+//
+//    func formatePhoneNumber(_ number : String?) -> String {
+//        guard let phoneNumber = number else { return "" }
+//
+//        if phoneNumber.count < 9 {
+//            return number ?? ""
+//        }
+//
+//        var firstDigits = phoneNumber.substringWithRange(0, end: 3)
+//        var secondDigits = phoneNumber.substringWithRange(3, end: 6)
+//        var thirdDigits = phoneNumber.substringWithRange(6, end: phoneNumber.count)
+//
+//        if phoneNumber.count > 10 {
+//
+//            firstDigits = phoneNumber.substringWithRange(0, end: 3)
+//            secondDigits = phoneNumber.substringWithRange(3, end: 7)
+//            thirdDigits = phoneNumber.substringWithRange(7, end: phoneNumber.count)
+//
+//            return "\(firstDigits) - \(secondDigits) - \(thirdDigits)"
+//        }
+//        return "\(firstDigits) - \(secondDigits) - \(thirdDigits)"
+//
+//    }
+//}
+
+
+//
+//import UserNotifications
+//import Photos
+//
+//extension UIViewController {
+//
+//    func checkAllowNotificationPermission(completion: @escaping Completion_Bool) {
+//        if #available(iOS 10.0, *) {
+//            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+//                if settings.authorizationStatus != .authorized {
+//                    DispatchQueue.main.async {
+//                        completion(false)
+//                    }
+//                }
+//                else {
+//                    completion(true)
+//                }
+//            }
+//        }
+//    }
+//
+//    func checkDeniedCameraPermission(completion: @escaping Completion_Bool) {
+//        if AVCaptureDevice.authorizationStatus(for: .video) == .denied {
+//            DispatchQueue.main.async {
+//                completion(true)
+//            }
+//        }
+//        else {
+//            DispatchQueue.main.async {
+//                completion(false)
+//            }
+//        }
+//    }
+//
+//    func checkAllowCameraPermission(completion: @escaping Completion_Bool) {
+//        if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
+//            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) -> Void in
+//                DispatchQueue.main.async {
+//                    completion(granted)
+//                }
+//            })
+//        }
+//        else {
+//            DispatchQueue.main.async {
+//                completion(true)
+//            }
+//        }
+//    }
+//
+//    func checkDeniedPhotoPermission(completion: @escaping Completion_Bool) {
+//        if (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.denied) {
+//            DispatchQueue.main.async {
+//                completion(true)
+//            }
+//        }
+//        else {
+//            DispatchQueue.main.async {
+//                completion(false)
+//            }
+//        }
+//    }
+//
+//    func checkAllowPhotoPermission(completion: @escaping Completion_Bool) {
+//        if (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized) {
+//            DispatchQueue.main.async {
+//                completion(true)
+//            }
+//        }
+//        else if (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.notDetermined) {
+//            PHPhotoLibrary.requestAuthorization({ (newStatus) in
+//                if (newStatus == PHAuthorizationStatus.authorized) {
+//                    DispatchQueue.main.async {
+//                        completion(true)
+//                    }
+//                }
+//                else {
+//                    DispatchQueue.main.async {
+//                        completion(false)
+//                    }
+//                }
+//            })
+//        }
+//        else {
+//            DispatchQueue.main.async {
+//                completion(false)
+//            }
+//        }
+//    }
+//}

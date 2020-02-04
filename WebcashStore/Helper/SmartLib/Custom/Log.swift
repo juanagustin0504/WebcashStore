@@ -37,12 +37,6 @@ public class Log {
     
     private class func customLog(_ object: [Any?], filename: String = #file, line: Int = #line, funcname: String = #function) {
         print("‣ \(filename.components(separatedBy: "/").last ?? "") | Line: \(line) | \(funcname.replace(of: ":", with: ", ").replace(of: ", )", with: ")"))")
-//        print("‣ File     : \(filename.components(separatedBy: "/").last ?? "")")
-//        print("‣ Line     : \(line) ")
-//        print("‣ Function : \(funcname)")
-
-        print("")
-        print("", terminator: "")
         
         object.forEach { (obj) in
             if let obj = obj {
@@ -61,60 +55,3 @@ public class Log {
         print("\n--------------------------------------------------\n")
     }
 }
-
-/*
-public class Log {
-    
-    @discardableResult init<T>(_ object: T?, filename: String = #file, line: Int = #line, funcname: String = #function) {
-        tempLog(object, filename: filename, line: line, funcname: funcname, emoji: "📄")
-    }
-
-    class func d<T>(_ object: T?, filename: String = #file, line: Int = #line, funcname: String = #function) {
-        tempLog(object, filename: filename, line: line, funcname: funcname, emoji: "⭐️")
-    }
-
-    class func e<T>(_ object: T?, filename: String = #file, line: Int = #line, funcname: String = #function) {
-        tempLog(object, filename: filename, line: line, funcname: funcname, emoji: "⛔️")
-    }
-
-    class func w<T>(_ object: T?, filename: String = #file, line: Int = #line, funcname: String = #function) {
-        tempLog(object, filename: filename, line: line, funcname: funcname, emoji: "⚠️")
-    }
-}
-
-
-func tempLog<T>(_ object: T?, filename: String, line: Int, funcname: String, emoji: String) {
-    #if DEBUG
-    guard let object = object else {
-        print("""
-            
-            
-            ======================== P R I N T =======================
-            \(emoji) \(filename.components(separatedBy: "/").last ?? "") | Line: \(line) | \(funcname)
-            \(emoji) nil
-            """)
-        
-            print("""
-            ========================== E N D =========================
-
-
-            """)
-        return
-    }
-    
-    print("""
-        
-        
-        ======================== P R I N T =======================
-        \(emoji) \(filename.components(separatedBy: "/").last ?? "") | Line: \(line) | \(funcname)
-        \(emoji) \(object)
-        """)
-    
-    print("""
-        ========================== E N D =========================
-
-
-        """)
-    #endif
-}
-*/
