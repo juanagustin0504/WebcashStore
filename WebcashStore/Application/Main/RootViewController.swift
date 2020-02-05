@@ -24,7 +24,7 @@ class RootViewController: RESideMenu,RESideMenuDelegate {
     func setupSideMenu() {
         let leftMenu    = self.VC(sbName: "SideMenu", identifier: "leftMenuViewController")
         
-        let mainVC    = self.VC(sbName: "Main", identifier: MainViewController.storyboardIdentifier)
+        let mainVC    = self.VC(sbName: "Main", identifier: "mainNavi")
         
 
         self.leftMenuViewController = leftMenu

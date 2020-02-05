@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
         self.fetchMainList()
         self.mainVM.initDataBase()
         KeychainManager.setSynchronizable()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Settings"), object: nil)
     }
 
     //MARK: - button actions
@@ -93,6 +95,15 @@ class MainViewController: UIViewController {
         DispatchQueue.main.async {
             self.reloadTableView()
         }
+    }
+    
+    // FIXME: - don't push view controller
+    @objc func gotoSettingsVc() {
+        print("Hello it's me")
+        DispatchQueue.main.async {
+            self.pushVC(sbName: "Settings", identifier: "SettingsViewController_sid")
+        }
+        
     }
 }
 

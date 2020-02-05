@@ -17,31 +17,45 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var notificationView: UIView!
     @IBOutlet weak var touchAreaView: UIView!
     
-    @IBOutlet weak var notificationSwitch: UISwitch!
-    
+    // Navigation View
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var settingsTitle: UILabel!
+    
+    // Notification View
     @IBOutlet weak var notification: UILabel!
     @IBOutlet weak var notification_detail: UILabel!
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    
+    // Language Selection View(Header View)
     @IBOutlet weak var display_language: UILabel!
     @IBOutlet weak var choose_language: UILabel!
+    
+    // About Us View(Footer View)
     @IBOutlet weak var about_us: UILabel!
     @IBOutlet weak var about_us_detail: UILabel!
     
-    private let langList: [String] = ["한국어", "ខ្មែរ", "English"]
-    private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea.png")!, UIImage(named: "Flag_of_Cambodia.png")!, UIImage(named: "Flag_of_US_UK.png")!]
-    private let btnLangImages: [UIImage] = [UIImage(named: "radio_button_unchecked.png")!, UIImage(named: "radio_button_checked.png")!]
+    let langList: [String] = ["한국어", "ខ្មែរ", "English"]
+    let langImages: [UIImage?] = [UIImage(named: "Flag_of_Korea.png"), UIImage(named: "Flag_of_Cambodia.png"), UIImage(named: "Flag_of_US_UK.png")]
+    let btnLangImages: [UIImage] = [UIImage(named: "radio_button_unchecked.png")!, UIImage(named: "radio_button_checked.png")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = UIImage(named: "ic_expand_less.png")!
-        let newImage = image.rotate(radians: .pi/2) // Rotate 90 degrees
-        backButton.setImage(newImage, for: .normal)
         
+        // Back Button Image Setting
+        let image = UIImage(named: "ic_expand_more.png")!
+        let newImage = image.rotate(radians: .pi/2) // Rotate 90 degrees
+        backButton.setBackgroundImage(newImage, for: .normal)
+        
+        
+        
+        // ShadowView, NotificationView Setting
         applyRoundShadow()
+        
+        // Localizing
         localize()
         
+        // When touched NotificationView, gotoNotificationSetting -> modify after login
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.gotoNotificationSetting (_:)))
         self.touchAreaView.addGestureRecognizer(gesture)
         
@@ -49,9 +63,9 @@ class SettingsViewController: UIViewController {
     
     func applyRoundShadow() {
         
-        let maskPath = UIBezierPath(roundedRect: notificationView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
+        let maskPath = UIBezierPath(roundedRect: shadowView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = self.notificationView.bounds
+        maskLayer.frame = self.shadowView.bounds
         maskLayer.path = maskPath.cgPath
         maskLayer.backgroundColor = UIColor.clear.cgColor
         
@@ -119,7 +133,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func backToMain(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -153,7 +167,8 @@ extension SettingsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell", for: indexPath) as? LanguageSelectionCell else {
             return UITableViewCell()
         }
-        cell.languageImageView.image = langImages[indexPath.row]
+        
+        cell.languageImageView.image = langImages[indexPath.row]!
         cell.lblLanguage.text = langList[indexPath.row]
         cell.btnSelection.tag = indexPath.row
         
