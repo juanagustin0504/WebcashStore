@@ -32,8 +32,13 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var appIconImage: UIImageView! {
         didSet {
-            let url = URL(string: dataResponse.app_image ?? "")
-            self.appIconImage.sd_setImage(with: url)
+           let app_image = dataResponse.app_image ?? ""
+            if  app_image != ""   {
+                let url = URL(string: app_image)
+                self.appIconImage.sd_setImage(with: url)
+            }else{
+                self.appIconImage.image = UIImage(named: "image_placeholder")
+            }
         }
     }
     

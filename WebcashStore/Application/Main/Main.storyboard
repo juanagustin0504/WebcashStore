@@ -20,7 +20,7 @@
                                 <rect key="frame" x="18" y="15" width="284" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webcash" translatesAutoresizingMaskIntoConstraints="NO" id="54k-GO-26H">
-                                        <rect key="frame" x="13" y="12" width="35.000000000000014" height="32"/>
+                                        <rect key="frame" x="13" y="12" width="35" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="X8l-go-Xpf"/>
                                             <constraint firstAttribute="height" constant="32" id="rrE-MP-mNa"/>
@@ -183,6 +183,14 @@
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="0.16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EN-U0-fN8" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
                                                             <rect key="frame" x="201" y="25.5" width="70" height="30"/>
@@ -337,6 +345,14 @@
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="0.16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d44-zz-95Q" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
                                                             <rect key="frame" x="201" y="25" width="70" height="29"/>
