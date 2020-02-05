@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // apply Shadown body view
+        // apply Shadow body view
         applyRoundShadow()
         
         // Localizing
