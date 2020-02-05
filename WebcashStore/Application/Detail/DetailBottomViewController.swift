@@ -27,7 +27,7 @@ class DetailBottomViewController: BottomPopupViewController {
     
     @IBOutlet weak var versionLbl: UILabelDynamicSizeClass! {
         didSet {
-            self.versionLbl.text = "lastest_version".localiz() +  "\((self.detailVM.responseObj.ios?.first)?.version ?? "")"
+            self.versionLbl.text = "latest_version".localiz() +  "\((self.detailVM.responseObj.ios?.first)?.version ?? "")"
         }
     }
 

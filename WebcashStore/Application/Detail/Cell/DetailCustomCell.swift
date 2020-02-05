@@ -10,8 +10,16 @@ import UIKit
 
 class DetailCustomCell: UITableViewCell {
 
-    @IBOutlet weak var realBtn: UIButtonDynamicSizeClass!
-    @IBOutlet weak var devBtn: UIButtonDynamicSizeClass!
+    @IBOutlet weak var realBtn: UIButtonDynamicSizeClass! {
+        didSet {
+            self.realBtn.setTitle("real".localiz(), for: .normal)
+        }
+    }
+    @IBOutlet weak var devBtn: UIButtonDynamicSizeClass! {
+        didSet {
+            self.devBtn.setTitle("develop".localiz(), for: .normal)
+        }
+    }
     @IBOutlet weak var versionLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var realAgoDateLbl: UILabelDynamicSizeClass!
@@ -30,7 +38,7 @@ class DetailCustomCell: UITableViewCell {
     func configueCell(response : MainModel.Response, atindexPath indexpath : IndexPath) {
         let detailVM = DetailViewModel(responseObj: response)
         
-        self.versionLbl.text = "Version : \(detailVM.responseObj.ios![indexpath.row].version ?? "")"
+        self.versionLbl.text = "version".localiz() + " \(detailVM.responseObj.ios![indexpath.row].version ?? "")"
 
         realServerSetup: do {
             self.realBtn.backgroundColor = detailVM.serverIsAvailable(version: .RealServer, atIndex: indexpath.row) ? UIColor(hexString: "4B70FF") : UIColor(hexString: "BFBFBF")

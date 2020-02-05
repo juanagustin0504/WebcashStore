@@ -49,15 +49,9 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var realBtn: UIButtonDynamicSizeClass! {
+    @IBOutlet weak var listOfAllAppVersionLbl: UILabelDynamicSizeClass! {
         didSet {
-            self.realBtn.setTitle("real".localiz(), for: .normal)
-        }
-    }
-    
-    @IBOutlet weak var devBtn: UIButtonDynamicSizeClass! {
-        didSet {
-            self.devBtn.setTitle("develop".localiz(), for: .normal)
+            self.listOfAllAppVersionLbl.text = "list_of_all_app_version".localiz()
         }
     }
     
