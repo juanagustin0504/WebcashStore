@@ -24,11 +24,11 @@ class MainListCustomCell: UITableViewCell {
     let colorCache  = NSCache<NSString, UIColor>()
     
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.appImage.image                 = nil
-        self.wrapperView.backgroundColor    = nil
-    }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.appImage.image                 = nil
+//        self.wrapperView.backgroundColor    = nil
+//    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
