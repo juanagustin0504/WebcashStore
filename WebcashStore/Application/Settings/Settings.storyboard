@@ -82,7 +82,7 @@
                                                             </constraints>
                                                         </view>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pf1-MW-BAJ">
-                                                            <rect key="frame" x="345" y="20" width="51" height="31"/>
+                                                            <rect key="frame" x="345" y="26" width="51" height="31"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="31" id="Frb-EU-ThJ"/>
                                                                 <constraint firstAttribute="width" constant="49" id="Kfa-9m-YBx"/>
@@ -99,7 +99,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="Pf1-MW-BAJ" secondAttribute="trailing" constant="20" id="2uc-pj-pqE"/>
                                                         <constraint firstItem="QwQ-pc-b2e" firstAttribute="leading" secondItem="n1r-fH-rsE" secondAttribute="leading" constant="20" id="Xc7-Rg-IIi"/>
-                                                        <constraint firstItem="QwQ-pc-b2e" firstAttribute="top" secondItem="Pf1-MW-BAJ" secondAttribute="bottom" constant="41" id="cVv-HX-mK8"/>
+                                                        <constraint firstItem="QwQ-pc-b2e" firstAttribute="top" secondItem="Pf1-MW-BAJ" secondAttribute="bottom" constant="35" id="cVv-HX-mK8"/>
                                                         <constraint firstAttribute="height" constant="93" id="pmJ-U6-TfR"/>
                                                         <constraint firstAttribute="bottom" secondItem="QwQ-pc-b2e" secondAttribute="bottom" id="sht-2C-SgH"/>
                                                         <constraint firstAttribute="trailing" secondItem="QwQ-pc-b2e" secondAttribute="trailing" constant="20" id="z6C-Zr-OqN"/>

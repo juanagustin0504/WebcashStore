@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        // apply Shadown body view
         applyRoundShadow()
         
         // Localizing
@@ -50,11 +50,11 @@ class SettingsViewController: UIViewController {
         self.touchAreaView.addGestureRecognizer(gesture)
         
     }
-    
+    //MARK:- Private Method -
     func applyRoundShadow() {
 
         let shadowLayer             = CAShapeLayer()
-        shadowLayer.path            = UIBezierPath(roundedRect: self.shadowView.bounds, cornerRadius: 30).cgPath
+        shadowLayer.path            = UIBezierPath(roundedRect: self.view.bounds, cornerRadius: 30).cgPath
         shadowLayer.fillColor       = UIColor.white.cgColor
 
         shadowLayer.shadowColor     = UIColor.darkGray.cgColor
@@ -67,6 +67,17 @@ class SettingsViewController: UIViewController {
     
     }
     
+    func localize() {
+        settingsTitle.text          = "settings".localiz()
+        notification.text           = "notification".localiz()
+        notification_detail.text    = "notification_detail".localiz()
+        display_language.text       = "display_language".localiz()
+        choose_language.text        = "choose_language".localiz()
+        about_us.text               = "about_us".localiz()
+        about_us_detail.text        = "about_us_detail".localiz()
+    }
+    
+    //MARK:- Connection Action Method -
     // open Notification Setting
     @objc func gotoNotificationSetting(_ sender: UITapGestureRecognizer) {
         
@@ -105,42 +116,12 @@ class SettingsViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    func localize() {
-        settingsTitle.text          = "settings".localiz()
-        notification.text           = "notification".localiz()
-        notification_detail.text    = "notification_detail".localiz()
-        display_language.text       = "display_language".localiz()
-        choose_language.text        = "choose_language".localiz()
-        about_us.text               = "about_us".localiz()
-        about_us_detail.text        = "about_us_detail".localiz()
-    }
-    
     @IBAction func backToMain(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
 }
 
-extension SettingsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedLanguage: Languages
-        
-        switch indexPath.row {
-        case 0: // Korean
-            selectedLanguage = .ko
-        case 1: // Khmer
-            selectedLanguage = .km
-        default:
-            selectedLanguage = .en
-        }
-        
-        LanguageManager.shared.setLanguage(language: selectedLanguage)
-        localize()
-        
-        self.tableView.reloadData()
-    }
-}
-
-extension SettingsViewController: UITableViewDataSource {
+extension SettingsViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return langList.count
@@ -165,29 +146,22 @@ extension SettingsViewController: UITableViewDataSource {
         return cell
     }
     
-    
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           let selectedLanguage: Languages
+           
+           switch indexPath.row {
+           case 0: // Korean
+               selectedLanguage = .ko
+           case 1: // Khmer
+               selectedLanguage = .km
+           default:
+               selectedLanguage = .en
+           }
+           
+           LanguageManager.shared.setLanguage(language: selectedLanguage)
+           localize()
+           
+           self.tableView.reloadData()
+       }
 
-extension UIImage {
-    func rotate(radians: Float) -> UIImage? {
-        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
-        
-        newSize.width = floor(newSize.width)
-        newSize.height = floor(newSize.height)
-
-        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
-        let context = UIGraphicsGetCurrentContext()!
-
-        // Move origin to middle
-        context.translateBy(x: newSize.width/2, y: newSize.height/2)
-        // Rotate around middle
-        context.rotate(by: CGFloat(radians))
-        // Draw the image at its center
-        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage
-    }
 }
