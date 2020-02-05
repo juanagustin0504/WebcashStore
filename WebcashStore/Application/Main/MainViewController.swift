@@ -9,6 +9,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var searchForApps: UITextFieldDynamicSizeClass!
+    @IBOutlet weak var listOfAllAppsLbl: UILabelDynamicSizeClass!
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -28,6 +31,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.fetchMainList()
         self.mainVM.initDataBase()
+        self.localizeMainView()
         KeychainManager.setSynchronizable()
         
         NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Settings"), object: nil)
@@ -97,13 +101,15 @@ class MainViewController: UIViewController {
         }
     }
     
-    // FIXME: - don't push view controller
     @objc func gotoSettingsVc() {
-        print("Hello it's me")
         DispatchQueue.main.async {
             self.pushVC(sbName: "Settings", identifier: "SettingsViewController_sid")
         }
-        
+    }
+    
+    func localizeMainView() {
+        self.searchForApps.placeholder = "search_for_apps".localiz()
+        self.listOfAllAppsLbl.text = "list_of_all_apps".localiz()
     }
 }
 

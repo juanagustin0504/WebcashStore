@@ -27,7 +27,7 @@ class DetailBottomViewController: BottomPopupViewController {
     
     @IBOutlet weak var versionLbl: UILabelDynamicSizeClass! {
         didSet {
-            self.versionLbl.text = "Latest version : \((self.detailVM.responseObj.ios?.first)?.version ?? "")"
+            self.versionLbl.text = "lastest_version".localiz() +  "\((self.detailVM.responseObj.ios?.first)?.version ?? "")"
         }
     }
 
@@ -64,6 +64,7 @@ class DetailBottomViewController: BottomPopupViewController {
         didSet {
             self.realBtn.backgroundColor = self.detailVM.serverIsAvailable(version: .RealServer) ? UIColor(hexString: "4B70FF") : UIColor(hexString: "BFBFBF")
             self.realBtn.isUserInteractionEnabled = self.detailVM.serverIsAvailable(version: .RealServer)
+            self.realBtn.setTitle("real".localiz(), for: .normal)
         }
     }
     
@@ -71,6 +72,7 @@ class DetailBottomViewController: BottomPopupViewController {
         didSet {
             self.devBtn.backgroundColor = self.detailVM.serverIsAvailable(version: .DevelopeServer) ? UIColor(hexString: "FF7137") : UIColor(hexString: "BFBFBF")
             self.devBtn.isUserInteractionEnabled = self.detailVM.serverIsAvailable(version: .DevelopeServer)
+            self.devBtn.setTitle("develop".localiz(), for: .normal)
         }
     }
     

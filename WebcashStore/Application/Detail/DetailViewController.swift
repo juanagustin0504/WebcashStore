@@ -44,6 +44,18 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var realBtn: UIButtonDynamicSizeClass! {
+        didSet {
+            self.realBtn.setTitle("real".localiz(), for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var devBtn: UIButtonDynamicSizeClass! {
+        didSet {
+            self.devBtn.setTitle("develop".localiz(), for: .normal)
+        }
+    }
+    
     //MARK: - properties
     private var selectedIndex : IndexPath!
     var dataResponse : MainModel.Response!

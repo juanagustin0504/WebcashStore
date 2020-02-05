@@ -18,6 +18,9 @@ class MainListCustomCell: UITableViewCell {
     @IBOutlet weak var getBtn: UIButtonDynamicSizeClass!
     @IBOutlet weak var appNameLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var wrapperView: DesignableView!
+    @IBOutlet weak var serverRealLbl: UILabelDynamicSizeClass!
+    @IBOutlet weak var serverDevelopLbl: UILabelDynamicSizeClass!
+    
     
     // define as cache for after downloading the image color 
     let imgCache    = NSCache<NSString, UIImage>()
@@ -83,6 +86,7 @@ class MainListCustomCell: UITableViewCell {
                 }
             }
         }
+        self.getBtn.setTitle("get".localiz(), for: .normal)
     }
     
     func saveCache(image : UIImage, color : UIColor , key: NSString){
@@ -106,6 +110,14 @@ class MainListCustomCell: UITableViewCell {
         let detailVM = DetailViewModel(responseObj: data)
         self.developServerDateLbl.text = detailVM.getAgoDate(server: .DevelopeServer) ?? "-"
         self.realServerDateLbl.text = detailVM.getAgoDate(server: .RealServer) ?? "-"
+        
+        self.localizeCell()
+    }
+    
+    func localizeCell() {
+        self.getBtn.setTitle("get".localiz(), for: .normal)
+        self.serverRealLbl.text = "server_real".localiz()
+        self.serverDevelopLbl.text = "server_develop".localiz()
     }
     
 }

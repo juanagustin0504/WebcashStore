@@ -285,6 +285,8 @@
                                             <outlet property="developServerDateLbl" destination="cfu-pe-Z5o" id="1AH-6k-MO7"/>
                                             <outlet property="getBtn" destination="1EN-U0-fN8" id="VF4-qA-OUe"/>
                                             <outlet property="realServerDateLbl" destination="xva-E6-XoG" id="7GS-n9-jsz"/>
+                                            <outlet property="serverDevelopLbl" destination="FYL-lI-PvV" id="5fv-1U-rTt"/>
+                                            <outlet property="serverRealLbl" destination="1vr-Tc-UR8" id="Pmg-HJ-y0N"/>
                                             <outlet property="wrapperView" destination="JXn-n7-272" id="Ru6-Qu-znP"/>
                                         </connections>
                                     </tableViewCell>
@@ -465,6 +467,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="fVn-Tk-G0y"/>
                     <connections>
+                        <outlet property="listOfAllAppsLbl" destination="vHZ-9r-vJ9" id="xFe-eo-GcK"/>
+                        <outlet property="searchForApps" destination="XaI-uC-taD" id="83I-Rf-EQF"/>
                         <outlet property="tableView" destination="IFm-41-KuF" id="vCe-n6-FyS"/>
                     </connections>
                 </viewController>

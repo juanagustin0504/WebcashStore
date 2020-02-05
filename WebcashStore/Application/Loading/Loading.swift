@@ -57,7 +57,7 @@ import UIKit
         return CGRect(origin: center, size: size)
     }
     
-    public func show(message: String = "Loading...") {
+    public func show(message: String = "loading".localiz()) {
         if (myView != nil) {
             if !message.isEmpty {
                 messageLoadingLb.text = message

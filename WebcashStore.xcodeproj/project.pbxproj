@@ -18,7 +18,7 @@
 		76CDE78C23D6B3520025C9F3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */; };
 		76CDE78D23D6B3520025C9F3 /* SideMenuCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78923D6B3520025C9F3 /* SideMenuCustomCell.swift */; };
 		76CDE78F23D6B3960025C9F3 /* MainListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78E23D6B3960025C9F3 /* MainListCustomCell.swift */; };
-		76CF0F2B23EA539300B18E11 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0F2A23EA539300B18E11 /* Recent.storyboard */; };
+		76CF0F2B23EA539300B18E11 /* RecentVisited.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0F2A23EA539300B18E11 /* RecentVisited.storyboard */; };
 		E48D4FC701011B62C5C6C8B6 /* Pods_WebcashStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B546AC0236BBA52866C2BC7D /* Pods_WebcashStore.framework */; };
 		FD01BC2E23D6E17F00A26FD8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC2D23D6E17F00A26FD8 /* UITextField.swift */; };
 		FD01BC3223D6E5C600A26FD8 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD01BC3123D6E5C600A26FD8 /* Detail.storyboard */; };
@@ -103,7 +103,7 @@
 		76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		76CDE78923D6B3520025C9F3 /* SideMenuCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCustomCell.swift; sourceTree = "<group>"; };
 		76CDE78E23D6B3960025C9F3 /* MainListCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListCustomCell.swift; sourceTree = "<group>"; };
-		76CF0F2A23EA539300B18E11 /* Recent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recent.storyboard; sourceTree = "<group>"; };
+		76CF0F2A23EA539300B18E11 /* RecentVisited.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecentVisited.storyboard; sourceTree = "<group>"; };
 		B546AC0236BBA52866C2BC7D /* Pods_WebcashStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebcashStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebcashStore.debug.xcconfig"; path = "Target Support Files/Pods-WebcashStore/Pods-WebcashStore.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebcashStore.release.xcconfig"; path = "Target Support Files/Pods-WebcashStore/Pods-WebcashStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,12 +215,12 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		760725BE23E255D2005294A3 /* Recent */ = {
+		760725BE23E255D2005294A3 /* RecentVisited */ = {
 			isa = PBXGroup;
 			children = (
-				76CF0F2A23EA539300B18E11 /* Recent.storyboard */,
+				76CF0F2A23EA539300B18E11 /* RecentVisited.storyboard */,
 			);
-			path = Recent;
+			path = RecentVisited;
 			sourceTree = "<group>";
 		};
 		7634D0A123E3E42300599BF7 /* CustomCell */ = {
@@ -397,7 +397,7 @@
 				FDDB626323D6B1A8003D8919 /* Main */,
 				FD01BC2F23D6E56A00A26FD8 /* Detail */,
 				FDDB625623D6B1A8003D8919 /* VoicePopup */,
-				760725BE23E255D2005294A3 /* Recent */,
+				760725BE23E255D2005294A3 /* RecentVisited */,
 				760725BD23E255C1005294A3 /* Settings */,
 			);
 			path = Application;
@@ -652,7 +652,7 @@
 				FDE7D3D723E3A50200A3B5B2 /* GoogleService-Info.plist in Resources */,
 				FDDB627323D6B1A8003D8919 /* VoicePopup.storyboard in Resources */,
 				FDDB627023D6B1A8003D8919 /* Intro.storyboard in Resources */,
-				76CF0F2B23EA539300B18E11 /* Recent.storyboard in Resources */,
+				76CF0F2B23EA539300B18E11 /* RecentVisited.storyboard in Resources */,
 				760725C023E255FE005294A3 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
