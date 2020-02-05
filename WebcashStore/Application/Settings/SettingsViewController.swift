@@ -14,11 +14,9 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var notificationView: UIView!
     @IBOutlet weak var touchAreaView: UIView!
     
     // Navigation View
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var settingsTitle: UILabel!
     
     // Notification View
@@ -34,22 +32,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var about_us: UILabel!
     @IBOutlet weak var about_us_detail: UILabel!
     
-    let langList: [String] = ["한국어", "ខ្មែរ", "English"]
-    let langImages: [UIImage?] = [UIImage(named: "Flag_of_Korea.png"), UIImage(named: "Flag_of_Cambodia.png"), UIImage(named: "Flag_of_US_UK.png")]
-    let btnLangImages: [UIImage] = [UIImage(named: "radio_button_unchecked.png")!, UIImage(named: "radio_button_checked.png")!]
+    let langList: [String]          = ["한국어", "ខ្មែរ", "English"]
+    let langImages: [UIImage?]      = [UIImage(named: "Flag_of_Korea.png"), UIImage(named: "Flag_of_Cambodia.png"), UIImage(named: "Flag_of_US_UK.png")]
+    let btnLangImages: [UIImage]    = [UIImage(named: "radio_button_unchecked.png")!, UIImage(named: "radio_button_checked.png")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Back Button Image Setting
-        let image = UIImage(named: "ic_expand_more.png")!
-        let newImage = image.rotate(radians: .pi/2) // Rotate 90 degrees
-        backButton.setBackgroundImage(newImage, for: .normal)
-        
-        
-        
-        // ShadowView, NotificationView Setting
+
         applyRoundShadow()
         
         // Localizing
@@ -62,26 +52,19 @@ class SettingsViewController: UIViewController {
     }
     
     func applyRoundShadow() {
-        
-        let maskPath = UIBezierPath(roundedRect: shadowView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = self.shadowView.bounds
-        maskLayer.path = maskPath.cgPath
-        maskLayer.backgroundColor = UIColor.clear.cgColor
-        
-        let shadowLayer = CAShapeLayer()
-        
-        shadowLayer.path = maskPath.cgPath
-        shadowLayer.fillColor = UIColor.clear.cgColor
-        
-        shadowLayer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
-        shadowLayer.shadowPath = shadowLayer.path
-        shadowLayer.shadowOffset = CGSize(width: 0.0, height: -5.0)
-        shadowLayer.shadowOpacity = 0.16
-        shadowLayer.shadowRadius = 3
-        
+
+        let shadowLayer             = CAShapeLayer()
+        shadowLayer.path            = UIBezierPath(roundedRect: self.shadowView.bounds, cornerRadius: 30).cgPath
+        shadowLayer.fillColor       = UIColor.white.cgColor
+
+        shadowLayer.shadowColor     = UIColor.darkGray.cgColor
+        shadowLayer.shadowPath      = shadowLayer.path
+        shadowLayer.shadowOffset    = CGSize(width: 0.0, height: -3.0)
+        shadowLayer.shadowOpacity   = 0.5
+        shadowLayer.shadowRadius    = 5
+
         shadowView.layer.insertSublayer(shadowLayer, at: 0)
-        notificationView.layer.mask = maskLayer
+    
     }
     
     // open Notification Setting
@@ -123,13 +106,13 @@ class SettingsViewController: UIViewController {
     }
     
     func localize() {
-        settingsTitle.text = "settings".localiz()
-        notification.text = "notification".localiz()
-        notification_detail.text = "notification_detail".localiz()
-        display_language.text = "display_language".localiz()
-        choose_language.text = "choose_language".localiz()
-        about_us.text = "about_us".localiz()
-        about_us_detail.text = "about_us_detail".localiz()
+        settingsTitle.text          = "settings".localiz()
+        notification.text           = "notification".localiz()
+        notification_detail.text    = "notification_detail".localiz()
+        display_language.text       = "display_language".localiz()
+        choose_language.text        = "choose_language".localiz()
+        about_us.text               = "about_us".localiz()
+        about_us_detail.text        = "about_us_detail".localiz()
     }
     
     @IBAction func backToMain(_ sender: UIButton) {
