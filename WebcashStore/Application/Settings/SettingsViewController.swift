@@ -43,9 +43,11 @@ class SettingsViewController: UIViewController {
         
         
         // Back Button Image Setting
-        let image = UIImage(named: "ic_expand_less.png")!
+        let image = UIImage(named: "ic_expand_more.png")!
         let newImage = image.rotate(radians: .pi/2) // Rotate 90 degrees
-        backButton.setImage(newImage, for: .normal)
+        backButton.setBackgroundImage(newImage, for: .normal)
+        
+        
         
         // ShadowView, NotificationView Setting
         applyRoundShadow()

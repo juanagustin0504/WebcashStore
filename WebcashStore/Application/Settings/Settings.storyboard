@@ -19,11 +19,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-fL-WJw" userLabel="Navigation View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-vv-QAW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-vv-QAW">
                                         <rect key="frame" x="20" y="18" width="15" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="8RH-BZ-OgN"/>
-                                            <constraint firstAttribute="width" constant="15" id="uDi-tw-zBd"/>
+                                            <constraint firstAttribute="width" constant="15" id="Bs7-45-5bC"/>
+                                            <constraint firstAttribute="height" constant="20" id="uM1-73-OLa"/>
                                         </constraints>
                                         <connections>
                                             <action selector="backToMain:" destination="XjN-IM-Kgt" eventType="touchUpInside" id="sqW-2f-nqV"/>
@@ -40,10 +40,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="0Oz-Sf-SkZ"/>
                                     <constraint firstItem="90g-Sy-xoH" firstAttribute="centerX" secondItem="GvX-fL-WJw" secondAttribute="centerX" id="EKx-m8-bF7"/>
+                                    <constraint firstItem="wUM-vv-QAW" firstAttribute="leading" secondItem="GvX-fL-WJw" secondAttribute="leading" constant="20" id="UXh-F7-PjY"/>
                                     <constraint firstItem="90g-Sy-xoH" firstAttribute="top" secondItem="GvX-fL-WJw" secondAttribute="top" constant="18" id="ezt-rL-Olb"/>
                                     <constraint firstAttribute="bottom" secondItem="90g-Sy-xoH" secondAttribute="bottom" constant="17" id="iDf-Bz-vt3"/>
-                                    <constraint firstItem="wUM-vv-QAW" firstAttribute="leading" secondItem="GvX-fL-WJw" secondAttribute="leading" constant="20" id="lSY-ho-UD0"/>
-                                    <constraint firstItem="wUM-vv-QAW" firstAttribute="centerY" secondItem="GvX-fL-WJw" secondAttribute="centerY" id="rDu-01-vba"/>
+                                    <constraint firstItem="wUM-vv-QAW" firstAttribute="centerY" secondItem="GvX-fL-WJw" secondAttribute="centerY" id="w9A-rN-ZnV"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-Dr-bMP" userLabel="Shadow View">
@@ -243,7 +243,7 @@
                     <connections>
                         <outlet property="about_us" destination="Osv-Se-bVc" id="oWW-Bq-XYN"/>
                         <outlet property="about_us_detail" destination="o7C-an-wSl" id="6m4-Uz-jrJ"/>
-                        <outlet property="backButton" destination="wUM-vv-QAW" id="mNv-Pq-W21"/>
+                        <outlet property="backButton" destination="wUM-vv-QAW" id="LEM-gN-hUB"/>
                         <outlet property="choose_language" destination="24q-cq-RvT" id="al2-fq-qnh"/>
                         <outlet property="display_language" destination="nFc-Hs-jcl" id="TIv-oh-cX7"/>
                         <outlet property="notification" destination="CyM-ka-Jw0" id="Cc6-HZ-PlY"/>
