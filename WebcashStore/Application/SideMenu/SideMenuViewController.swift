@@ -60,7 +60,7 @@ extension SideMenuViewController : UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.row == 1 { // Recent
             
         } else if indexPath.row == 2 { // Settings
-            self.presentVC(sbName: "Settings", identifier: "SettingsViewController_sid")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Settings"), object: nil)
         }
     }
     
