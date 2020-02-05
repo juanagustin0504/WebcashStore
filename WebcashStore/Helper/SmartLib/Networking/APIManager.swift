@@ -2,7 +2,7 @@
 //  APIManager.swift
 //  WebcashStore
 //
-//  Created by kosign webcash on 1/22/20.
+//  Created by God Save The King on 1/22/20.
 //  Copyright © 2020 Webcash. All rights reserved.
 //
 
@@ -15,7 +15,6 @@ public enum RequestMethod: String {
 
 struct APIManager {
     
-//    private static var sharedInstance   =
     private static var sessionConfig    : URLSessionConfiguration!
     private static var session          : URLSession!
     var shouldReplacePlusWithSpace      : Bool  = false

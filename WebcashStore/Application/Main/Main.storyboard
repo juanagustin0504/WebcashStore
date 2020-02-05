@@ -20,11 +20,10 @@
                                 <rect key="frame" x="18" y="15" width="284" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webcash" translatesAutoresizingMaskIntoConstraints="NO" id="54k-GO-26H">
-                                        <rect key="frame" x="13" y="17.5" width="28" height="25"/>
+                                        <rect key="frame" x="13" y="12" width="35.000000000000014" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="54k-GO-26H" secondAttribute="height" multiplier="28:25" id="OGz-6S-ZHH"/>
-                                            <constraint firstAttribute="width" constant="28" id="X8l-go-Xpf"/>
-                                            <constraint firstAttribute="height" constant="25" id="rrE-MP-mNa"/>
+                                            <constraint firstAttribute="width" constant="35" id="X8l-go-Xpf"/>
+                                            <constraint firstAttribute="height" constant="32" id="rrE-MP-mNa"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-do-cOL">
@@ -56,8 +55,8 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for apps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-uC-taD" customClass="UITextFieldDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="56" y="15" width="187" height="30"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                        <rect key="frame" x="63" y="19.5" width="180" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="R3n-CX-zi3"/>
@@ -66,16 +65,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="XaI-uC-taD" firstAttribute="centerY" secondItem="YRN-dy-xag" secondAttribute="centerY" id="1J5-8A-qRe"/>
                                     <constraint firstItem="54k-GO-26H" firstAttribute="leading" secondItem="YRN-dy-xag" secondAttribute="leading" constant="13" id="1Pk-dL-4Aq"/>
                                     <constraint firstItem="9aF-sx-cNJ" firstAttribute="top" secondItem="YRN-dy-xag" secondAttribute="top" id="2CJ-Qo-Qyo"/>
                                     <constraint firstItem="jOi-do-cOL" firstAttribute="leading" secondItem="YRN-dy-xag" secondAttribute="leading" id="5sM-oc-Ns8"/>
-                                    <constraint firstItem="54k-GO-26H" firstAttribute="centerY" secondItem="YRN-dy-xag" secondAttribute="centerY" id="AJ4-ef-exL"/>
                                     <constraint firstItem="jOi-do-cOL" firstAttribute="top" secondItem="YRN-dy-xag" secondAttribute="top" id="AcV-By-Iib"/>
                                     <constraint firstAttribute="trailing" secondItem="9aF-sx-cNJ" secondAttribute="trailing" id="BTB-5N-eqH"/>
                                     <constraint firstAttribute="width" constant="284" id="CR0-nh-7Dk"/>
-                                    <constraint firstItem="XaI-uC-taD" firstAttribute="top" secondItem="YRN-dy-xag" secondAttribute="top" constant="15" id="Hud-lE-NJg"/>
-                                    <constraint firstAttribute="bottom" secondItem="XaI-uC-taD" secondAttribute="bottom" constant="15" id="Ile-RS-6tS"/>
-                                    <constraint firstItem="54k-GO-26H" firstAttribute="top" secondItem="YRN-dy-xag" secondAttribute="top" constant="17.5" id="P9Z-xC-Cjq"/>
                                     <constraint firstItem="9aF-sx-cNJ" firstAttribute="leading" secondItem="XaI-uC-taD" secondAttribute="trailing" constant="5" id="TGo-3p-fFc"/>
                                     <constraint firstItem="0lc-wf-6ni" firstAttribute="top" secondItem="YRN-dy-xag" secondAttribute="top" constant="21" id="UTy-Sl-sD9"/>
                                     <constraint firstItem="0lc-wf-6ni" firstAttribute="centerY" secondItem="YRN-dy-xag" secondAttribute="centerY" id="avh-NR-70t"/>
@@ -83,10 +79,10 @@
                                     <constraint firstAttribute="width" secondItem="YRN-dy-xag" secondAttribute="height" multiplier="71:15" id="eQt-MQ-ti3"/>
                                     <constraint firstItem="XaI-uC-taD" firstAttribute="leading" secondItem="54k-GO-26H" secondAttribute="trailing" constant="15" id="iaV-Ns-fLv"/>
                                     <constraint firstAttribute="bottom" secondItem="jOi-do-cOL" secondAttribute="bottom" id="kzW-Hh-dTq"/>
-                                    <constraint firstAttribute="bottom" secondItem="54k-GO-26H" secondAttribute="bottom" constant="17.5" id="lGI-Ik-8l9"/>
                                     <constraint firstAttribute="trailing" secondItem="0lc-wf-6ni" secondAttribute="trailing" constant="11" id="mzq-B9-7Of"/>
                                     <constraint firstAttribute="bottom" secondItem="0lc-wf-6ni" secondAttribute="bottom" constant="21" id="ptd-Y3-PaU"/>
                                     <constraint firstAttribute="bottom" secondItem="9aF-sx-cNJ" secondAttribute="bottom" id="qOz-Ik-fd0"/>
+                                    <constraint firstItem="54k-GO-26H" firstAttribute="centerY" secondItem="YRN-dy-xag" secondAttribute="centerY" constant="-2" id="x3b-cS-ENm"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -292,21 +288,21 @@
                                             <outlet property="wrapperView" destination="JXn-n7-272" id="Ru6-Qu-znP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="normalCell" rowHeight="96" id="nqv-qT-bXS" customClass="MainListCustomCell" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="193" width="320" height="96"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="normalCell" rowHeight="90" id="nqv-qT-bXS" customClass="MainListCustomCell" customModule="WebcashStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nqv-qT-bXS" id="GWM-6X-1Gp">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFU-2X-vll" customClass="DesignableView" customModule="WebcashStore" customModuleProvider="target">
-                                                    <rect key="frame" x="18" y="6" width="284" height="80"/>
+                                                    <rect key="frame" x="18" y="6" width="284" height="79"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-xq-nIY" customClass="DesignableView" customModule="WebcashStore" customModuleProvider="target">
-                                                            <rect key="frame" x="17" y="15" width="50" height="50"/>
+                                                            <rect key="frame" x="17" y="15" width="50" height="49"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lue-Zu-ebV">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="49"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                             <real key="value" value="5"/>
@@ -337,13 +333,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="os8-2E-7b4" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                                            <rect key="frame" x="83" y="26.5" width="110" height="27.5"/>
+                                                            <rect key="frame" x="83" y="26.5" width="110" height="26.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d44-zz-95Q" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                                            <rect key="frame" x="201" y="25" width="70" height="30"/>
+                                                            <rect key="frame" x="201" y="25" width="70" height="29"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="Bkq-ZC-6IC"/>
                                                                 <constraint firstAttribute="width" secondItem="d44-zz-95Q" secondAttribute="height" multiplier="7:3" id="JLM-dl-m6a"/>
@@ -394,7 +390,7 @@
                                                 <constraint firstItem="FFU-2X-vll" firstAttribute="leading" secondItem="GWM-6X-1Gp" secondAttribute="leading" constant="18" id="CYH-o7-nAK"/>
                                                 <constraint firstItem="FFU-2X-vll" firstAttribute="top" secondItem="GWM-6X-1Gp" secondAttribute="top" constant="6" id="lK7-2d-NdQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="FFU-2X-vll" secondAttribute="trailing" constant="18" id="rUW-aa-lzo"/>
-                                                <constraint firstAttribute="bottom" secondItem="FFU-2X-vll" secondAttribute="bottom" constant="10" id="zCq-bF-Az6"/>
+                                                <constraint firstAttribute="bottom" secondItem="FFU-2X-vll" secondAttribute="bottom" constant="5" id="zCq-bF-Az6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -406,7 +402,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyCell" rowHeight="269" id="Cuc-6Q-BVX" customClass="MainListCustomCell" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="289" width="320" height="269"/>
+                                        <rect key="frame" x="0.0" y="283" width="320" height="269"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cuc-6Q-BVX" id="6au-MV-yWH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>

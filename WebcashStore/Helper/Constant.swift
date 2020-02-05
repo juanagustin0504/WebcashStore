@@ -26,9 +26,3 @@ enum APIKey : String {
     case KS_PUSH_NOTIFICATION   =   "API/KS_PUSH_NOTIFICATION"
     case UploadFile             =   "API/uploadFile"
 }
-
-struct AppUtil {
-    var AppDelegate : AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate;
-    }
-}

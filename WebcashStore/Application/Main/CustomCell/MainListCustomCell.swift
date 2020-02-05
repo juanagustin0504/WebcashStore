@@ -19,40 +19,75 @@ class MainListCustomCell: UITableViewCell {
     @IBOutlet weak var appNameLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var wrapperView: DesignableView!
     
+    // define as cache for after downloading the image color 
+    let imgCache    = NSCache<NSString, UIImage>()
+    let colorCache  = NSCache<NSString, UIColor>()
+    
     
     override func prepareForReuse() {
-        self.wrapperView.backgroundColor = self.wrapperView.backgroundColor 
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        super.prepareForReuse()
+        self.appImage.image                 = nil
+        self.wrapperView.backgroundColor    = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    
-    func configCell(data : MainModel.Response) {
-        self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
         
-        let url = URL(string: data.app_image ?? "")
-        #warning("Fix this later")
-        self.appImage.sd_setImage(with: url) { (img, err, _, _) in
-            if err == nil {
-                img?.getColors({ (imgColor) in
-                    self.wrapperView.backgroundColor = imgColor?.background
-                    self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
-                })
-            } else {
-                self.appImage.image = UIImage(named: "image_placeholder")
-                self.wrapperView.backgroundColor = UIColor(hexString: "F3F4EF")
-                self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
-            }
-        }
+    func configCell(data : MainModel.Response) {
+        
+//        self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+//        let url = URL(string: data.app_image ?? "")
+//        self.appImage.sd_setImage(with: url) { (img, err, _, _) in
+//            if err == nil {
+//                img?.getColors({ (imgColor) in
+//                    self.wrapperView.backgroundColor = imgColor?.background
+//                    self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+//                })
+//            } else {
+//                self.appImage.image = UIImage(named: "image_placeholder")
+//                self.wrapperView.backgroundColor = UIColor(hexString: "FFFFFF")
+//                self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+//            }
+//        }
         
         self.appNameLbl.text = data.app_name
+        
+        // set app_name as key for each cache
+        let keyForCache = NSString(string: data.app_name ?? "")
+
+        // share to cache when every reuse data as array cache
+        if imgCache.object(forKey: keyForCache) != nil{
+            self.appImage.image                 = imgCache.object(forKey: keyForCache)
+            self.wrapperView.backgroundColor    = colorCache.object(forKey: keyForCache)
+            self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+        }else{
+            self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+            let url = URL(string: data.app_image!)
+            self.appImage.sd_setImage(with: url) { (img, err, _, _) in
+                DispatchQueue.main.async {
+                    if err == nil {
+                        img?.getColors({ (imgColor) in
+                            self.wrapperView.backgroundColor = imgColor?.background
+                            self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+
+                            self.saveCache(image: img!, color:(imgColor?.background)!, key: NSString(string: keyForCache))
+                        })
+                    } else {
+                        self.appImage.image = UIImage(named: "image_placeholder")
+                        self.wrapperView.backgroundColor = UIColor(hexString: "FFFFFF")
+                        self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+                        
+                        self.saveCache(image: UIImage(named: "image_placeholder")!, color: UIColor(hexString: "FFFFFF"), key: NSString(string: keyForCache))
+                    }
+                }
+            }
+        }
+    }
+    
+    func saveCache(image : UIImage, color : UIColor , key: NSString){
+        self.imgCache.setObject(image, forKey: key)
+        self.colorCache.setObject(color, forKey: key)
     }
     
     private func changeBtnBackgroundColor(color : UIColor?) {

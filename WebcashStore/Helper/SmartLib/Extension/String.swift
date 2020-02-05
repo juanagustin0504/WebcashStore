@@ -148,13 +148,24 @@ extension String {
     
     
     /// URL 인코딩
-    public func encodeURL() -> String {
-        NSString.urlEncode(self)
+    public func encodeURL() -> String? {
+        let allowedCharacterSets = (NSCharacterSet.urlQueryAllowed as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
+        allowedCharacterSets.removeCharacters(in: "!@#$%^&*()-_+=~`:;\"'<,>.?/")
+        
+        guard let encodeString = self.addingPercentEncoding(withAllowedCharacters: allowedCharacterSets as CharacterSet) else{
+            return nil
+        }
+        
+        return encodeString
     }
     
     /// URL 디코딩
-    public func decodeURL() -> String{
-        NSString.urlDecode(self)
+    public func decodeURL() -> String? {
+        guard let encodeString = self.removingPercentEncoding else{
+            return nil
+        }
+        
+        return encodeString
     }
     
     /// AES256 암호화
