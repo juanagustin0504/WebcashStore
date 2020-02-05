@@ -23,6 +23,13 @@ class MainListCustomCell: UITableViewCell {
     let imgCache    = NSCache<NSString, UIImage>()
     let colorCache  = NSCache<NSString, UIColor>()
     
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.appImage.image                 = nil
+        self.wrapperView.backgroundColor    = nil
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -46,6 +53,7 @@ class MainListCustomCell: UITableViewCell {
         
         self.appNameLbl.text = data.app_name
         
+        // set app_name as key for each cache
         let keyForCache = NSString(string: data.app_name ?? "")
 
         // share to cache when every reuse data as array cache
