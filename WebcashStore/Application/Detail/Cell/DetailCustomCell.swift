@@ -57,7 +57,7 @@ class DetailCustomCell: UITableViewCell {
 
     func expandCell() {
         self.expandImg.isHighlighted = true
-        self.contentView.backgroundColor = UIColor(hexString: "F5F5F5")
+        self.contentView.backgroundColor = UIColor(hexString: "E8E8E8")
     }
     
     func collapeCell() {
