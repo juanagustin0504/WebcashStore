@@ -44,6 +44,12 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var listOfAllAppVersionLbl: UILabelDynamicSizeClass! {
+        didSet {
+            self.listOfAllAppVersionLbl.text = "list_of_all_app_version".localiz()
+        }
+    }
+    
     //MARK: - properties
     private var selectedIndex : IndexPath!
     var dataResponse : MainModel.Response!

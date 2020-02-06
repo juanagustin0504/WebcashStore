@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // apply Shadown body view
+        // apply Shadow body view
         applyRoundShadow()
         
         // Localizing
@@ -64,7 +64,6 @@ class SettingsViewController: UIViewController {
         shadowLayer.shadowRadius    = 5
 
         shadowView.layer.insertSublayer(shadowLayer, at: 0)
-    
     }
     
     func localize() {
@@ -117,6 +116,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func backToMain(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BackToMain"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
 }

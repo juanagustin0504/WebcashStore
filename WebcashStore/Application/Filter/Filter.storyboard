@@ -242,6 +242,11 @@
                         <viewLayoutGuide key="safeArea" id="omz-jJ-8Re"/>
                     </view>
                     <connections>
+                        <outlet property="a2zLbl" destination="G2e-kt-DC6" id="OAW-Q5-jrc"/>
+                        <outlet property="applyBtn" destination="XcR-fq-hfh" id="dDi-qp-VBk"/>
+                        <outlet property="listStyleLbl" destination="qCP-2u-U8i" id="Se0-s3-4Jg"/>
+                        <outlet property="sortByLbl" destination="fv8-bZ-8ur" id="g3Z-pQ-MCT"/>
+                        <outlet property="z2aLbl" destination="J5x-iY-Lsa" id="Hax-FK-33F"/>
                         <outletCollection property="sortRadioImages" destination="Xz4-Kc-Ts3" collectionClass="NSMutableArray" id="9U4-Hx-haG"/>
                         <outletCollection property="sortRadioImages" destination="4Yq-gx-g3E" collectionClass="NSMutableArray" id="yk7-CN-8eU"/>
                         <outletCollection property="listRadionImages" destination="vrm-pK-Wgv" collectionClass="NSMutableArray" id="HGm-gN-LFo"/>

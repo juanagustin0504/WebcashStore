@@ -26,7 +26,7 @@ class SideMenuCustomCell: UITableViewCell {
     func configueCell(_ data : (img_name : String, title : String)) {
         let img = UIImage(named: data.img_name)
         self.img.image = img
-        self.titleLbl.text = data.title
+        self.titleLbl.text = data.title.localiz()
     }
 
 }

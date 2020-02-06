@@ -18,17 +18,37 @@ class SideMenuViewController: UIViewController {
         }
     }
     
-    //MARK: - properties
-    private let sideMenuArr = [(img_name : "home", title : "home".localiz()),
-                               (img_name : "recent", title : "recent_visited".localiz()),
-                               (img_name : "setting", title : "settings".localiz())]
+    @IBOutlet weak var copyrightLbl: UILabelDynamicSizeClass!
     
+    //MARK: - properties
+    private let sideMenuArr = [(img_name : "home", title : "home"),
+                               (img_name : "recent", title : "recent_visited"),
+                               (img_name : "setting", title : "settings")]
+    
+    
+
     //MARK: - view life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.localizeSideMenu()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(localizeSideMenu), name: NSNotification.Name("BackToMain"), object: nil)
     }
-
+    
+    
+    //MARK: - custom functions
+    @objc func localizeSideMenu() {
+        self.copyrightLbl.text = "copyright © 2020 WEBCASH".localiz()
+        print(sideMenuArr)
+        self.reloadTableView()
+    }
+    
+    fileprivate func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 //MARK: - Tableview data source & delegate

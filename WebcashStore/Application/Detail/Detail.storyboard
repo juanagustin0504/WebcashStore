@@ -474,6 +474,7 @@
                         <outlet property="appNameLbl" destination="dBq-vH-HC4" id="hKV-Bq-HdF"/>
                         <outlet property="closeView" destination="w7T-nM-Y8g" id="Fjt-wV-6is"/>
                         <outlet property="lineImage" destination="mHB-lM-FQv" id="lHw-J7-Gx7"/>
+                        <outlet property="listOfAllAppVersionLbl" destination="usx-y1-izJ" id="HFB-x2-Sqp"/>
                         <outlet property="tableView" destination="Aey-tm-awY" id="aZH-62-E3j"/>
                     </connections>
                 </viewController>

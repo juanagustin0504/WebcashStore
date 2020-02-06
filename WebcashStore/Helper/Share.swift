@@ -14,4 +14,7 @@ struct ShareInstance {
     
     // Token
     var access_token : String!
+
+    // Device Token
+    var device_token : String!
 }

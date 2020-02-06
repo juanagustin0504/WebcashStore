@@ -66,13 +66,13 @@ struct DetailViewModel {
             
             if ago > 12 {
                 ago = Date().interval(ofComponent: .year, fromDate: dateFromMilli)
-                return "\(ago) " + "yeas ago".localiz()
+                return "\(ago) " + "years_ago".localiz()
             }
             
-            return "\(ago) " + "months ago".localiz()
+            return "\(ago) " + "months_ago".localiz()
         }
         
-        return "\(ago) " + "days ago".localiz()
+        return "\(ago) " + "days_ago".localiz()
     }
     
     func getURLString(server : Server, atIndex index : Int = 0) -> String? {

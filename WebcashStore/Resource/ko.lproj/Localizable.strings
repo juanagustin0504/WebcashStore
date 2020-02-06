@@ -18,9 +18,9 @@
 // ----------- Home Menu
 "search_for_apps"="앱 검색";
 "list_of_all_apps"="모든 앱 목록";
-"get"="다운로드";
-"server_real"="서버 리얼";
-"server_develop"="서버 개발";
+"get"="설치";
+"server_real"="리얼 서버";
+"server_develop"="개발 서버";
 
 // ----------- Time formate
 "years_ago"="년 전에";
