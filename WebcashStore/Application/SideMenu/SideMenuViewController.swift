@@ -21,9 +21,9 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var copyrightLbl: UILabelDynamicSizeClass!
     
     //MARK: - properties
-    private let sideMenuArr = [(img_name : "home", title : "home".localiz()),
-                               (img_name : "recent", title : "recent_visited".localiz()),
-                               (img_name : "setting", title : "settings".localiz())]
+    private let sideMenuArr = [(img_name : "home", title : "home"),
+                               (img_name : "recent", title : "recent_visited"),
+                               (img_name : "setting", title : "settings")]
     
     
 
@@ -32,12 +32,16 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         
         self.localizeSideMenu()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(localizeSideMenu), name: NSNotification.Name("BackToMain"), object: nil)
     }
     
     
     //MARK: - custom functions
-    func localizeSideMenu() {
+    @objc func localizeSideMenu() {
         self.copyrightLbl.text = "copyright © 2020 WEBCASH".localiz()
+        print(sideMenuArr)
+        self.reloadTableView()
     }
     
     fileprivate func reloadTableView() {

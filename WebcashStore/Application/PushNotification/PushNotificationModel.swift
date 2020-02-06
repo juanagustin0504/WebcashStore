@@ -1,5 +1,5 @@
 //
-//  SettingsModel.swift
+//  PushNotificationModel.swift
 //  WebcashStore
 //
 //  Created by Webcash on 2020/02/03.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct SettingsModel {
+struct PushNotificationModel {
     
     struct Request : Encodable {
-        let divece_token    : String
-        let platform_name   : String
-        let platform_version: String
-        let platform_type   : String
+        let device_token        : String
+        let platform_name       : String
+        let platform_version    : String
+        let platform_type       : String
     }
     
     struct Response : Decodable {

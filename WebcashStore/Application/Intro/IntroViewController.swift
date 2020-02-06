@@ -10,6 +10,8 @@ import UIKit
 
 class IntroViewController: UIViewController {
     
+    var pushNotificationVM: PushNotificationViewModel = PushNotificationViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +33,14 @@ class IntroViewController: UIViewController {
                 }
                 return
             }
-            self.setRootViewController(sbName: "Main", identifier: "rootController")
+            
+            self.requestDeviceToken()
         }
+    }
+    
+    func requestDeviceToken() {
+        self.pushNotificationVM.requestDeviceToken(deviceToken: ShareInstance.shared.device_token ?? "", completion: { (error) in
+            self.setRootViewController(sbName: "Main", identifier: "rootController")
+        })
     }
 }

@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         KeychainManager.setSynchronizable()
         
         NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Settings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localizeMainView), name: NSNotification.Name("BackToMain"), object: nil)
     }
 
     //MARK: - button actions
@@ -102,14 +103,22 @@ class MainViewController: UIViewController {
     }
     
     @objc func gotoSettingsVc() {
-        DispatchQueue.main.async {
-            self.pushVC(sbName: "Settings", identifier: "SettingsViewController_sid")
-        }
+        
+        let settingsSb = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsVc = settingsSb.instantiateViewController(withIdentifier: "SettingsViewController_sid") as! SettingsViewController
+        
+        self.navigationController?.pushViewController(settingsVc, animated: true)
+        
+//        DispatchQueue.main.async {
+//            self.pushVC(sbName: "Settings", identifier: "SettingsViewController_sid")
+//        }
     }
     
-    func localizeMainView() {
+    @objc func localizeMainView() {
         self.searchForApps.placeholder = "search_for_apps".localiz()
         self.listOfAllAppsLbl.text = "list_of_all_apps".localiz()
+        
+        self.tableView.reloadData()
     }
 }
 

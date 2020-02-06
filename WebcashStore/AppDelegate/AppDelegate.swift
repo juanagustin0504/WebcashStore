@@ -119,6 +119,7 @@ extension AppDelegate: MessagingDelegate {
                 print("didReceiveRegistrationToken")
                 print(result.token)
                 
+                ShareInstance.shared.device_token = result.token
             }
         }
     }

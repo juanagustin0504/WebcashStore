@@ -25,12 +25,22 @@
                                         <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.64313725489999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ou-2Q-TTV">
+                                        <rect key="frame" x="20" y="17" width="13" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="13" id="Y4d-Bf-xM7"/>
+                                            <constraint firstAttribute="height" constant="22" id="tgx-S4-aDW"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="fOi-1m-V9j" firstAttribute="centerX" secondItem="MMT-yy-f3k" secondAttribute="centerX" id="0tU-sY-Mel"/>
                                     <constraint firstItem="fOi-1m-V9j" firstAttribute="centerY" secondItem="MMT-yy-f3k" secondAttribute="centerY" id="DTh-iV-pAg"/>
                                     <constraint firstAttribute="height" constant="56" id="WKR-qQ-GIb"/>
+                                    <constraint firstItem="8ou-2Q-TTV" firstAttribute="centerY" secondItem="MMT-yy-f3k" secondAttribute="centerY" id="fBf-Lr-ZLX"/>
+                                    <constraint firstItem="8ou-2Q-TTV" firstAttribute="leading" secondItem="MMT-yy-f3k" secondAttribute="leading" constant="20" symbolic="YES" id="jsf-d1-Ndb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmK-W9-sss" userLabel="Shadow View">
@@ -98,4 +108,7 @@
             <point key="canvasLocation" x="124" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="20.5" height="34.5"/>
+    </resources>
 </document>

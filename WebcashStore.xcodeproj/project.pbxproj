@@ -11,8 +11,8 @@
 		760725C223E2560C005294A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760725C123E2560C005294A3 /* SettingsViewController.swift */; };
 		7634D0A323E3E44300599BF7 /* LanguageSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D0A223E3E44300599BF7 /* LanguageSelectionCell.swift */; };
 		7634D0A623E3E78F00599BF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7634D0A823E3E78F00599BF7 /* Localizable.strings */; };
-		7652138623E7BDF300694654 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138523E7BDF300694654 /* SettingsModel.swift */; };
-		7652138823E817E300694654 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138723E817E300694654 /* SettingsViewModel.swift */; };
+		7652138623E7BDF300694654 /* PushNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138523E7BDF300694654 /* PushNotificationModel.swift */; };
+		7652138823E817E300694654 /* PushNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138723E817E300694654 /* PushNotificationViewModel.swift */; };
 		76663A4B23EAB486008CE3C5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF923D81A290034F6EA /* NetworkManager.swift */; };
 		76663A4C23EAB486008CE3C5 /* NSString+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61E523D6AE14003D8919 /* NSString+Crypto.m */; };
 		76663A4D23EAB486008CE3C5 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626D23D6B1A8003D8919 /* LoginModel.swift */; };
@@ -25,7 +25,7 @@
 		76663A5423EAB486008CE3C5 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB624F23D6B1A8003D8919 /* IntroViewController.swift */; };
 		76663A5523EAB486008CE3C5 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC2D23D6E17F00A26FD8 /* UITextField.swift */; };
 		76663A5623EAB486008CE3C5 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D923D6AE14003D8919 /* UIImageView.swift */; };
-		76663A5723EAB486008CE3C5 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138523E7BDF300694654 /* SettingsModel.swift */; };
+		76663A5723EAB486008CE3C5 /* PushNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138523E7BDF300694654 /* PushNotificationModel.swift */; };
 		76663A5823EAB486008CE3C5 /* DetailBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC3323D6E5D000A26FD8 /* DetailBottomViewController.swift */; };
 		76663A5923EAB486008CE3C5 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB625123D6B1A8003D8919 /* IntroViewModel.swift */; };
 		76663A5A23EAB486008CE3C5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CB23D6AE14003D8919 /* Constant.swift */; };
@@ -61,7 +61,7 @@
 		76663A7823EAB486008CE3C5 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61DE23D6AE14003D8919 /* PermissionManager.swift */; };
 		76663A7923EAB486008CE3C5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D623D6AE14003D8919 /* UIViewController.swift */; };
 		76663A7A23EAB486008CE3C5 /* AES256Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61EA23D6AE14003D8919 /* AES256Encryption.m */; };
-		76663A7B23EAB486008CE3C5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138723E817E300694654 /* SettingsViewModel.swift */; };
+		76663A7B23EAB486008CE3C5 /* PushNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138723E817E300694654 /* PushNotificationViewModel.swift */; };
 		76663A7C23EAB486008CE3C5 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D723D6AE14003D8919 /* UINavigationBar.swift */; };
 		76663A7D23EAB486008CE3C5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB620923D6AE1E003D8919 /* Response.swift */; };
 		76663A7E23EAB486008CE3C5 /* BluetoothPermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61DD23D6AE14003D8919 /* BluetoothPermissionManager.swift */; };
@@ -90,7 +90,7 @@
 		76663A9723EAB486008CE3C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDE7D3D623E3A50200A3B5B2 /* GoogleService-Info.plist */; };
 		76663A9823EAB486008CE3C5 /* VoicePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB625723D6B1A8003D8919 /* VoicePopup.storyboard */; };
 		76663A9923EAB486008CE3C5 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB625023D6B1A8003D8919 /* Intro.storyboard */; };
-		76663A9A23EAB486008CE3C5 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0F2A23EA539300B18E11 /* Recent.storyboard */; };
+		76663A9A23EAB486008CE3C5 /* RecentVisited.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0F2A23EA539300B18E11 /* RecentVisited.storyboard */; };
 		76663A9B23EAB486008CE3C5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760725BF23E255FE005294A3 /* Settings.storyboard */; };
 		76CDE78A23D6B3520025C9F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE78323D6B3520025C9F3 /* LaunchScreen.storyboard */; };
 		76CDE78B23D6B3520025C9F3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78623D6B3520025C9F3 /* SideMenuViewController.swift */; };
@@ -174,8 +174,8 @@
 		7634D0A723E3E78F00599BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7634D0A923E3E7A600599BF7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7634D0AA23E3E7B400599BF7 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7652138523E7BDF300694654 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
-		7652138723E817E300694654 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7652138523E7BDF300694654 /* PushNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationModel.swift; sourceTree = "<group>"; };
+		7652138723E817E300694654 /* PushNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationViewModel.swift; sourceTree = "<group>"; };
 		765C7F0623E4225F0020D21B /* WebcashStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebcashStore.entitlements; sourceTree = "<group>"; };
 		76663AA023EAB486008CE3C5 /* WebcashStoreEnt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebcashStoreEnt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76663AA123EAB486008CE3C5 /* WebcashStore copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WebcashStore copy-Info.plist"; path = "/Users/webcash/Desktop/Webcash Store/Projects/WebcashStore_iOS/WebcashStore copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -297,8 +297,6 @@
 			children = (
 				760725BF23E255FE005294A3 /* Settings.storyboard */,
 				760725C123E2560C005294A3 /* SettingsViewController.swift */,
-				7652138523E7BDF300694654 /* SettingsModel.swift */,
-				7652138723E817E300694654 /* SettingsViewModel.swift */,
 				7634D0A123E3E42300599BF7 /* CustomCell */,
 			);
 			path = Settings;
@@ -318,6 +316,15 @@
 				7634D0A223E3E44300599BF7 /* LanguageSelectionCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		76667B7523EC0269004824D6 /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				7652138523E7BDF300694654 /* PushNotificationModel.swift */,
+				7652138723E817E300694654 /* PushNotificationViewModel.swift */,
+			);
+			path = PushNotification;
 			sourceTree = "<group>";
 		};
 		76CDE78223D6B3520025C9F3 /* Launch */ = {
@@ -483,6 +490,7 @@
 				76CDE78523D6B3520025C9F3 /* SideMenu */,
 				FDDB625923D6B1A8003D8919 /* Filter */,
 				FDDB624E23D6B1A8003D8919 /* Intro */,
+				76667B7523EC0269004824D6 /* PushNotification */,
 				FDDB625C23D6B1A8003D8919 /* Loading */,
 				FDDB626B23D6B1A8003D8919 /* Login */,
 				FDDB626323D6B1A8003D8919 /* Main */,
@@ -763,7 +771,7 @@
 				76663A9723EAB486008CE3C5 /* GoogleService-Info.plist in Resources */,
 				76663A9823EAB486008CE3C5 /* VoicePopup.storyboard in Resources */,
 				76663A9923EAB486008CE3C5 /* Intro.storyboard in Resources */,
-				76663A9A23EAB486008CE3C5 /* Recent.storyboard in Resources */,
+				76663A9A23EAB486008CE3C5 /* RecentVisited.storyboard in Resources */,
 				76663A9B23EAB486008CE3C5 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,7 +896,7 @@
 				76663A5423EAB486008CE3C5 /* IntroViewController.swift in Sources */,
 				76663A5523EAB486008CE3C5 /* UITextField.swift in Sources */,
 				76663A5623EAB486008CE3C5 /* UIImageView.swift in Sources */,
-				76663A5723EAB486008CE3C5 /* SettingsModel.swift in Sources */,
+				76663A5723EAB486008CE3C5 /* PushNotificationModel.swift in Sources */,
 				76663A5823EAB486008CE3C5 /* DetailBottomViewController.swift in Sources */,
 				76663A5923EAB486008CE3C5 /* IntroViewModel.swift in Sources */,
 				76663A5A23EAB486008CE3C5 /* Constant.swift in Sources */,
@@ -924,7 +932,7 @@
 				76663A7823EAB486008CE3C5 /* PermissionManager.swift in Sources */,
 				76663A7923EAB486008CE3C5 /* UIViewController.swift in Sources */,
 				76663A7A23EAB486008CE3C5 /* AES256Encryption.m in Sources */,
-				76663A7B23EAB486008CE3C5 /* SettingsViewModel.swift in Sources */,
+				76663A7B23EAB486008CE3C5 /* PushNotificationViewModel.swift in Sources */,
 				76663A7C23EAB486008CE3C5 /* UINavigationBar.swift in Sources */,
 				76663A7D23EAB486008CE3C5 /* Response.swift in Sources */,
 				76663A7E23EAB486008CE3C5 /* BluetoothPermissionManager.swift in Sources */,
@@ -960,7 +968,7 @@
 				FDDB626F23D6B1A8003D8919 /* IntroViewController.swift in Sources */,
 				FD01BC2E23D6E17F00A26FD8 /* UITextField.swift in Sources */,
 				FDDB61FB23D6AE14003D8919 /* UIImageView.swift in Sources */,
-				7652138623E7BDF300694654 /* SettingsModel.swift in Sources */,
+				7652138623E7BDF300694654 /* PushNotificationModel.swift in Sources */,
 				FD01BC3423D6E5D000A26FD8 /* DetailBottomViewController.swift in Sources */,
 				FDDB627123D6B1A8003D8919 /* IntroViewModel.swift in Sources */,
 				FDDB61EF23D6AE14003D8919 /* Constant.swift in Sources */,
@@ -996,7 +1004,7 @@
 				FDDB61FE23D6AE14003D8919 /* PermissionManager.swift in Sources */,
 				FDDB61F823D6AE14003D8919 /* UIViewController.swift in Sources */,
 				FDDB620323D6AE14003D8919 /* AES256Encryption.m in Sources */,
-				7652138823E817E300694654 /* SettingsViewModel.swift in Sources */,
+				7652138823E817E300694654 /* PushNotificationViewModel.swift in Sources */,
 				FDDB61F923D6AE14003D8919 /* UINavigationBar.swift in Sources */,
 				FDDB620B23D6AE1E003D8919 /* Response.swift in Sources */,
 				FDDB61FD23D6AE14003D8919 /* BluetoothPermissionManager.swift in Sources */,
