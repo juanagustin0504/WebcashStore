@@ -13,6 +13,85 @@
 		7634D0A623E3E78F00599BF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7634D0A823E3E78F00599BF7 /* Localizable.strings */; };
 		7652138623E7BDF300694654 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138523E7BDF300694654 /* SettingsModel.swift */; };
 		7652138823E817E300694654 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138723E817E300694654 /* SettingsViewModel.swift */; };
+		76663A4B23EAB486008CE3C5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF923D81A290034F6EA /* NetworkManager.swift */; };
+		76663A4C23EAB486008CE3C5 /* NSString+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61E523D6AE14003D8919 /* NSString+Crypto.m */; };
+		76663A4D23EAB486008CE3C5 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626D23D6B1A8003D8919 /* LoginModel.swift */; };
+		76663A4E23EAB486008CE3C5 /* NSData+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61E723D6AE14003D8919 /* NSData+AESCrypt.m */; };
+		76663A4F23EAB486008CE3C5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626423D6B1A8003D8919 /* RootViewController.swift */; };
+		76663A5023EAB486008CE3C5 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61ED23D6AE14003D8919 /* Log.swift */; };
+		76663A5123EAB486008CE3C5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D523D6AE14003D8919 /* UIImage.swift */; };
+		76663A5223EAB486008CE3C5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626C23D6B1A8003D8919 /* LoginViewModel.swift */; };
+		76663A5323EAB486008CE3C5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D123D6AE14003D8919 /* UIColor.swift */; };
+		76663A5423EAB486008CE3C5 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB624F23D6B1A8003D8919 /* IntroViewController.swift */; };
+		76663A5523EAB486008CE3C5 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC2D23D6E17F00A26FD8 /* UITextField.swift */; };
+		76663A5623EAB486008CE3C5 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D923D6AE14003D8919 /* UIImageView.swift */; };
+		76663A5723EAB486008CE3C5 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138523E7BDF300694654 /* SettingsModel.swift */; };
+		76663A5823EAB486008CE3C5 /* DetailBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01BC3323D6E5D000A26FD8 /* DetailBottomViewController.swift */; };
+		76663A5923EAB486008CE3C5 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB625123D6B1A8003D8919 /* IntroViewModel.swift */; };
+		76663A5A23EAB486008CE3C5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CB23D6AE14003D8919 /* Constant.swift */; };
+		76663A5B23EAB486008CE3C5 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80B623E8FBC0000210FD /* KeychainSwift.swift */; };
+		76663A5C23EAB486008CE3C5 /* DetailCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CDE2023E7DEC9002244D7 /* DetailCustomCell.swift */; };
+		76663A5D23EAB486008CE3C5 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD2255DC23E803A50035363F /* Database.xcdatamodeld */; };
+		76663A5E23EAB486008CE3C5 /* SideMenuCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78923D6B3520025C9F3 /* SideMenuCustomCell.swift */; };
+		76663A5F23EAB486008CE3C5 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BA23E8FF7E000210FD /* KeychainManager.swift */; };
+		76663A6023EAB486008CE3C5 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80B523E8FBC0000210FD /* TegKeychainConstants.swift */; };
+		76663A6123EAB486008CE3C5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BE23E9091F000210FD /* Utils.swift */; };
+		76663A6223EAB486008CE3C5 /* MainListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78E23D6B3960025C9F3 /* MainListCustomCell.swift */; };
+		76663A6323EAB486008CE3C5 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80C723E9491A000210FD /* Typealiases.swift */; };
+		76663A6423EAB486008CE3C5 /* NSString+AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61E623D6AE14003D8919 /* NSString+AESCrypt.m */; };
+		76663A6523EAB486008CE3C5 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78623D6B3520025C9F3 /* SideMenuViewController.swift */; };
+		76663A6623EAB486008CE3C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CDE2123E7DEC9002244D7 /* DetailViewController.swift */; };
+		76663A6723EAB486008CE3C5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD623D952950081B795 /* Date.swift */; };
+		76663A6823EAB486008CE3C5 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D823D6AE14003D8919 /* UIWindow.swift */; };
+		76663A6923EAB486008CE3C5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626723D6B1A8003D8919 /* MainViewModel.swift */; };
+		76663A6A23EAB486008CE3C5 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626823D6B1A8003D8919 /* MainModel.swift */; };
+		76663A6B23EAB486008CE3C5 /* VoicePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB625823D6B1A8003D8919 /* VoicePopupViewController.swift */; };
+		76663A6C23EAB486008CE3C5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D423D6AE14003D8919 /* String.swift */; };
+		76663A6D23EAB486008CE3C5 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80B423E8FBC0000210FD /* KeychainSwiftAccessOptions.swift */; };
+		76663A6E23EAB486008CE3C5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF723D810610034F6EA /* Reachability.swift */; };
+		76663A6F23EAB486008CE3C5 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D323D6AE14003D8919 /* UIDevice.swift */; };
+		76663A7023EAB486008CE3C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79223D1A159007667BE /* AppDelegate.swift */; };
+		76663A7123EAB486008CE3C5 /* Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61EE23D6AE14003D8919 /* Pulsator.swift */; };
+		76663A7223EAB486008CE3C5 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D023D6AE14003D8919 /* Data.swift */; };
+		76663A7323EAB486008CE3C5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CF23D6AE14003D8919 /* UIView.swift */; };
+		76663A7423EAB486008CE3C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB626523D6B1A8003D8919 /* MainViewController.swift */; };
+		76663A7523EAB486008CE3C5 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CC23D6AE14003D8919 /* Share.swift */; };
+		76663A7623EAB486008CE3C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760725C123E2560C005294A3 /* SettingsViewController.swift */; };
+		76663A7723EAB486008CE3C5 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80C523E938BC000210FD /* Wrapper.swift */; };
+		76663A7823EAB486008CE3C5 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61DE23D6AE14003D8919 /* PermissionManager.swift */; };
+		76663A7923EAB486008CE3C5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D623D6AE14003D8919 /* UIViewController.swift */; };
+		76663A7A23EAB486008CE3C5 /* AES256Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61EA23D6AE14003D8919 /* AES256Encryption.m */; };
+		76663A7B23EAB486008CE3C5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652138723E817E300694654 /* SettingsViewModel.swift */; };
+		76663A7C23EAB486008CE3C5 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D723D6AE14003D8919 /* UINavigationBar.swift */; };
+		76663A7D23EAB486008CE3C5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB620923D6AE1E003D8919 /* Response.swift */; };
+		76663A7E23EAB486008CE3C5 /* BluetoothPermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61DD23D6AE14003D8919 /* BluetoothPermissionManager.swift */; };
+		76663A7F23EAB486008CE3C5 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB625D23D6B1A8003D8919 /* Loading.swift */; };
+		76663A8023EAB486008CE3C5 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB625B23D6B1A8003D8919 /* FilterViewController.swift */; };
+		76663A8123EAB486008CE3C5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD823D958F70081B795 /* DetailViewModel.swift */; };
+		76663A8223EAB486008CE3C5 /* DynamicSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61DB23D6AE14003D8919 /* DynamicSizeClass.swift */; };
+		76663A8323EAB486008CE3C5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFFC23D822F80034F6EA /* APIManager.swift */; };
+		76663A8423EAB486008CE3C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79423D1A159007667BE /* SceneDelegate.swift */; };
+		76663A8523EAB486008CE3C5 /* RandomKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BD23E9091F000210FD /* RandomKeyGenerator.swift */; };
+		76663A8623EAB486008CE3C5 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61EB23D6AE14003D8919 /* Enum.swift */; };
+		76663A8723EAB486008CE3C5 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB620823D6AE1E003D8919 /* DataAccess.swift */; };
+		76663A8823EAB486008CE3C5 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61D223D6AE14003D8919 /* Encodable.swift */; };
+		76663A8923EAB486008CE3C5 /* LanguageSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7634D0A223E3E44300599BF7 /* LanguageSelectionCell.swift */; };
+		76663A8A23EAB486008CE3C5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2255E023E804070035363F /* CoreDataManager.swift */; };
+		76663A8B23EAB486008CE3C5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2255D923E7EDED0035363F /* UIButton.swift */; };
+		76663A8D23EAB486008CE3C5 /* Pods_WebcashStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B546AC0236BBA52866C2BC7D /* Pods_WebcashStore.framework */; };
+		76663A8F23EAB486008CE3C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE78323D6B3520025C9F3 /* LaunchScreen.storyboard */; };
+		76663A9023EAB486008CE3C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7634D0A823E3E78F00599BF7 /* Localizable.strings */; };
+		76663A9123EAB486008CE3C5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB626E23D6B1A8003D8919 /* Login.storyboard */; };
+		76663A9223EAB486008CE3C5 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD01BC3123D6E5C600A26FD8 /* Detail.storyboard */; };
+		76663A9323EAB486008CE3C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB626623D6B1A8003D8919 /* Main.storyboard */; };
+		76663A9423EAB486008CE3C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD62D79B23D1A15A007667BE /* Assets.xcassets */; };
+		76663A9523EAB486008CE3C5 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB625A23D6B1A8003D8919 /* Filter.storyboard */; };
+		76663A9623EAB486008CE3C5 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */; };
+		76663A9723EAB486008CE3C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDE7D3D623E3A50200A3B5B2 /* GoogleService-Info.plist */; };
+		76663A9823EAB486008CE3C5 /* VoicePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB625723D6B1A8003D8919 /* VoicePopup.storyboard */; };
+		76663A9923EAB486008CE3C5 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDB625023D6B1A8003D8919 /* Intro.storyboard */; };
+		76663A9A23EAB486008CE3C5 /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0F2A23EA539300B18E11 /* Recent.storyboard */; };
+		76663A9B23EAB486008CE3C5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760725BF23E255FE005294A3 /* Settings.storyboard */; };
 		76CDE78A23D6B3520025C9F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE78323D6B3520025C9F3 /* LaunchScreen.storyboard */; };
 		76CDE78B23D6B3520025C9F3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE78623D6B3520025C9F3 /* SideMenuViewController.swift */; };
 		76CDE78C23D6B3520025C9F3 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */; };
@@ -98,6 +177,8 @@
 		7652138523E7BDF300694654 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		7652138723E817E300694654 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		765C7F0623E4225F0020D21B /* WebcashStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebcashStore.entitlements; sourceTree = "<group>"; };
+		76663AA023EAB486008CE3C5 /* WebcashStoreEnt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebcashStoreEnt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76663AA123EAB486008CE3C5 /* WebcashStore copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WebcashStore copy-Info.plist"; path = "/Users/webcash/Desktop/Webcash Store/Projects/WebcashStore_iOS/WebcashStore copy-Info.plist"; sourceTree = "<absolute>"; };
 		76CDE78423D6B3520025C9F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CDE78623D6B3520025C9F3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -184,6 +265,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		76663A8C23EAB486008CE3C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76663A8D23EAB486008CE3C5 /* Pods_WebcashStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD62D78C23D1A159007667BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +428,7 @@
 				FD62D79023D1A159007667BE /* Products */,
 				B731F56BA660E1C83A9DFCC2 /* Pods */,
 				7575ED54677E9F209A0A057F /* Frameworks */,
+				76663AA123EAB486008CE3C5 /* WebcashStore copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -346,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				FD62D78F23D1A159007667BE /* WebcashStore.app */,
+				76663AA023EAB486008CE3C5 /* WebcashStoreEnt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -582,6 +673,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		76663A4823EAB486008CE3C5 /* WebcashStoreEnt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76663A9D23EAB486008CE3C5 /* Build configuration list for PBXNativeTarget "WebcashStoreEnt" */;
+			buildPhases = (
+				76663A4923EAB486008CE3C5 /* [CP] Check Pods Manifest.lock */,
+				76663A4A23EAB486008CE3C5 /* Sources */,
+				76663A8C23EAB486008CE3C5 /* Frameworks */,
+				76663A8E23EAB486008CE3C5 /* Resources */,
+				76663A9C23EAB486008CE3C5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebcashStoreEnt;
+			productName = WebcashStore;
+			productReference = 76663AA023EAB486008CE3C5 /* WebcashStoreEnt.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FD62D78E23D1A159007667BE /* WebcashStore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD62D7A323D1A15A007667BE /* Build configuration list for PBXNativeTarget "WebcashStore" */;
@@ -632,11 +742,32 @@
 			projectRoot = "";
 			targets = (
 				FD62D78E23D1A159007667BE /* WebcashStore */,
+				76663A4823EAB486008CE3C5 /* WebcashStoreEnt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		76663A8E23EAB486008CE3C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76663A8F23EAB486008CE3C5 /* LaunchScreen.storyboard in Resources */,
+				76663A9023EAB486008CE3C5 /* Localizable.strings in Resources */,
+				76663A9123EAB486008CE3C5 /* Login.storyboard in Resources */,
+				76663A9223EAB486008CE3C5 /* Detail.storyboard in Resources */,
+				76663A9323EAB486008CE3C5 /* Main.storyboard in Resources */,
+				76663A9423EAB486008CE3C5 /* Assets.xcassets in Resources */,
+				76663A9523EAB486008CE3C5 /* Filter.storyboard in Resources */,
+				76663A9623EAB486008CE3C5 /* SideMenu.storyboard in Resources */,
+				76663A9723EAB486008CE3C5 /* GoogleService-Info.plist in Resources */,
+				76663A9823EAB486008CE3C5 /* VoicePopup.storyboard in Resources */,
+				76663A9923EAB486008CE3C5 /* Intro.storyboard in Resources */,
+				76663A9A23EAB486008CE3C5 /* Recent.storyboard in Resources */,
+				76663A9B23EAB486008CE3C5 /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD62D78D23D1A159007667BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -660,6 +791,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		76663A4923EAB486008CE3C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebcashStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76663A9C23EAB486008CE3C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebcashStore/Pods-WebcashStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebcashStore/Pods-WebcashStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebcashStore/Pods-WebcashStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C8935CF0DD6624499262C9B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,6 +872,78 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		76663A4A23EAB486008CE3C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76663A4B23EAB486008CE3C5 /* NetworkManager.swift in Sources */,
+				76663A4C23EAB486008CE3C5 /* NSString+Crypto.m in Sources */,
+				76663A4D23EAB486008CE3C5 /* LoginModel.swift in Sources */,
+				76663A4E23EAB486008CE3C5 /* NSData+AESCrypt.m in Sources */,
+				76663A4F23EAB486008CE3C5 /* RootViewController.swift in Sources */,
+				76663A5023EAB486008CE3C5 /* Log.swift in Sources */,
+				76663A5123EAB486008CE3C5 /* UIImage.swift in Sources */,
+				76663A5223EAB486008CE3C5 /* LoginViewModel.swift in Sources */,
+				76663A5323EAB486008CE3C5 /* UIColor.swift in Sources */,
+				76663A5423EAB486008CE3C5 /* IntroViewController.swift in Sources */,
+				76663A5523EAB486008CE3C5 /* UITextField.swift in Sources */,
+				76663A5623EAB486008CE3C5 /* UIImageView.swift in Sources */,
+				76663A5723EAB486008CE3C5 /* SettingsModel.swift in Sources */,
+				76663A5823EAB486008CE3C5 /* DetailBottomViewController.swift in Sources */,
+				76663A5923EAB486008CE3C5 /* IntroViewModel.swift in Sources */,
+				76663A5A23EAB486008CE3C5 /* Constant.swift in Sources */,
+				76663A5B23EAB486008CE3C5 /* KeychainSwift.swift in Sources */,
+				76663A5C23EAB486008CE3C5 /* DetailCustomCell.swift in Sources */,
+				76663A5D23EAB486008CE3C5 /* Database.xcdatamodeld in Sources */,
+				76663A5E23EAB486008CE3C5 /* SideMenuCustomCell.swift in Sources */,
+				76663A5F23EAB486008CE3C5 /* KeychainManager.swift in Sources */,
+				76663A6023EAB486008CE3C5 /* TegKeychainConstants.swift in Sources */,
+				76663A6123EAB486008CE3C5 /* Utils.swift in Sources */,
+				76663A6223EAB486008CE3C5 /* MainListCustomCell.swift in Sources */,
+				76663A6323EAB486008CE3C5 /* Typealiases.swift in Sources */,
+				76663A6423EAB486008CE3C5 /* NSString+AESCrypt.m in Sources */,
+				76663A6523EAB486008CE3C5 /* SideMenuViewController.swift in Sources */,
+				76663A6623EAB486008CE3C5 /* DetailViewController.swift in Sources */,
+				76663A6723EAB486008CE3C5 /* Date.swift in Sources */,
+				76663A6823EAB486008CE3C5 /* UIWindow.swift in Sources */,
+				76663A6923EAB486008CE3C5 /* MainViewModel.swift in Sources */,
+				76663A6A23EAB486008CE3C5 /* MainModel.swift in Sources */,
+				76663A6B23EAB486008CE3C5 /* VoicePopupViewController.swift in Sources */,
+				76663A6C23EAB486008CE3C5 /* String.swift in Sources */,
+				76663A6D23EAB486008CE3C5 /* KeychainSwiftAccessOptions.swift in Sources */,
+				76663A6E23EAB486008CE3C5 /* Reachability.swift in Sources */,
+				76663A6F23EAB486008CE3C5 /* UIDevice.swift in Sources */,
+				76663A7023EAB486008CE3C5 /* AppDelegate.swift in Sources */,
+				76663A7123EAB486008CE3C5 /* Pulsator.swift in Sources */,
+				76663A7223EAB486008CE3C5 /* Data.swift in Sources */,
+				76663A7323EAB486008CE3C5 /* UIView.swift in Sources */,
+				76663A7423EAB486008CE3C5 /* MainViewController.swift in Sources */,
+				76663A7523EAB486008CE3C5 /* Share.swift in Sources */,
+				76663A7623EAB486008CE3C5 /* SettingsViewController.swift in Sources */,
+				76663A7723EAB486008CE3C5 /* Wrapper.swift in Sources */,
+				76663A7823EAB486008CE3C5 /* PermissionManager.swift in Sources */,
+				76663A7923EAB486008CE3C5 /* UIViewController.swift in Sources */,
+				76663A7A23EAB486008CE3C5 /* AES256Encryption.m in Sources */,
+				76663A7B23EAB486008CE3C5 /* SettingsViewModel.swift in Sources */,
+				76663A7C23EAB486008CE3C5 /* UINavigationBar.swift in Sources */,
+				76663A7D23EAB486008CE3C5 /* Response.swift in Sources */,
+				76663A7E23EAB486008CE3C5 /* BluetoothPermissionManager.swift in Sources */,
+				76663A7F23EAB486008CE3C5 /* Loading.swift in Sources */,
+				76663A8023EAB486008CE3C5 /* FilterViewController.swift in Sources */,
+				76663A8123EAB486008CE3C5 /* DetailViewModel.swift in Sources */,
+				76663A8223EAB486008CE3C5 /* DynamicSizeClass.swift in Sources */,
+				76663A8323EAB486008CE3C5 /* APIManager.swift in Sources */,
+				76663A8423EAB486008CE3C5 /* SceneDelegate.swift in Sources */,
+				76663A8523EAB486008CE3C5 /* RandomKeyGenerator.swift in Sources */,
+				76663A8623EAB486008CE3C5 /* Enum.swift in Sources */,
+				76663A8723EAB486008CE3C5 /* DataAccess.swift in Sources */,
+				76663A8823EAB486008CE3C5 /* Encodable.swift in Sources */,
+				76663A8923EAB486008CE3C5 /* LanguageSelectionCell.swift in Sources */,
+				76663A8A23EAB486008CE3C5 /* CoreDataManager.swift in Sources */,
+				76663A8B23EAB486008CE3C5 /* UIButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD62D78B23D1A159007667BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -798,6 +1040,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		76663A9E23EAB486008CE3C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3A66C60BFFA820B8855800C /* Pods-WebcashStore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebcashStore/WebcashStore.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = DL7DPUW7R9;
+				INFOPLIST_FILE = "WebcashStore copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kr.webcashstore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "WebcashStore Ent";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebcashStore/WebcashStore-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		76663A9F23EAB486008CE3C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA2C170ED71B023357C29D70 /* Pods-WebcashStore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebcashStore/WebcashStore.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DEVELOPMENT_TEAM = DL7DPUW7R9;
+				INFOPLIST_FILE = "WebcashStore copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kr.webcashstore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "WebcashStore Ent";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebcashStore/WebcashStore-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		FD62D7A123D1A15A007667BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -969,6 +1263,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		76663A9D23EAB486008CE3C5 /* Build configuration list for PBXNativeTarget "WebcashStoreEnt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76663A9E23EAB486008CE3C5 /* Debug */,
+				76663A9F23EAB486008CE3C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD62D78A23D1A159007667BE /* Build configuration list for PBXProject "WebcashStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
