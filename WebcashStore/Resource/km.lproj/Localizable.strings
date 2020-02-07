@@ -8,7 +8,7 @@
 
 
 // ----------- Footer and Launch Screen
-"copyright © 2020 WEBCASH" = "រក្សាសិទ្ធិ© ២០២០ WEBCASH";
+"copyright © 2020 WEBCASH" = "រក្សាសិទ្ធិ© ២០២០ Webcash";
 
 // ----------- Menu
 "recent_visited"="ដែលបានទស្សនា";
@@ -19,8 +19,8 @@
 "search_for_apps"="ស្វែងរកកម្មវិធី";
 "list_of_all_apps"="បញ្ជីកម្មវិធីទាំងអស់";
 "get"="ដំឡើង";
-"server_real"="បានអភិវឌ្ឍ សាធារណៈ";
-"server_develop"="អភិវឌ្ឍ ឯកជន";
+"server_real"="បានអភិវឌ្ឍ";
+"server_develop"="កំពុងអភិវឌ្ឍ";
 
 // ----------- Time formate
 "years_ago"="ឆ្នាំមុន";
@@ -29,13 +29,12 @@
 "hours_ago"="ម៉ោងមុន";
 "minutes_ago"="នាទីមុន";
 "seconds_ago"="វិនាទីមុន";
-"year_ago"="ឆ្នាំមុន";
-"month_ago"="ខែមុន";
-"day_ago"="ថ្ងៃមុន";
-"hour_ago"="ម៉ោងមុន";
-"minute_ago"="នាទីមុន";
+"year_ago"="មួយឆ្នាំមុន";
+"month_ago"="មួយខែមុន";
+"day_ago"="មួយថ្ងៃមុន";
+"hour_ago"="មួយម៉ោងមុន";
+"minute_ago"="មួយនាទីមុន";
 "second_ago"="វិនាទីមុន";
-
 "moment_ago"="មួយភ្លែតមុននេះ";
 
 // ----------- Filter Popup
@@ -49,7 +48,7 @@
 // ----------- Quick Detail
 "latest_version"="កំណែចុងក្រោយ:";
 "real"="បានអភិវឌ្ឍ";
-"develop"="អភិវឌ្ឍ";
+"develop"="កំពុងអភិវឌ្ឍ";
 "list_of_all_app_version"="បង្ហាញជំនាន់ទាំងអស់របស់កម្មវិធី";
 "version"="ជំនាន់ :";
 
@@ -62,3 +61,6 @@
 "about_us_detail"="បង្កើតដោយស្នាដៃកូនខ្មែរពិតៗ";
 
 "loading"="កំពុងដំណើរការ…";
+"no_description"="គ្មានការពិពណ៌នា";
+"description"="ការពិពណ៌នា";
+"new"="ថ្មី";

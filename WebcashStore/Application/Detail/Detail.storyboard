@@ -284,8 +284,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A30-de-aBM">
-                                                    <rect key="frame" x="33" y="13" width="51" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A30-de-aBM">
+                                                    <rect key="frame" x="33" y="13" width="127.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27.5" id="A37-2d-tt9"/>
                                                     </constraints>
@@ -397,6 +397,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionLbl" destination="tbY-SF-hig" id="PKA-eL-y1E"/>
+                                            <outlet property="descriptionTitle" destination="AMV-Bn-9ff" id="rTG-ZO-oT4"/>
                                             <outlet property="devAgoDateLbl" destination="AT5-kk-NOL" id="l5b-pU-JQI"/>
                                             <outlet property="devBtn" destination="SZH-GU-5l6" id="NC1-ic-bHI"/>
                                             <outlet property="expandImg" destination="eTq-ud-yi3" id="z0z-Dm-Aw8"/>

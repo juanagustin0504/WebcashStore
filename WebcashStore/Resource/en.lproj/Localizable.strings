@@ -8,7 +8,7 @@
 
 
 // ----------- Footer and Launch Screen
-"copyright © 2020 WEBCASH" = "copyright © 2020 WEBCASH";
+"copyright © 2020 WEBCASH" = "copyright © 2020 Webcash";
 
 // ----------- Menu
 "recent_visited"="Recent visited";
@@ -28,14 +28,13 @@
 "days_ago"="days ago";
 "hours_ago"="hours ago";
 "minutes_ago"="minutes ago";
-"seconds_ago"="second ago";
-"year_ago"="year ago";
-"month_ago"="month ago";
-"day_ago"="day ago";
-"hour_ago"="hour ago";
-"minute_ago"="minute ago";
-"second_ago"="seconds ago";
-
+"seconds_ago"="seconds ago";
+"year_ago"="a year ago";
+"month_ago"="a month ago";
+"day_ago"="a day ago";
+"hour_ago"="an hour ago";
+"minute_ago"="a minute ago";
+"second_ago"="a second ago";
 "moment_ago"="a moment ago";
 
 // ----------- Filter Popup
@@ -62,4 +61,6 @@
 "about_us_detail"="Made by love from Phnom Penh, Cambodia.";
 
 "loading"="Loading…";
-
+"no_description"="No Description";
+"description"="Description";
+"new"="New";

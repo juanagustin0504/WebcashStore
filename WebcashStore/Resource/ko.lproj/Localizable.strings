@@ -8,7 +8,7 @@
 
 
 // ----------- Footer and Launch Screen
-"copyright © 2020 WEBCASH" = "copyright © 2020 WEBCASH";
+"copyright © 2020 WEBCASH" = "copyright © 2020 Webcash";
 
 // ----------- Menu
 "recent_visited"="최근 방문";
@@ -35,7 +35,6 @@
 "hour_ago"="한 시간 전에";
 "minute_ago"="일 분 전에";
 "second_ago"="일 초 전에";
-
 "moment_ago"="조금 전에";
 
 // ----------- Filter Popup
@@ -48,8 +47,8 @@
 
 // ----------- Quick Detail
 "latest_version"="마지막 버전 :";
-"real"="리얼";
-"develop"="개발";
+"real"="리얼 서버";
+"develop"="개발 서버";
 "list_of_all_app_version"="모든 앱의 버전 목록";
 "version"="버전 :";
 
@@ -62,3 +61,6 @@
 "about_us_detail"="캄보디아 프놈펜의 사랑에 의해 만들어졌습니다.";
 
 "loading"="잠시만 기다려주세요…";
+"no_description"="설명 없음";
+"description"="설명";
+"new"="새로운";

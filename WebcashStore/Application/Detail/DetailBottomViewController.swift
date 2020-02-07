@@ -45,14 +45,14 @@ class DetailBottomViewController: BottomPopupViewController {
 
     @IBOutlet weak var descriptionLbl: UILabelDynamicSizeClass! {
         didSet {
-            self.descriptionLbl.text = "Description"
+            self.descriptionLbl.text = "description".localiz()
         }
     }
 
     @IBOutlet weak var contentTextView: UITextViewDynamicSizeClass! {
         didSet {
             if ((self.detailVM.responseObj.ios?.first)?.description?.isEmpty)! {
-                self.contentTextView.text = "No Description"
+                self.contentTextView.text = "no_description".localiz()
             } else {
                 self.contentTextView.text = (self.detailVM.responseObj.ios?.first)?.description
             }

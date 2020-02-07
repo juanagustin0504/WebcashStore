@@ -21,11 +21,12 @@ class DetailCustomCell: UITableViewCell {
         }
     }
     @IBOutlet weak var versionLbl: UILabelDynamicSizeClass!
+    @IBOutlet weak var descriptionTitle: UILabelDynamicSizeClass!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var realAgoDateLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var devAgoDateLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var expandImg: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -54,13 +55,13 @@ class DetailCustomCell: UITableViewCell {
             self.devAgoDateLbl.text =  detailVM.getAgoDate(server: .DevelopeServer,atIndex: indexpath.row) ?? "-"
         }
         
+        self.descriptionTitle.text = "description".localiz()
         if (detailVM.responseObj.ios![indexpath.row].description?.isEmpty)! {
-            self.descriptionLbl.text = "No Description"
+            self.descriptionLbl.text = "no_description".localiz()
         } else {
             self.descriptionLbl.text = detailVM.responseObj.ios![indexpath.row].description
         }
-        
-        
+
     }
 
     func expandCell() {

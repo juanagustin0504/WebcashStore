@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     //MARK: - Outlet
     @IBOutlet weak var closeView: UIView! {
         didSet {
-            self.closeView.isHidden = UIDevice.getOSVerstion() >= 13
+//            self.closeView.isHidden = UIDevice.getOSVerstion() >= 13
         }
     }
     
