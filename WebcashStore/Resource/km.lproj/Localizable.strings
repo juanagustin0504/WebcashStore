@@ -43,6 +43,8 @@
 "a_to_z"="A ដល់ Z";
 "z_to_a"="Z ដល់ A";
 "select_list_styles_by"="ជ្រើសរចនាប័ទ្មបញ្ជីដោយ :";
+"detail"="លំអិត";
+"normal"="ធម្មតា";
 "apply_filter"="អនុវត្តតម្រង";
 
 // ----------- Quick Detail

@@ -42,6 +42,8 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var z2aLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var listStyleLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var applyBtn: UIButtonDynamicSizeClass!
+    @IBOutlet weak var styleNormalLbl: UILabelDynamicSizeClass!
+    @IBOutlet weak var styleDetailLbl: UILabelDynamicSizeClass!
     
     
     //MARK: - properties
@@ -93,13 +95,15 @@ class FilterViewController: UIViewController {
     @IBAction func closeBtnDidTapped(_ sender: Any) {
         self.popOrDismissVC()
     }
-    
+
     //MARK: - custom method
     func localizeFilterView() {
-        self.sortByLbl.text     = "sort_the_list_by".localiz()
-        self.a2zLbl.text        = "a_to_z".localiz()
-        self.z2aLbl.text        = "z_to_a".localiz()
-        self.listStyleLbl.text  = "select_list_styles_by".localiz()
+        self.sortByLbl.text         = "sort_the_list_by".localiz()
+        self.a2zLbl.text            = "a_to_z".localiz()
+        self.z2aLbl.text            = "z_to_a".localiz()
+        self.listStyleLbl.text      = "select_list_styles_by".localiz()
+        self.styleDetailLbl.text    = "detail".localiz()
+        self.styleNormalLbl.text    = "normal".localiz()
         self.applyBtn.setTitle("apply_filter".localiz(), for: .normal)
     }
 }

@@ -43,6 +43,8 @@
 "a_to_z"="오름차순";
 "z_to_a"="내림차순";
 "select_list_styles_by"="목록 스타일 선택 기준 :";
+"detail"="세부 사항";
+"normal"="정상";
 "apply_filter"="필터 적용";
 
 // ----------- Quick Detail

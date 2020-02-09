@@ -43,6 +43,8 @@
 "a_to_z"="A to Z";
 "z_to_a"="Z to A";
 "select_list_styles_by"="Select list styles by :";
+"detail"="Detail";
+"normal"="Normal";
 "apply_filter"="Apply Filter";
 
 // ----------- Quick Detail
