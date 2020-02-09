@@ -17,4 +17,7 @@ struct ShareInstance {
 
     // Device Token
     var device_token : String!
+    
+    // response data
+    var mainResponse : [MainModel.Response]!
 }

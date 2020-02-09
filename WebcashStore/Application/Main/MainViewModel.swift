@@ -24,6 +24,7 @@ class MainViewModel {
                 completion(err)
             case .success(let response):
                 self.mainResponse = response?.DATA
+                ShareInstance.shared.mainResponse = self.mainResponse
                 completion(nil)
             }
             

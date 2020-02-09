@@ -70,7 +70,6 @@
 		76663A8123EAB486008CE3C5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD823D958F70081B795 /* DetailViewModel.swift */; };
 		76663A8223EAB486008CE3C5 /* DynamicSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61DB23D6AE14003D8919 /* DynamicSizeClass.swift */; };
 		76663A8323EAB486008CE3C5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFFC23D822F80034F6EA /* APIManager.swift */; };
-		76663A8423EAB486008CE3C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79423D1A159007667BE /* SceneDelegate.swift */; };
 		76663A8523EAB486008CE3C5 /* RandomKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2A80BD23E9091F000210FD /* RandomKeyGenerator.swift */; };
 		76663A8623EAB486008CE3C5 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61EB23D6AE14003D8919 /* Enum.swift */; };
 		76663A8723EAB486008CE3C5 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB620823D6AE1E003D8919 /* DataAccess.swift */; };
@@ -119,8 +118,11 @@
 		FD4EEFFA23D81A290034F6EA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFF923D81A290034F6EA /* NetworkManager.swift */; };
 		FD4EEFFD23D822F80034F6EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4EEFFC23D822F80034F6EA /* APIManager.swift */; };
 		FD62D79323D1A159007667BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79223D1A159007667BE /* AppDelegate.swift */; };
-		FD62D79523D1A159007667BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62D79423D1A159007667BE /* SceneDelegate.swift */; };
 		FD62D79C23D1A15A007667BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD62D79B23D1A15A007667BE /* Assets.xcassets */; };
+		FD63EBD323EFB0FF00EBA145 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63EBD223EFB0FF00EBA145 /* RecentViewController.swift */; };
+		FD63EBD423EFB10400EBA145 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63EBD223EFB0FF00EBA145 /* RecentViewController.swift */; };
+		FD63EBD623EFC88E00EBA145 /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63EBD523EFC88E00EBA145 /* RecentViewModel.swift */; };
+		FD63EBD723EFC88E00EBA145 /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63EBD523EFC88E00EBA145 /* RecentViewModel.swift */; };
 		FDC5EAD723D952950081B795 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD623D952950081B795 /* Date.swift */; };
 		FDC5EAD923D958F70081B795 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5EAD823D958F70081B795 /* DetailViewModel.swift */; };
 		FDDB61EF23D6AE14003D8919 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB61CB23D6AE14003D8919 /* Constant.swift */; };
@@ -210,9 +212,10 @@
 		FD4EEFFC23D822F80034F6EA /* APIManager.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FD62D78F23D1A159007667BE /* WebcashStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebcashStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD62D79223D1A159007667BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD62D79423D1A159007667BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD62D79B23D1A15A007667BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD62D7A023D1A15A007667BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD63EBD223EFB0FF00EBA145 /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
+		FD63EBD523EFC88E00EBA145 /* RecentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewModel.swift; sourceTree = "<group>"; };
 		FDC5EAD623D952950081B795 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FDC5EAD823D958F70081B795 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FDDB61CB23D6AE14003D8919 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				76CF0F2A23EA539300B18E11 /* RecentVisited.storyboard */,
+				FD63EBD223EFB0FF00EBA145 /* RecentViewController.swift */,
+				FD63EBD523EFC88E00EBA145 /* RecentViewModel.swift */,
 			);
 			path = RecentVisited;
 			sourceTree = "<group>";
@@ -466,7 +471,6 @@
 			isa = PBXGroup;
 			children = (
 				FD62D79223D1A159007667BE /* AppDelegate.swift */,
-				FD62D79423D1A159007667BE /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -889,6 +893,7 @@
 				76663A4D23EAB486008CE3C5 /* LoginModel.swift in Sources */,
 				76663A4E23EAB486008CE3C5 /* NSData+AESCrypt.m in Sources */,
 				76663A4F23EAB486008CE3C5 /* RootViewController.swift in Sources */,
+				FD63EBD723EFC88E00EBA145 /* RecentViewModel.swift in Sources */,
 				76663A5023EAB486008CE3C5 /* Log.swift in Sources */,
 				76663A5123EAB486008CE3C5 /* UIImage.swift in Sources */,
 				76663A5223EAB486008CE3C5 /* LoginViewModel.swift in Sources */,
@@ -915,6 +920,7 @@
 				76663A6723EAB486008CE3C5 /* Date.swift in Sources */,
 				76663A6823EAB486008CE3C5 /* UIWindow.swift in Sources */,
 				76663A6923EAB486008CE3C5 /* MainViewModel.swift in Sources */,
+				FD63EBD423EFB10400EBA145 /* RecentViewController.swift in Sources */,
 				76663A6A23EAB486008CE3C5 /* MainModel.swift in Sources */,
 				76663A6B23EAB486008CE3C5 /* VoicePopupViewController.swift in Sources */,
 				76663A6C23EAB486008CE3C5 /* String.swift in Sources */,
@@ -941,7 +947,6 @@
 				76663A8123EAB486008CE3C5 /* DetailViewModel.swift in Sources */,
 				76663A8223EAB486008CE3C5 /* DynamicSizeClass.swift in Sources */,
 				76663A8323EAB486008CE3C5 /* APIManager.swift in Sources */,
-				76663A8423EAB486008CE3C5 /* SceneDelegate.swift in Sources */,
 				76663A8523EAB486008CE3C5 /* RandomKeyGenerator.swift in Sources */,
 				76663A8623EAB486008CE3C5 /* Enum.swift in Sources */,
 				76663A8723EAB486008CE3C5 /* DataAccess.swift in Sources */,
@@ -961,6 +966,7 @@
 				FDDB628223D6B1A8003D8919 /* LoginModel.swift in Sources */,
 				FDDB620223D6AE14003D8919 /* NSData+AESCrypt.m in Sources */,
 				FDDB627B23D6B1A8003D8919 /* RootViewController.swift in Sources */,
+				FD63EBD623EFC88E00EBA145 /* RecentViewModel.swift in Sources */,
 				FDDB620523D6AE14003D8919 /* Log.swift in Sources */,
 				FDDB61F723D6AE14003D8919 /* UIImage.swift in Sources */,
 				FDDB628123D6B1A8003D8919 /* LoginViewModel.swift in Sources */,
@@ -987,6 +993,7 @@
 				FDC5EAD723D952950081B795 /* Date.swift in Sources */,
 				FDDB61FA23D6AE14003D8919 /* UIWindow.swift in Sources */,
 				FDDB627E23D6B1A8003D8919 /* MainViewModel.swift in Sources */,
+				FD63EBD323EFB0FF00EBA145 /* RecentViewController.swift in Sources */,
 				FDDB627F23D6B1A8003D8919 /* MainModel.swift in Sources */,
 				FDDB627423D6B1A8003D8919 /* VoicePopupViewController.swift in Sources */,
 				FDDB61F623D6AE14003D8919 /* String.swift in Sources */,
@@ -1013,7 +1020,6 @@
 				FDC5EAD923D958F70081B795 /* DetailViewModel.swift in Sources */,
 				FDDB61FC23D6AE14003D8919 /* DynamicSizeClass.swift in Sources */,
 				FD4EEFFD23D822F80034F6EA /* APIManager.swift in Sources */,
-				FD62D79523D1A159007667BE /* SceneDelegate.swift in Sources */,
 				FD2A80BF23E9091F000210FD /* RandomKeyGenerator.swift in Sources */,
 				FDDB620423D6AE14003D8919 /* Enum.swift in Sources */,
 				FDDB620A23D6AE1E003D8919 /* DataAccess.swift in Sources */,

@@ -30,12 +30,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchMainList()
+        
         self.mainVM.initDataBase()
         self.localizeMainView()
         KeychainManager.setSynchronizable()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Settings"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(localizeMainView), name: NSNotification.Name("BackToMain"), object: nil)
+        self.setNotification()
     }
 
     //MARK: - button actions
@@ -112,6 +112,18 @@ class MainViewController: UIViewController {
 //        DispatchQueue.main.async {
 //            self.pushVC(sbName: "Settings", identifier: "SettingsViewController_sid")
 //        }
+    }
+    
+    @objc func gotoRecentScreen() {
+        let vc = self.VC(sbName: "RecentVisited", identifier: RecentViewController.storyboardIdentifier)
+        self.pushVC(viewController: vc)
+        
+    }
+    
+    private func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Settings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(localizeMainView), name: NSNotification.Name("BackToMain"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Recent"), object: nil)
     }
     
     @objc func localizeMainView() {

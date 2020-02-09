@@ -74,7 +74,7 @@ extension SideMenuViewController : UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 { // Home
             
         } else if indexPath.row == 1 { // Recent
-            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Recent"), object: nil)
         } else if indexPath.row == 2 { // Settings
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Settings"), object: nil)
         }
