@@ -123,7 +123,7 @@ class MainViewController: UIViewController {
     private func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Settings"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(localizeMainView), name: NSNotification.Name("BackToMain"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(gotoSettingsVc), name: NSNotification.Name("Recent"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(gotoRecentScreen), name: NSNotification.Name("Recent"), object: nil)
     }
     
     @objc func localizeMainView() {

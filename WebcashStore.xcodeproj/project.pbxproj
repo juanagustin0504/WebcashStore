@@ -180,7 +180,6 @@
 		7652138723E817E300694654 /* PushNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationViewModel.swift; sourceTree = "<group>"; };
 		765C7F0623E4225F0020D21B /* WebcashStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebcashStore.entitlements; sourceTree = "<group>"; };
 		76663AA023EAB486008CE3C5 /* WebcashStoreEnt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebcashStoreEnt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		76663AA123EAB486008CE3C5 /* WebcashStore copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WebcashStore copy-Info.plist"; path = "/Users/webcash/Desktop/Webcash Store/Projects/WebcashStore_iOS/WebcashStore copy-Info.plist"; sourceTree = "<absolute>"; };
 		76CDE78423D6B3520025C9F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CDE78623D6B3520025C9F3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		76CDE78723D6B3520025C9F3 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -440,7 +439,6 @@
 				FD62D79023D1A159007667BE /* Products */,
 				B731F56BA660E1C83A9DFCC2 /* Pods */,
 				7575ED54677E9F209A0A057F /* Frameworks */,
-				76663AA123EAB486008CE3C5 /* WebcashStore copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1064,7 +1062,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = DL7DPUW7R9;
-				INFOPLIST_FILE = "WebcashStore copy-Info.plist";
+				INFOPLIST_FILE = WebcashStore/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1090,7 +1088,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = DL7DPUW7R9;
-				INFOPLIST_FILE = "WebcashStore copy-Info.plist";
+				INFOPLIST_FILE = WebcashStore/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

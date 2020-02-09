@@ -50,16 +50,28 @@ class CoreDataManager {
     
     /// Get all record from a database
     /// - Parameter responseType: record type to get from a database
-    func fetchAll<T:NSManagedObject>(responseType : T.Type) -> [T]? {
+    func fetchAll<T:NSManagedObject>(responseType : T.Type, entityName : String) -> [T]? {
         
+        
+        let fetchRequest = NSFetchRequest<T>(entityName: entityName)
         do {
-            let records = try self.context.fetch(responseType.fetchRequest() as! NSFetchRequest<T>)
+            let fetchedResults = try self.context.fetch(fetchRequest)
             print("######## CoreDataManager ######## ~ Success - Fetch All")
-            return records
-        } catch {
+            return fetchedResults
+        } catch let error as NSError {
+            // something went wrong, print the error.
             print("######## CoreDataManager ######## ~ Error - Fetch All : \(error.localizedDescription)")
             return nil
         }
+//        
+//        do {
+//            let records = try self.context.fetch(responseType.fetchRequest() as! NSFetchRequest<T>)
+//            print("######## CoreDataManager ######## ~ Success - Fetch All")
+//            return records
+//        } catch {
+//            print("######## CoreDataManager ######## ~ Error - Fetch All : \(error.localizedDescription)")
+//            return nil
+//        }
     }
     
     /// Get records from a database
@@ -108,5 +120,5 @@ class CoreDataManager {
     func redo() {
         self.context.redo()
     }
-   
+    
 }

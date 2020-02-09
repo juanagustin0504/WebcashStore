@@ -27,7 +27,14 @@ class RecentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        DispatchQueue.main.async {
+//            self.ableToSwipeNavigationBack()
+//        }
+        localize()
+        
         self.mainListDataArr = recentVM.getRecentApps() ?? []
+        
     }
 
     //MARK: - custom methods

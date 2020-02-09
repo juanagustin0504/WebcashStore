@@ -38,6 +38,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
         // apply Shadow body view
         applyRoundShadow()
@@ -60,8 +61,8 @@ class SettingsViewController: UIViewController {
         shadowLayer.shadowColor     = UIColor.darkGray.cgColor
         shadowLayer.shadowPath      = shadowLayer.path
         shadowLayer.shadowOffset    = CGSize(width: 0.0, height: -3.0)
-        shadowLayer.shadowOpacity   = 0.5
-        shadowLayer.shadowRadius    = 5
+        shadowLayer.shadowOpacity   = 0.3
+        shadowLayer.shadowRadius    = 8
 
         shadowView.layer.insertSublayer(shadowLayer, at: 0)
     }

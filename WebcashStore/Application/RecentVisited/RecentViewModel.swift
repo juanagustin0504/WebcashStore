@@ -17,7 +17,7 @@ class RecentViewModel {
     }
     
     func getRecentApps() -> [MainModel.Response]? {
-        let app_ids = self.coreDataManager.fetchAll(responseType: App.self)
+        let app_ids = self.coreDataManager.fetchAll(responseType: App.self, entityName: "App")
         var responseObj = [MainModel.Response]()
         for app in app_ids! {
             let apps = ShareInstance.shared.mainResponse.filter {
