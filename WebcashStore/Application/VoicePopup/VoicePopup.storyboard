@@ -28,7 +28,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something for searching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-PN-8bm" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something for searching" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-PN-8bm" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
                                             <rect key="frame" x="18" y="137" width="206.5" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,6 +91,8 @@
                     </view>
                     <connections>
                         <outlet property="effectBlurView" destination="4Xg-S1-AEC" id="2cl-6C-o9y"/>
+                        <outlet property="lblDescription" destination="CgW-PN-8bm" id="8Zv-gJ-QK6"/>
+                        <outlet property="lblTitle" destination="Z3r-9g-QzH" id="pPm-2b-M4z"/>
                         <outlet property="microPhoneImg" destination="e1j-9q-egk" id="ZzR-b4-RSl"/>
                     </connections>
                 </viewController>

@@ -66,3 +66,8 @@
 "no_description"="គ្មានការពិពណ៌នា";
 "description"="ការពិពណ៌នា";
 "new"="ថ្មី";
+
+// ----------- Voice
+"listening"="កំពុងស្តាប់";
+"hold_say_something_for_searching"="សង្កត់ប៊ូតុងឲ្យជាប់ហើយនិយាយ";
+"error_record"="ការថតសម្លេងបរាជ័យ. \nសូមចូលទៅកាន់ការកំណត់ដើម្បីបើក Siri";

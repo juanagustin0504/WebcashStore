@@ -66,3 +66,8 @@
 "no_description"="No Description";
 "description"="Description";
 "new"="New";
+
+// ----------- Voice
+"listening"="Listening";
+"hold_say_something_for_searching"="Hold the button and say something for searching";
+"error_record"="Speech recognition is not currently available. \nGo settings for srir turn on";

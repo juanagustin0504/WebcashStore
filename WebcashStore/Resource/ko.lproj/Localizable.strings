@@ -66,3 +66,8 @@
 "no_description"="설명 없음";
 "description"="설명";
 "new"="새로운";
+
+// ----------- Voice
+"listening"="들으면서";
+"hold_say_something_for_searching"="버튼을 누르고 검색을 위한 무언가를 말하라.";
+"error_record"="음성 인식은 현재 사용할 수 없다. \nSiri 켜기 설정";
