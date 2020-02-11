@@ -29,16 +29,39 @@ class MainViewController: UIViewController {
     //MARK: - view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.fetchMainList()
         
         self.mainVM.initDataBase()
+        
         self.localizeMainView()
-        KeychainManager.setSynchronizable()
         
         self.setNotification()
+        
+        // set search action for textfeild when editing change.
+        searchForApps.addTarget(self, action: #selector(searchingAction), for: .editingChanged)
+
     }
+    
 
     //MARK: - button actions
+    @objc func searchingAction(textField: UITextField) {
+      
+         if let searchText = textField.text, !searchText.isEmpty {
+
+            let found = self.mainVM.mainResponse.filter{ ($0.app_name?.lowercased().contains(searchText))! }
+            if found.count != 0 {
+                mainListDataArr = found
+            }else{
+                mainListDataArr = []
+            }
+            reloadTableView()
+        }else{
+            // go defualt list show
+            sortData()
+        }
+        
+     }
     
     @IBAction func microphoneBtnDidTapped(_ sender: UIButton) {
         let popupVC = self.VC(sbName: "VoicePopup", identifier: VoicePopupViewController.storyboardIdentifier)
@@ -46,10 +69,15 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func filterBtnDidTapped(_ sender: UIButton) {
-        let vc = self.VC(sbName: "Filter", identifier: FilterViewController.storyboardIdentifier) as! FilterViewController
-        vc.sortBy = self.sortBy
-        vc.listStyle = self.viewStyle
-        vc.delegate = self
+        
+        // to clear search before apply filter
+        searchForApps.text = ""
+        
+        // open filter popup
+        let vc          = self.VC(sbName: "Filter", identifier: FilterViewController.storyboardIdentifier) as! FilterViewController
+        vc.sortBy       = self.sortBy
+        vc.listStyle    = self.viewStyle
+        vc.delegate     = self
         
         self.presentPopup(vc: vc)
     }
@@ -90,32 +118,26 @@ class MainViewController: UIViewController {
         case .LatestUpdate:
             self.mainListDataArr = self.mainVM.mainResponse.reversed()
         case .Accending:
-            self.mainListDataArr = self.mainListDataArr.sorted {
+            self.mainListDataArr = self.mainVM.mainResponse.sorted {
                 ($0.app_name ?? "") < ($1.app_name ?? "")
             }
         case .Descending:
-            self.mainListDataArr = self.mainListDataArr.sorted {
-                ($0.app_name ?? "") > ($1.app_name ?? "")
+            self.mainListDataArr = self.mainVM.mainResponse.sorted {
+               ($0.app_name ?? "") > ($1.app_name ?? "")
             }
         default:
             print("default sortData")
         }
         
-        DispatchQueue.main.async {
-            self.reloadTableView()
-        }
+        reloadTableView()
     }
     
     @objc func gotoSettingsVc() {
         
         let settingsSb = UIStoryboard(name: "Settings", bundle: nil)
         let settingsVc = settingsSb.instantiateViewController(withIdentifier: "SettingsViewController_sid") as! SettingsViewController
-        
         self.navigationController?.pushViewController(settingsVc, animated: true)
-        
-//        DispatchQueue.main.async {
-//            self.pushVC(sbName: "Settings", identifier: "SettingsViewController_sid")
-//        }
+
     }
     
     @objc func gotoRecentScreen() {
@@ -131,10 +153,10 @@ class MainViewController: UIViewController {
     }
     
     @objc func localizeMainView() {
-        self.searchForApps.placeholder = "search_for_apps".localiz()
-        self.listOfAllAppsLbl.text = "list_of_all_apps".localiz()
+        self.searchForApps.placeholder  = "search_for_apps".localiz()
+        self.listOfAllAppsLbl.text      = "list_of_all_apps".localiz()
         
-        self.tableView.reloadData()
+        reloadTableView()
     }
 }
 
@@ -172,6 +194,12 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if mainListDataArr.count <= 0 {
+            return
+        }
+        
         let responseObj = mainListDataArr[indexPath.row]
 
         let detailVC = self.VC(sbName: "Detail", identifier: DetailViewController.storyboardIdentifier) as! DetailViewController
@@ -190,9 +218,8 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
 //MARK: - filter delegate
 extension MainViewController : FilterDelegate {
     func filterDidApplied(sortBy: SortBy, listStyle: ViewStyle) {
-        self.sortBy = sortBy
-        self.viewStyle = listStyle
-        
+        self.sortBy         = sortBy
+        self.viewStyle      = listStyle
         self.sortData()
     }
 }

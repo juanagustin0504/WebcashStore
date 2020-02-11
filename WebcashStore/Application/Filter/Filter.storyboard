@@ -264,6 +264,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3bW-2H-aM6" firstAttribute="centerX" secondItem="HzM-tv-TEB" secondAttribute="centerX" id="1H1-PR-Ls5"/>
                             <constraint firstItem="IP0-I6-23J" firstAttribute="centerX" secondItem="2Z7-GQ-Ala" secondAttribute="centerX" id="3h1-1e-e4m"/>
@@ -275,6 +276,9 @@
                             <constraint firstItem="omz-jJ-8Re" firstAttribute="trailing" secondItem="3bW-2H-aM6" secondAttribute="trailing" constant="16.5" id="xHr-sz-sGK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="omz-jJ-8Re"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BEa-C3-f4R" appends="YES" id="Gdh-cf-uRw"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="a2zLbl" destination="G2e-kt-DC6" id="OAW-Q5-jrc"/>
@@ -293,6 +297,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JX6-YL-Xbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BEa-C3-f4R">
+                    <connections>
+                        <action selector="TapDismissAction:" destination="aL4-cG-lFO" id="CdG-E8-VLt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="26.25" y="-263.02816901408448"/>
         </scene>

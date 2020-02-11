@@ -61,6 +61,12 @@ class FilterViewController: UIViewController {
     }
 
     //MARK: - button actions
+    
+    @IBAction func TapDismissAction(_ sender: UITapGestureRecognizer) {
+        
+//        self.dismiss(animated: true, completion: nil)
+        
+    }
     @IBAction func sortActions(_ sender: UIButton) {
         sortRadioImages.forEach {
             $0.isHighlighted = false
