@@ -54,21 +54,23 @@ class MainListCustomCell: UITableViewCell {
 //            }
 //        }
         
-        self.appNameLbl.text = data.app_name
-        
-        // set app_name as key for each cache
-        let keyForCache = NSString(string: data.app_name ?? "")
 
-        // share to cache when every reuse data as array cache
-        if imgCache.object(forKey: keyForCache) != nil{
-            self.appImage.image                 = imgCache.object(forKey: keyForCache)
-            self.wrapperView.backgroundColor    = colorCache.object(forKey: keyForCache)
-            self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
-        }else{
-            self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            let url = URL(string: data.app_image!)
-            self.appImage.sd_setImage(with: url) { (img, err, _, _) in
-                DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            self.appNameLbl.text = data.app_name
+            
+            // set app_name as key for each cache
+            let keyForCache = NSString(string: data.app_name ?? "")
+            
+            // share to cache when every reuse data as array cache
+            if self.imgCache.object(forKey: keyForCache) != nil{
+                self.appImage.image                 = self.imgCache.object(forKey: keyForCache)
+                self.wrapperView.backgroundColor    = self.colorCache.object(forKey: keyForCache)
+                self.changeBtnBackgroundColor(color: self.wrapperView.backgroundColor)
+            }else{
+                self.appImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                let url = URL(string: data.app_image!)
+                self.appImage.sd_setImage(with: url) { (img, err, _, _) in
+
                     if err == nil {
                         img?.getColors({ (imgColor) in
                             self.wrapperView.backgroundColor = imgColor?.background

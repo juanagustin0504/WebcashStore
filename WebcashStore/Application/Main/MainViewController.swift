@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
     fileprivate lazy var mainVM = MainViewModel()
     fileprivate var mainListDataArr : [MainModel.Response] = []
     fileprivate var viewStyle : ViewStyle! = ViewStyle.Detail
-    fileprivate var sortBy : SortBy! = SortBy.Accending
+    fileprivate var sortBy : SortBy! = SortBy.LatestUpdate
     
     //MARK: - view lifecycle
     override func viewDidLoad() {
@@ -87,14 +87,18 @@ class MainViewController: UIViewController {
     
     fileprivate func sortData() {
         switch self.sortBy {
+        case .LatestUpdate:
+            self.mainListDataArr = self.mainVM.mainResponse.reversed()
         case .Accending:
             self.mainListDataArr = self.mainListDataArr.sorted {
                 ($0.app_name ?? "") < ($1.app_name ?? "")
             }
-        default:
+        case .Descending:
             self.mainListDataArr = self.mainListDataArr.sorted {
                 ($0.app_name ?? "") > ($1.app_name ?? "")
             }
+        default:
+            print("default sortData")
         }
         
         DispatchQueue.main.async {

@@ -18,10 +18,12 @@ class FilterViewController: UIViewController {
     @IBOutlet var sortRadioImages: [UIImageView]! {
         didSet {
             switch sortBy {
-            case .Accending:
+            case .LatestUpdate:
                 sortRadioImages[0].isHighlighted = true
-            default:
+            case .Accending:
                 sortRadioImages[1].isHighlighted = true
+            case .Descending:
+                sortRadioImages[2].isHighlighted = true
             }
         }
     }
@@ -38,6 +40,7 @@ class FilterViewController: UIViewController {
     }
     
     @IBOutlet weak var sortByLbl: UILabelDynamicSizeClass!
+    @IBOutlet weak var latestUpdateLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var a2zLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var z2aLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var listStyleLbl: UILabelDynamicSizeClass!
@@ -45,11 +48,10 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var styleNormalLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var styleDetailLbl: UILabelDynamicSizeClass!
     
-    
     //MARK: - properties
-    var sortBy : SortBy = SortBy.Accending
-    var listStyle : ViewStyle = ViewStyle.Detail
-    var delegate : FilterDelegate?
+    var sortBy      : SortBy = SortBy.LatestUpdate
+    var listStyle   : ViewStyle = ViewStyle.Detail
+    var delegate    : FilterDelegate?
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -57,7 +59,6 @@ class FilterViewController: UIViewController {
         
         self.localizeFilterView()
     }
-
 
     //MARK: - button actions
     @IBAction func sortActions(_ sender: UIButton) {
@@ -68,10 +69,9 @@ class FilterViewController: UIViewController {
         let index = sender.tag - 100
         sortRadioImages[index].isHighlighted = true
         
-        sortBy = SortBy(rawValue: sender.tag) ?? SortBy.Accending
-        
-    }
+        sortBy = SortBy(rawValue: sender.tag) ?? SortBy.LatestUpdate
     
+    }
     
     @IBAction func listAction(_ sender: UIButton) {
         listRadionImages.forEach {
@@ -99,6 +99,7 @@ class FilterViewController: UIViewController {
     //MARK: - custom method
     func localizeFilterView() {
         self.sortByLbl.text         = "sort_the_list_by".localiz()
+        self.latestUpdateLbl.text   = "last_update".localiz()
         self.a2zLbl.text            = "a_to_z".localiz()
         self.z2aLbl.text            = "z_to_a".localiz()
         self.listStyleLbl.text      = "select_list_styles_by".localiz()

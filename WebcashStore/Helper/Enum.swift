@@ -8,14 +8,13 @@
 
 import Foundation
 
-
-
 public enum ViewStyle : Int {
     case Detail = 300
     case Normal = 301
 }
 
 public enum SortBy : Int {
-    case Accending  =   100 // A - Z
-    case Descending =   101 // Z - A
+    case LatestUpdate = 100
+    case Accending    = 101 // A - Z
+    case Descending   = 102 // Z - A
 }

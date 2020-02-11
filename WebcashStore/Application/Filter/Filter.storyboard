@@ -17,16 +17,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-2H-aM6" customClass="DesignableView" customModule="WebcashStore" customModuleProvider="target">
-                                <rect key="frame" x="16.5" y="82" width="287" height="404"/>
+                                <rect key="frame" x="16.5" y="66" width="287" height="436"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Sort by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv8-bZ-8ur" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="28" width="67" height="25"/>
+                                        <rect key="frame" x="18" y="30" width="67" height="25"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ska-yq-qxf">
+                                        <rect key="frame" x="25.5" y="71" width="243" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_button_unchecked" highlightedImage="radio_button_checked" translatesAutoresizingMaskIntoConstraints="NO" id="hyu-5n-G5S">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="1yz-va-NgK"/>
+                                                    <constraint firstAttribute="width" secondItem="hyu-5n-G5S" secondAttribute="height" multiplier="1:1" id="NrC-KK-Ipi"/>
+                                                    <constraint firstAttribute="width" constant="24" id="wF0-uS-PcB"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGX-nQ-eGj" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="0.0" width="211" height="24"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ska-yq-qxf" secondAttribute="height" multiplier="81:8" id="pdk-cz-XAP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thC-zL-1wS">
+                                        <rect key="frame" x="25.5" y="71" width="243" height="24"/>
+                                        <connections>
+                                            <action selector="sortActions:" destination="aL4-cG-lFO" eventType="touchUpInside" id="zVs-Ma-Nvs"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X31-FA-Z4H">
-                                        <rect key="frame" x="26" y="70" width="243" height="24"/>
+                                        <rect key="frame" x="26" y="115" width="243" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_button_unchecked" highlightedImage="radio_button_checked" translatesAutoresizingMaskIntoConstraints="NO" id="Xz4-Kc-Ts3">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -47,14 +75,14 @@
                                             <constraint firstAttribute="width" secondItem="X31-FA-Z4H" secondAttribute="height" multiplier="81:8" id="cBq-hn-76i"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8U-jt-qr1">
-                                        <rect key="frame" x="26" y="70" width="243" height="24"/>
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8U-jt-qr1">
+                                        <rect key="frame" x="26" y="115" width="243" height="24"/>
                                         <connections>
-                                            <action selector="sortActions:" destination="aL4-cG-lFO" eventType="touchUpInside" id="Jew-D6-rFZ"/>
+                                            <action selector="sortActions:" destination="aL4-cG-lFO" eventType="touchUpInside" id="auJ-fX-mWQ"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NL7-YT-nkA">
-                                        <rect key="frame" x="26" y="114" width="243" height="24"/>
+                                        <rect key="frame" x="26" y="159" width="243" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_button_unchecked" highlightedImage="radio_button_checked" translatesAutoresizingMaskIntoConstraints="NO" id="4Yq-gx-g3E">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -75,20 +103,20 @@
                                             <constraint firstAttribute="width" secondItem="NL7-YT-nkA" secondAttribute="height" multiplier="81:8" id="DmR-U0-fZR"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-wK-Bbc">
-                                        <rect key="frame" x="26" y="114" width="243" height="24"/>
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-wK-Bbc">
+                                        <rect key="frame" x="26" y="159" width="243" height="24"/>
                                         <connections>
-                                            <action selector="sortActions:" destination="aL4-cG-lFO" eventType="touchUpInside" id="g0J-LP-Gub"/>
+                                            <action selector="sortActions:" destination="aL4-cG-lFO" eventType="touchUpInside" id="6l0-Zl-4x5"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Style:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-2u-U8i" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="172" width="251" height="25"/>
+                                        <rect key="frame" x="18" y="217" width="251" height="25"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AjZ-LV-CDy">
-                                        <rect key="frame" x="26" y="213" width="243" height="24"/>
+                                        <rect key="frame" x="26" y="258" width="243" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_button_unchecked" highlightedImage="radio_button_checked" translatesAutoresizingMaskIntoConstraints="NO" id="vrm-pK-Wgv">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -110,13 +138,13 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-sG-APT">
-                                        <rect key="frame" x="26" y="213" width="243" height="24"/>
+                                        <rect key="frame" x="26" y="258" width="243" height="24"/>
                                         <connections>
                                             <action selector="listAction:" destination="aL4-cG-lFO" eventType="touchUpInside" id="v1a-HS-fiy"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fBP-26-zDQ">
-                                        <rect key="frame" x="26" y="257" width="243" height="24"/>
+                                        <rect key="frame" x="26" y="302" width="243" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_button_unchecked" highlightedImage="radio_button_checked" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-Ce-pR8">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -138,11 +166,11 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcR-fq-hfh" customClass="UIButtonDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                        <rect key="frame" x="45" y="320" width="197" height="45"/>
+                                        <rect key="frame" x="43.5" y="361" width="200" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.28235294117647058" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Qam-vw-0uD"/>
-                                            <constraint firstAttribute="width" constant="197" id="jBr-xA-yqG"/>
+                                            <constraint firstAttribute="width" constant="200" id="jBr-xA-yqG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Apply">
@@ -158,7 +186,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-ts-U9d">
-                                        <rect key="frame" x="26" y="257" width="243" height="24"/>
+                                        <rect key="frame" x="26" y="302" width="243" height="24"/>
                                         <connections>
                                             <action selector="listAction:" destination="aL4-cG-lFO" eventType="touchUpInside" id="dut-KC-TNg"/>
                                         </connections>
@@ -166,30 +194,39 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="X31-FA-Z4H" firstAttribute="top" secondItem="fv8-bZ-8ur" secondAttribute="bottom" constant="17" id="0YW-hr-dJp"/>
-                                    <constraint firstItem="fv8-bZ-8ur" firstAttribute="top" secondItem="3bW-2H-aM6" secondAttribute="top" constant="28" id="0gU-dI-19W"/>
+                                    <constraint firstItem="fv8-bZ-8ur" firstAttribute="top" secondItem="3bW-2H-aM6" secondAttribute="top" constant="30" id="0gU-dI-19W"/>
                                     <constraint firstItem="NL7-YT-nkA" firstAttribute="top" secondItem="X31-FA-Z4H" secondAttribute="bottom" constant="20" id="16t-4y-j9h"/>
                                     <constraint firstAttribute="trailing" secondItem="AjZ-LV-CDy" secondAttribute="trailing" constant="18" id="1Hy-fD-W0X"/>
+                                    <constraint firstItem="thC-zL-1wS" firstAttribute="bottom" secondItem="ska-yq-qxf" secondAttribute="bottom" id="2zb-zW-gL9"/>
                                     <constraint firstItem="rEw-ts-U9d" firstAttribute="trailing" secondItem="fBP-26-zDQ" secondAttribute="trailing" id="4CW-TL-M74"/>
                                     <constraint firstItem="e8U-jt-qr1" firstAttribute="leading" secondItem="X31-FA-Z4H" secondAttribute="leading" id="4M7-8S-R85"/>
                                     <constraint firstItem="t9c-wK-Bbc" firstAttribute="trailing" secondItem="NL7-YT-nkA" secondAttribute="trailing" id="5T7-fs-9zz"/>
+                                    <constraint firstItem="thC-zL-1wS" firstAttribute="leading" secondItem="ska-yq-qxf" secondAttribute="leading" id="8MI-wr-Gyr"/>
+                                    <constraint firstItem="thC-zL-1wS" firstAttribute="top" secondItem="ska-yq-qxf" secondAttribute="top" id="95T-e6-QoT"/>
                                     <constraint firstItem="AjZ-LV-CDy" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="26" id="ALF-4H-FWd"/>
                                     <constraint firstAttribute="trailing" secondItem="fBP-26-zDQ" secondAttribute="trailing" constant="18" id="Adk-OT-XIW"/>
+                                    <constraint firstItem="thC-zL-1wS" firstAttribute="trailing" secondItem="ska-yq-qxf" secondAttribute="trailing" id="Bb8-kS-Pw4"/>
                                     <constraint firstItem="e8U-jt-qr1" firstAttribute="bottom" secondItem="X31-FA-Z4H" secondAttribute="bottom" id="IxF-tG-xSF"/>
-                                    <constraint firstItem="XcR-fq-hfh" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="45" id="KZg-0J-HpU"/>
+                                    <constraint firstItem="ska-yq-qxf" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="25.5" id="KIE-j7-ZfE"/>
+                                    <constraint firstItem="ska-yq-qxf" firstAttribute="width" secondItem="ska-yq-qxf" secondAttribute="height" multiplier="81:8" id="Kxp-kI-IV7"/>
                                     <constraint firstItem="rEw-ts-U9d" firstAttribute="top" secondItem="fBP-26-zDQ" secondAttribute="top" id="Lk8-PI-Eci"/>
                                     <constraint firstAttribute="trailing" secondItem="X31-FA-Z4H" secondAttribute="trailing" constant="18" id="NMb-ij-64d"/>
                                     <constraint firstItem="t9c-wK-Bbc" firstAttribute="leading" secondItem="NL7-YT-nkA" secondAttribute="leading" id="OP6-Er-eL6"/>
-                                    <constraint firstAttribute="bottom" secondItem="XcR-fq-hfh" secondAttribute="bottom" constant="39" id="Xwp-pk-kcz"/>
+                                    <constraint firstItem="X31-FA-Z4H" firstAttribute="top" secondItem="ska-yq-qxf" secondAttribute="bottom" constant="20" id="Ub0-Xs-h5G"/>
+                                    <constraint firstAttribute="trailing" secondItem="ska-yq-qxf" secondAttribute="trailing" constant="18.5" id="Wg0-uU-1ca"/>
+                                    <constraint firstAttribute="bottom" secondItem="XcR-fq-hfh" secondAttribute="bottom" constant="30" id="Xwp-pk-kcz"/>
                                     <constraint firstItem="e8U-jt-qr1" firstAttribute="top" secondItem="X31-FA-Z4H" secondAttribute="top" id="Yr0-rJ-huc"/>
                                     <constraint firstItem="rEw-ts-U9d" firstAttribute="leading" secondItem="fBP-26-zDQ" secondAttribute="leading" id="aEE-HZ-CUT"/>
                                     <constraint firstItem="e8U-jt-qr1" firstAttribute="trailing" secondItem="X31-FA-Z4H" secondAttribute="trailing" id="aPh-bn-F4O"/>
+                                    <constraint firstItem="ska-yq-qxf" firstAttribute="top" secondItem="fv8-bZ-8ur" secondAttribute="bottom" constant="16" id="brZ-oz-Orm"/>
                                     <constraint firstItem="NL7-YT-nkA" firstAttribute="leading" secondItem="X31-FA-Z4H" secondAttribute="leading" id="bt2-pE-YCf"/>
+                                    <constraint firstItem="XcR-fq-hfh" firstAttribute="top" secondItem="fBP-26-zDQ" secondAttribute="bottom" constant="35" id="dov-Rj-cVv"/>
                                     <constraint firstItem="k1g-sG-APT" firstAttribute="trailing" secondItem="AjZ-LV-CDy" secondAttribute="trailing" id="eeH-PY-vDU"/>
                                     <constraint firstItem="rEw-ts-U9d" firstAttribute="bottom" secondItem="fBP-26-zDQ" secondAttribute="bottom" id="f1w-FW-GpT"/>
                                     <constraint firstItem="fBP-26-zDQ" firstAttribute="top" secondItem="AjZ-LV-CDy" secondAttribute="bottom" constant="20" id="gmg-cW-ij6"/>
                                     <constraint firstItem="fBP-26-zDQ" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="26" id="hhl-hl-IXU"/>
                                     <constraint firstItem="fv8-bZ-8ur" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="18" id="jA9-eA-NF0"/>
+                                    <constraint firstItem="XcR-fq-hfh" firstAttribute="centerX" secondItem="3bW-2H-aM6" secondAttribute="centerX" id="kh9-hx-UzL"/>
                                     <constraint firstItem="t9c-wK-Bbc" firstAttribute="bottom" secondItem="NL7-YT-nkA" secondAttribute="bottom" id="lbA-ZL-qqm"/>
                                     <constraint firstItem="k1g-sG-APT" firstAttribute="leading" secondItem="AjZ-LV-CDy" secondAttribute="leading" id="llL-F4-JxE"/>
                                     <constraint firstItem="X31-FA-Z4H" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="26" id="oyG-La-2XP"/>
@@ -199,14 +236,12 @@
                                     <constraint firstItem="qCP-2u-U8i" firstAttribute="leading" secondItem="3bW-2H-aM6" secondAttribute="leading" constant="18" id="tEP-3W-gJZ"/>
                                     <constraint firstItem="k1g-sG-APT" firstAttribute="bottom" secondItem="AjZ-LV-CDy" secondAttribute="bottom" id="tNC-KF-gxh"/>
                                     <constraint firstItem="AjZ-LV-CDy" firstAttribute="top" secondItem="qCP-2u-U8i" secondAttribute="bottom" constant="16" id="tyu-l5-Ugg"/>
-                                    <constraint firstAttribute="trailing" secondItem="XcR-fq-hfh" secondAttribute="trailing" constant="45" id="xp4-0J-dQT"/>
-                                    <constraint firstItem="XcR-fq-hfh" firstAttribute="top" secondItem="fBP-26-zDQ" secondAttribute="bottom" constant="39" id="y9Z-Go-Bkd"/>
                                     <constraint firstItem="qCP-2u-U8i" firstAttribute="top" secondItem="NL7-YT-nkA" secondAttribute="bottom" constant="34" id="yXe-nH-eVx"/>
                                     <constraint firstItem="k1g-sG-APT" firstAttribute="top" secondItem="AjZ-LV-CDy" secondAttribute="top" id="yZQ-Zf-LKg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -244,15 +279,17 @@
                     <connections>
                         <outlet property="a2zLbl" destination="G2e-kt-DC6" id="OAW-Q5-jrc"/>
                         <outlet property="applyBtn" destination="XcR-fq-hfh" id="dDi-qp-VBk"/>
+                        <outlet property="latestUpdateLbl" destination="IGX-nQ-eGj" id="dNX-RM-RG3"/>
                         <outlet property="listStyleLbl" destination="qCP-2u-U8i" id="Se0-s3-4Jg"/>
                         <outlet property="sortByLbl" destination="fv8-bZ-8ur" id="g3Z-pQ-MCT"/>
                         <outlet property="styleDetailLbl" destination="335-M0-PHd" id="5I3-MI-trN"/>
                         <outlet property="styleNormalLbl" destination="vD8-o7-TFy" id="WeE-CI-CPU"/>
                         <outlet property="z2aLbl" destination="J5x-iY-Lsa" id="Hax-FK-33F"/>
-                        <outletCollection property="sortRadioImages" destination="Xz4-Kc-Ts3" collectionClass="NSMutableArray" id="9U4-Hx-haG"/>
-                        <outletCollection property="sortRadioImages" destination="4Yq-gx-g3E" collectionClass="NSMutableArray" id="yk7-CN-8eU"/>
                         <outletCollection property="listRadionImages" destination="vrm-pK-Wgv" collectionClass="NSMutableArray" id="HGm-gN-LFo"/>
                         <outletCollection property="listRadionImages" destination="zwQ-Ce-pR8" collectionClass="NSMutableArray" id="FTA-pp-ffw"/>
+                        <outletCollection property="sortRadioImages" destination="hyu-5n-G5S" collectionClass="NSMutableArray" id="maW-NZ-UAT"/>
+                        <outletCollection property="sortRadioImages" destination="Xz4-Kc-Ts3" collectionClass="NSMutableArray" id="HO7-E1-ouF"/>
+                        <outletCollection property="sortRadioImages" destination="4Yq-gx-g3E" collectionClass="NSMutableArray" id="s3Y-JB-AKv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JX6-YL-Xbd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
