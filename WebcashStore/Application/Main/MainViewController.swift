@@ -228,13 +228,7 @@ extension MainViewController : FilterDelegate {
 extension MainViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
-        if !(textField.text?.trim().isEmpty)! {
-            self.mainListDataArr = mainVM.filter(appName: textField.text!)
-        } else {
-            self.mainListDataArr = mainVM.mainResponse
-        }
-        self.sortData()
+
         return true
     }
 }
