@@ -25,4 +25,5 @@ enum APIKey : String {
     case KS_DELETE              =   "API/KS_DELETE"
     case KS_PUSH_NOTIFICATION   =   "API/KS_PUSH_NOTIFICATION"
     case UploadFile             =   "API/uploadFile"
+    case KS_HAD_DOWNLOAD        =   "API/KS_HAD_DOWNLOAD"
 }

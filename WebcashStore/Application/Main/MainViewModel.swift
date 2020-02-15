@@ -63,5 +63,13 @@ class MainViewModel {
             self.coreDataManager.insert(obj: appObj)
         }
     }
-    
+
+    /// App Count
+    /// - Parameter appID: App version ID
+    static func requestAppCount(appID: String, completion : @escaping Completion) {
+        let req = DownloadCount.Request(appversion_id: appID)
+        DataAccess.shared.request(shouldShowLoading: false, apiKey: .KS_HAD_DOWNLOAD, httpMethod: .post, body: req, responseType: DownloadCount.Response.self) { (_) in
+            completion()
+        }
+    }
 }

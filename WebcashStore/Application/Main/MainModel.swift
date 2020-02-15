@@ -30,12 +30,14 @@ struct MainModel {
                 let date    : Double?
                 let path    : String?
                 let view_count  : Int?
+                let appversion_id : Int?
             }
             
             struct Real : Decodable {
                 let date    : Double?
                 let path    : String?
                 let view_count  : Int?
+                let appversion_id : Int?
             }
         }
     }
@@ -43,4 +45,13 @@ struct MainModel {
     struct Search : Encodable {
         let search_text : String
     }
+}
+
+struct DownloadCount {
+    struct Request : Encodable {
+        let appversion_id   :   String
+    }
+    
+    struct Response : Decodable {}
+    
 }

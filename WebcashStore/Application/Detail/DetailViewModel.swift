@@ -15,6 +15,8 @@ enum Server : Int {
 
 struct DetailViewModel {
     var responseObj : MainModel.Response!
+    var isDevUpdate : Bool! = false
+    var isRealUpdate : Bool! = false
     
     func serverIsAvailable(version : Server, atIndex idx: Int = 0) -> Bool {
         
@@ -40,7 +42,10 @@ struct DetailViewModel {
         }
     }
     
-    func getAgoDate(server : Server, atIndex idx : Int = 0) -> String? {
+    mutating func getAgoDate(server : Server, atIndex idx : Int = 0) -> String? {
+        
+        self.isDevUpdate = false
+        self.isRealUpdate = false
         
         guard let obj = responseObj.ios?[idx] else {
               return nil
@@ -102,22 +107,32 @@ struct DetailViewModel {
            }
            
            if let hour = components.hour, hour >= 2 {
+            self.isDevUpdate = true
+            self.isRealUpdate = true
             return "\(hour) " + "hours_ago".localiz()
            }
            
            if let hour = components.hour, hour >= 1 {
+            self.isDevUpdate = true
+            self.isRealUpdate = true
             return "hour_ago".localiz()
            }
            
            if let minute = components.minute, minute >= 2 {
+            self.isDevUpdate = true
+            self.isRealUpdate = true
             return "\(minute) " + "minute_ago".localiz()
            }
            
            if let minute = components.minute, minute >= 1 {
+            self.isDevUpdate = true
+            self.isRealUpdate = true
             return "minute_ago".localiz()
            }
            
            if let second = components.second, second >= 3 {
+            self.isDevUpdate = true
+            self.isRealUpdate = true
             return "\(second) " + "seconds_ago".localiz()
            }
            
@@ -132,4 +147,17 @@ struct DetailViewModel {
         
         return (server == .DevelopeServer ? obj.develop?.path : obj.real?.path)
     }
+    
+    func getAppVersionString(server : Server, atIndex index : Int = 0) -> String? {
+        guard let obj = responseObj.ios?[index] else {
+            return nil
+        }
+        
+        return (server == .DevelopeServer ? "\(obj.develop?.appversion_id ?? 0)" : "\(obj.real?.appversion_id ?? 0)")
+    }
+    
+    func isNewUpdate() -> Bool {
+        return isDevUpdate || isRealUpdate
+    }
+    
 }

@@ -316,7 +316,6 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="downloadBtnDidClicked:" destination="h1a-Lb-RkB" eventType="touchUpInside" id="DZu-tb-1UE"/>
                                                                 <action selector="realBtnDidClicked:" destination="ELB-lp-SGJ" eventType="touchUpInside" id="uJa-63-zkO"/>
                                                             </connections>
                                                         </button>
@@ -334,7 +333,6 @@
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="devBtnDidClicked:" destination="ELB-lp-SGJ" eventType="touchUpInside" id="5gi-cd-fgX"/>
-                                                                <action selector="downloadBtnDidClicked:" destination="h1a-Lb-RkB" eventType="touchUpInside" id="FQe-Nj-qxF"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -366,6 +364,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUS-nU-0f0">
+                                                    <rect key="frame" x="170.5" y="16" width="50" height="22"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="7Xh-p5-8uB"/>
+                                                        <constraint firstAttribute="height" constant="22" id="cep-y4-4Da"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <state key="normal" title="New">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="11"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AT5-kk-NOL" firstAttribute="top" secondItem="hi3-xD-1p1" secondAttribute="bottom" constant="10" id="0IJ-3b-aep"/>
@@ -378,11 +393,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="tbY-SF-hig" secondAttribute="trailing" constant="17" id="SwD-qC-gB8"/>
                                                 <constraint firstItem="AMV-Bn-9ff" firstAttribute="top" secondItem="cdH-iD-P4E" secondAttribute="top" constant="155.5" id="USH-Bk-RdJ"/>
                                                 <constraint firstItem="hi3-xD-1p1" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="33" id="YWN-8y-qeR"/>
+                                                <constraint firstItem="pUS-nU-0f0" firstAttribute="leading" secondItem="A30-de-aBM" secondAttribute="trailing" constant="10" id="ZSD-yM-wwh"/>
                                                 <constraint firstItem="AT5-kk-NOL" firstAttribute="centerX" secondItem="SZH-GU-5l6" secondAttribute="centerX" id="cJZ-Dq-P3e"/>
                                                 <constraint firstAttribute="trailing" secondItem="eTq-ud-yi3" secondAttribute="trailing" constant="40" id="dmD-3m-HhQ"/>
                                                 <constraint firstItem="A30-de-aBM" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="33" id="eZy-G8-7sp"/>
                                                 <constraint firstItem="hi3-xD-1p1" firstAttribute="top" secondItem="A30-de-aBM" secondAttribute="bottom" constant="19" id="gVG-W8-p4s"/>
                                                 <constraint firstItem="tbY-SF-hig" firstAttribute="leading" secondItem="AMV-Bn-9ff" secondAttribute="leading" id="ifd-QE-2ph"/>
+                                                <constraint firstItem="pUS-nU-0f0" firstAttribute="centerY" secondItem="A30-de-aBM" secondAttribute="centerY" id="pcf-aK-9rT"/>
                                                 <constraint firstItem="eTq-ud-yi3" firstAttribute="centerY" secondItem="A30-de-aBM" secondAttribute="centerY" id="vGK-K1-LJV"/>
                                                 <constraint firstItem="AMV-Bn-9ff" firstAttribute="leading" secondItem="cdH-iD-P4E" secondAttribute="leading" constant="41" id="yiU-y6-uCZ"/>
                                             </constraints>
@@ -393,6 +410,7 @@
                                             <outlet property="devAgoDateLbl" destination="AT5-kk-NOL" id="l5b-pU-JQI"/>
                                             <outlet property="devBtn" destination="SZH-GU-5l6" id="NC1-ic-bHI"/>
                                             <outlet property="expandImg" destination="eTq-ud-yi3" id="z0z-Dm-Aw8"/>
+                                            <outlet property="newBtn" destination="pUS-nU-0f0" id="Cew-u1-g15"/>
                                             <outlet property="realAgoDateLbl" destination="Oj4-rs-OFY" id="dK9-Uj-xR1"/>
                                             <outlet property="realBtn" destination="cli-4c-oUw" id="QPe-RX-FPw"/>
                                             <outlet property="versionLbl" destination="A30-de-aBM" id="8Q2-Te-duF"/>

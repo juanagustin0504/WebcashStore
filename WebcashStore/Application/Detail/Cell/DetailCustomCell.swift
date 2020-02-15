@@ -26,7 +26,8 @@ class DetailCustomCell: UITableViewCell {
     @IBOutlet weak var realAgoDateLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var devAgoDateLbl: UILabelDynamicSizeClass!
     @IBOutlet weak var expandImg: UIImageView!
-
+    @IBOutlet weak var newBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,7 +38,7 @@ class DetailCustomCell: UITableViewCell {
     }
     
     func configueCell(response : MainModel.Response, atindexPath indexpath : IndexPath) {
-        let detailVM = DetailViewModel(responseObj: response)
+        var detailVM = DetailViewModel(responseObj: response)
         
         self.versionLbl.text = "version".localiz() + " \(detailVM.responseObj.ios![indexpath.row].version ?? "")"
 
@@ -55,6 +56,8 @@ class DetailCustomCell: UITableViewCell {
             self.devAgoDateLbl.text =  detailVM.getAgoDate(server: .DevelopeServer,atIndex: indexpath.row) ?? "-"
         }
         
+        self.newBtn.isHidden = !detailVM.isNewUpdate()
+
         self.descriptionTitle.text = "description".localiz()
         if (detailVM.responseObj.ios![indexpath.row].description?.isEmpty)! {
             self.descriptionLbl.text = "no_description".localiz()

@@ -65,7 +65,11 @@ class DetailViewController: UIViewController {
         UIDevice.hapticWithStyle(style: .medium)
         let detailVM = DetailViewModel(responseObj: self.dataResponse)
         let url = detailVM.getURLString(server: server, atIndex: int)
-        self.openWebURL(url: url ?? "")
+        
+        let appVersion = detailVM.getAppVersionString(server: server, atIndex: int)
+        MainViewModel.requestAppCount(appID: appVersion!) {
+            self.openWebURL(url: url ?? "")
+        }
     }
     
     //MARK: - button action

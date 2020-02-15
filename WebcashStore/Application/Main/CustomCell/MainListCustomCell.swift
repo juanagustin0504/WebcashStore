@@ -109,7 +109,7 @@ class MainListCustomCell: UITableViewCell {
     func configDetailCell(data : MainModel.Response) {
         self.configCell(data: data)
         
-        let detailVM = DetailViewModel(responseObj: data)
+        var detailVM = DetailViewModel(responseObj: data)
         self.developServerDateLbl.text = detailVM.getAgoDate(server: .DevelopeServer) ?? "-"
         self.realServerDateLbl.text = detailVM.getAgoDate(server: .RealServer) ?? "-"
         

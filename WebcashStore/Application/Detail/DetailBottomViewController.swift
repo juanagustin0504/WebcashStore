@@ -103,12 +103,19 @@ class DetailBottomViewController: BottomPopupViewController {
         UIDevice.hapticWithStyle(style: .medium)
         
         var url : String?
+        var appVersion : String?
+        
         if sender == realBtn {
             url = detailVM.getURLString(server: .RealServer)
+            appVersion = detailVM.getAppVersionString(server: .RealServer)
         } else {
             url = detailVM.getURLString(server: .DevelopeServer)
+            appVersion = detailVM.getAppVersionString(server: .DevelopeServer)
         }
-        
-        self.openWebURL(url: url ?? "")
+            
+        MainViewModel.requestAppCount(appID: appVersion!) {
+            self.openWebURL(url: url ?? "")
+        }
+
     }
 }
