@@ -35,6 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "ChangeNotificationSwitch"), object: nil)
+    }
+    
+    
 }
 
 //MARK: - Notifications Center -

@@ -50,14 +50,9 @@ class SettingsViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.gotoNotificationSetting (_:)))
         self.touchAreaView.addGestureRecognizer(gesture)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(changeNotificationSetting), name: Notification.Name("ChangeNotificationSwitch"), object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Notification Switch set value from UserDefaults
-        self.notificationSwitch.isOn = UserDefaults.standard.bool(forKey: "noti_switch_state")
-    }
     //MARK:- Private Method -
     func applyRoundShadow() {
 
@@ -93,12 +88,10 @@ class SettingsViewController: UIViewController {
                 return
             }
 
+            // OPEN Setting
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                        let isRegisteredForRemoteNotifications = UIApplication.shared.isRegisteredForRemoteNotifications
-                        self.notificationSwitch.isOn = isRegisteredForRemoteNotifications
-                        UserDefaults.standard.set(self.notificationSwitch.isOn, forKey: "noti_switch_state")
                         print("Settings opened: \(success)") // Prints true
                     })
                 } else {
@@ -106,6 +99,10 @@ class SettingsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func changeNotificationSetting() {
+        self.notificationSwitch.isOn = UIApplication.shared.isRegisteredForRemoteNotifications
     }
     
     @IBAction func changeLanguage(_ sender: UIButton) {
