@@ -53,6 +53,11 @@ class SettingsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(changeNotificationSetting), name: Notification.Name("ChangeNotificationSwitch"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.post(name: Notification.Name("ChangeNotificationSwitch"), object: nil)
+    }
     //MARK:- Private Method -
     func applyRoundShadow() {
 
