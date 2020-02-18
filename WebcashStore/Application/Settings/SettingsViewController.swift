@@ -51,6 +51,13 @@ class SettingsViewController: UIViewController {
         self.touchAreaView.addGestureRecognizer(gesture)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Notification Switch set value from UserDefaults
+        self.notificationSwitch.isOn = UserDefaults.standard.bool(forKey: "noti_switch_state")
+    }
     //MARK:- Private Method -
     func applyRoundShadow() {
 
@@ -89,6 +96,9 @@ class SettingsViewController: UIViewController {
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        let isRegisteredForRemoteNotifications = UIApplication.shared.isRegisteredForRemoteNotifications
+                        self.notificationSwitch.isOn = isRegisteredForRemoteNotifications
+                        UserDefaults.standard.set(self.notificationSwitch.isOn, forKey: "noti_switch_state")
                         print("Settings opened: \(success)") // Prints true
                     })
                 } else {
