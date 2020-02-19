@@ -50,6 +50,13 @@ class SettingsViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.gotoNotificationSetting (_:)))
         self.touchAreaView.addGestureRecognizer(gesture)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(changeNotificationSetting), name: Notification.Name("ChangeNotificationSwitch"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.post(name: Notification.Name("ChangeNotificationSwitch"), object: nil)
     }
     //MARK:- Private Method -
     func applyRoundShadow() {
@@ -86,6 +93,7 @@ class SettingsViewController: UIViewController {
                 return
             }
 
+            // OPEN Setting
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
@@ -96,6 +104,10 @@ class SettingsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func changeNotificationSetting() {
+        self.notificationSwitch.isOn = UIApplication.shared.isRegisteredForRemoteNotifications
     }
     
     @IBAction func changeLanguage(_ sender: UIButton) {
