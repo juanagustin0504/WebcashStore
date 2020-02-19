@@ -334,7 +334,11 @@ extension UIDevice {
         }
     }
     
-    static func checkSecurity(securityType type: BiometryType, completion: @escaping Completion_Bool) {
+    /// Login into iPhone with security type
+    /// - Parameters:
+    ///   - type: Password, Touch ID, Face ID, None
+    ///   - completion: True if login success
+    static func loginWithSecurity(securityType type: BiometryType, completion: @escaping (Bool, Error?)  -> Void) {
         switch type {
         case .touchID, .passcode:
             LAContext().evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Authenticaton is required.") { success, error in
@@ -343,7 +347,7 @@ extension UIDevice {
                 }
                 
                 DispatchQueue.main.async {
-                    completion(success)
+                    completion(success,error)
                 }
             }
         case .faceID:
@@ -352,12 +356,12 @@ extension UIDevice {
                     print(":::::::::: Security :::::::::: \(error.debugDescription)")
                 }
                 DispatchQueue.main.async {
-                    completion(success)
+                    completion(success,error)
                 }
             }
         default:
             DispatchQueue.main.async {
-                completion(false)
+                completion(false,nil)
             }
             break
         }
