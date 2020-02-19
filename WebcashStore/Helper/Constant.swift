@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 enum APIKey : String {
-    static var baseURL = "http://10.254.243.243:8080/webcashstore/"
+//    static var baseURL = "http://10.254.243.243:8080/webcashstore/"
+    static var baseURL = "https://westore.webcash.co.kr:8443/webcashstore/"
+    
     static var AuthKey = "Basic a29zaWduLWNsaWVudDprb3NpZ24tc2VjcmV0"
     
     case PreLogin           
