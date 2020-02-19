@@ -28,8 +28,8 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something for searching" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-PN-8bm" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
-                                            <rect key="frame" x="18" y="137" width="206.5" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Say something for searching" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-PN-8bm" customClass="UILabelDynamicSizeClass" customModule="WebcashStore" customModuleProvider="target">
+                                            <rect key="frame" x="18" y="137" width="284" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -72,6 +72,7 @@
                                         <constraint firstItem="p6V-Y7-Omb" firstAttribute="centerX" secondItem="cxJ-jx-h4x" secondAttribute="centerX" id="OJV-S6-pSe"/>
                                         <constraint firstAttribute="bottom" secondItem="p6V-Y7-Omb" secondAttribute="bottom" constant="45" id="PfL-SO-qUY"/>
                                         <constraint firstItem="e1j-9q-egk" firstAttribute="centerX" secondItem="cxJ-jx-h4x" secondAttribute="centerX" id="Ymu-hl-Iaf"/>
+                                        <constraint firstAttribute="trailing" secondItem="CgW-PN-8bm" secondAttribute="trailing" constant="18" id="arK-Ua-GFD"/>
                                         <constraint firstItem="B6k-BL-tFc" firstAttribute="centerX" secondItem="p6V-Y7-Omb" secondAttribute="centerX" id="b4m-5g-8Op"/>
                                         <constraint firstItem="CgW-PN-8bm" firstAttribute="top" secondItem="Z3r-9g-QzH" secondAttribute="bottom" constant="33" id="ib8-c0-ks7"/>
                                         <constraint firstItem="B6k-BL-tFc" firstAttribute="centerY" secondItem="p6V-Y7-Omb" secondAttribute="centerY" id="k7e-TM-D1r"/>

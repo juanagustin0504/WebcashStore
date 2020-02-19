@@ -15,6 +15,13 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            // add pull to refresh
+            if #available(iOS 10.0, *) {
+                tableView.refreshControl = refreshControl
+            } else {
+                tableView.addSubview(refreshControl)
+            }
+            
             self.tableView.rowHeight = UITableView.automaticDimension
             self.tableView.estimatedRowHeight = 50
         }
@@ -25,6 +32,7 @@ class MainViewController: UIViewController {
     fileprivate var mainListDataArr : [MainModel.Response] = []
     fileprivate var viewStyle : ViewStyle! = ViewStyle.Detail
     fileprivate var sortBy : SortBy! = SortBy.LatestUpdate
+    private let refreshControl = UIRefreshControl() // for pull to refresh
     
     //MARK: - view lifecycle
     override func viewDidLoad() {
@@ -40,6 +48,9 @@ class MainViewController: UIViewController {
         
         // set search action for textfeild when editing change.
         searchForApps.addTarget(self, action: #selector(searchingAction), for: .editingChanged)
+        
+        // pull to refresh action
+        self.refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
 
     }
     
@@ -96,6 +107,11 @@ class MainViewController: UIViewController {
     }
     
     //MARK: - custom methods
+    
+    @objc fileprivate func pullToRefresh(_ sender : Any) {
+        self.fetchMainList()
+    }
+    
     fileprivate func reloadTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -104,6 +120,9 @@ class MainViewController: UIViewController {
     
     private func fetchMainList() {
         mainVM.fetchMainList { (err) in
+            
+            self.refreshControl.endRefreshing()
+            
             guard err == nil else {
                 self.alert(message: err?.localizedDescription ?? "")
                 return
