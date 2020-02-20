@@ -51,12 +51,15 @@ class SettingsViewController: UIViewController {
         self.touchAreaView.addGestureRecognizer(gesture)
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeNotificationSetting), name: Notification.Name("ChangeNotificationSwitch"), object: nil)
+        
+        self.about_us_detail.lineBreakMode = .byWordWrapping
+        self.about_us_detail.numberOfLines = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NotificationCenter.default.post(name: Notification.Name("ChangeNotificationSwitch"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("ChangeNotificationSwitch"), object: nil) // changeNotificationSetting()
     }
     //MARK:- Private Method -
     func applyRoundShadow() {
