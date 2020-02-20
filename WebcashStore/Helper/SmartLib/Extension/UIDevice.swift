@@ -27,19 +27,48 @@ extension UIDevice {
         static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
     }
 
-    public struct DeviceType {
-        static let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
-        
-        static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-        
-        static let IS_IPHONE_6          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-        
-        static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-        
-        static let IS_IPHONE_X          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
-        
-        static let IS_IPHONE_XR         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 896.0
+    enum DeviceScreenSize {
+        case Mini           // iPhone 4 4s 5 or 5S or 5C or 5SE
+        case Meduim         // iPhone 6/6S/7/8
+        case Plus           // iPhone 6+/6S+/7+/8+
+        case XSerial        // iPhone X, XS, 11Pro, iPhone XR, 11
+        case XMaxSerial     // iPhone XS Max, 11Pro Max
     }
+    
+    private static func deviceId() -> Int {
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 960:
+                return 0
+            case 1136:
+                return 1
+            case 1334:
+                return 2
+            case 1920, 2208:
+                return 3
+            case 2436:
+                return 4
+            case 2688:
+                return 5
+            case 1792:
+                return 6
+            default:
+                return 999
+            }
+        }
+        return 0
+    }
+    
+    static func getDeviceScreenType() -> DeviceScreenSize {
+        let _deviceId = Self.deviceId()
+        if _deviceId == 0 || _deviceId == 1 { return .Mini }
+        else if _deviceId == 2 { return .Meduim }
+        else if _deviceId == 3 { return .Plus }
+        else if _deviceId == 4 || _deviceId == 6 { return .XSerial }
+        else if _deviceId == 5 { return .XMaxSerial }
+        else { return .Meduim }
+    }
+    
     
     public enum EnumModel: String {
         case simulator     = "simulator/sandbox",
@@ -305,23 +334,34 @@ extension UIDevice {
         }
     }
     
-    static func checkSecurity(completion: @escaping Completion_Bool) {
-        switch checkSecurityType() {
+    /// Login into iPhone with security type
+    /// - Parameters:
+    ///   - type: Password, Touch ID, Face ID, None
+    ///   - completion: True if login success
+    static func loginWithSecurity(securityType type: BiometryType, completion: @escaping (Bool, Error?)  -> Void) {
+        switch type {
         case .touchID, .passcode:
             LAContext().evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Authenticaton is required.") { success, error in
+                if !success {
+                    print(":::::::::: Security :::::::::: \(error.debugDescription)")
+                }
+                
                 DispatchQueue.main.async {
-                    completion(success)
+                    completion(success,error)
                 }
             }
         case .faceID:
             LAContext().evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "FaceID Authenticaton is required.") { success, error in
+                if !success {
+                    print(":::::::::: Security :::::::::: \(error.debugDescription)")
+                }
                 DispatchQueue.main.async {
-                    completion(success)
+                    completion(success,error)
                 }
             }
         default:
             DispatchQueue.main.async {
-                completion(false)
+                completion(false,nil)
             }
             break
         }
